@@ -1,0 +1,12 @@
+name: ""
+output_dir: "."
+navbar:
+  title: "Junto Technologies"
+  left:
+    - text: Home
+      href: index.html
+    - text: Team
+      href: team.html
+output:
+  html_document:
+    theme: yeti
