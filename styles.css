@@ -1,112 +1,77 @@
-
-.contact-box {
-position: relative;
-border: 2px solid lightgrey;
-padding: 20px;
-margin-bottom: 20px;
-border-radius: 10px;
-background-color: #f9f9f9;
-display: block;
-width: 100%;
-}
-
-.contact-text h2 {
-margin-bottom: 10px;
-font-size: 1.3em;
-margin-right: 50px;
-font-weight: bold;
-}
-
-.contact-wrapper {
-display: flex;
-}
-
-.contact-text {
-flex-grow: 1;
-}
-
-.year {
-position: absolute;
-top: 10px;
-right: 10px;
-font-weight: bold;
-padding-left: 10px; /* Add left padding to separate the year from the text */
-}
-
-.center {
-margin-bottom: 20px;           /* This adds some space below the image */
-}
-
-
-h2 {
-margin-bottom: 10px;
-font-size: 1.3em;
-margin-right: 50px; /* Add right margin to separate the title from the year */
-}
-
-p {
-margin-bottom: 0;
-}
-
-.about-us-section {
-background-color: #f9f9f9;  /* This adds a background color to the section */
-padding: 20px;              /* This adds some padding around the text */
-border-radius: 10px;        /* This makes the corners of the section rounded */
-margin-top: 20px;           /* This adds some space above the section */
-margin-bottom: 20px;        /* This adds some space below the section */
-font-family: Arial, sans-serif; /* This changes the font of the text */
-}
-
-.about-us-section h2 {
-color: #333;  /* This changes the color of the heading */
-font-size: 1.5em;  /* This changes the size of the heading */
-}
-
-.about-us-section p {
-line-height: 1.6;  /* This changes the space between lines of text */
-}
-
+/* Global styles */
 body {
     background-image: url('pics/background_pics/dalle_background2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: Arial, sans-serif;
 }
 
-.center {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
-
-.center img {
-max-width: 100%;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
+/* Text elements */
 h1 {
-font-size: 2.5em;
-margin-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 p {
-font-size: 1.1em;
-text-align: justify;
-margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
+/* Links */
 a {
-color: #1a73e8;
-text-decoration: none;
+    color: #1a73e8;
+    text-decoration: none;
 }
 
 a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
-.title {
-  text-align: center;
+/* Common box style */
+.contact-box, .about-us-section {
+    border: 2px solid lightgrey;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: block;
+    width: 100%;
 }
 
+/* Flexbox for alignment */
+.contact-wrapper, .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Specific text style */
+.contact-text {
+    flex-grow: 1;
+}
+
+.year {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/* Image style */
+.center img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
