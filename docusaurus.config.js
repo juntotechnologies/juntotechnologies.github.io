@@ -19,6 +19,7 @@ const config = {
   // GitHub pages deployment config.
   organizationName: 'juntotechnologies', // GitHub org/user name
   projectName: 'juntotechnologies.github.io', // Repository name
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
