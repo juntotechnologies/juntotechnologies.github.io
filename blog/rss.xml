@@ -4,10 +4,30 @@
         <title>Junto Technologies Blog</title>
         <link>https://juntotechnologies.com/blog</link>
         <description>Junto Technologies Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Chronicles of a Shitty WebDev]]></title>
+            <link>https://juntotechnologies.com/blog/chronicles-of-a-shitty-webdev</link>
+            <guid>https://juntotechnologies.com/blog/chronicles-of-a-shitty-webdev</guid>
+            <pubDate>Thu, 07 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[It all started in 2023...]]></description>
+            <content:encoded><![CDATA[<p>It all started in 2023...</p>
+<p>As a first foray into WebDev, I made a shitty site for my boss's statistical method (<a href="https://decisioncurveanalysis.org/" target="_blank" rel="noopener noreferrer">https://decisioncurveanalysis.org</a>). It was certainly an improvement over the old one (used to be hosted here: <a href="https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis" target="_blank" rel="noopener noreferrer">https://www.mskcc.org/departments/epidemiology-biostatistics/biostatistics/decision-curve-analysis</a>). Although now it's empty, trust that it was as easy to get through as War and Peace with drunk goggles.</p>
+<p>A previous colleague had written the tutorial code for the statistical method using an R wrapper (Rmd file). My contribution was to slap that onto a spare skeleton which now serves as Decision Curve Analysis' (DCA) new home. The model evaluation method itself isn't too easy to understand or apply effectively, but the site endeavors to provide clarity with code tutorials and other resources (I wrote the Python package and Python tutorial code, but that's another story).</p>
+<p>Making the site was no easy task, even with the help of ChatGPT (GPT-3.5/4). Not only was I (and still am) a complete novice at webdev, I also lack the eye for design and aesthetics completely. With the help of ChatGPT, I made something barebones and yet with some annoying bugs. If you check the literature tab, the moment the page pops up you can see that the first item in the sidebar TOC is fully white. If you scroll through the page, the bug appears to be fixed. Despite many hours spent debugging that page, that one error for the life of me I cannot resolve.</p>
+<p>A short while later I had a chance encounter at a coffee shop with a British lawyer lady of Nigerian background. She has an NGO affiliated with the United Nations and at that time was looking to create a website to advertise her work. I offered her my worse than mediocre site-making skills for free, and constructed this digital Frankenstein's monster (<a href="https://mishkanholdingsllc.github.io/" target="_blank" rel="noopener noreferrer">https://mishkanholdingsllc.github.io</a>). I reused as much code as I could from the DCA site, as is readily apparent from the similarities between the two. Although she was initially happy and grateful that she finally had a landing page that was maintained for free by me, her demands for updating the site became too much to cater to since I have trivial HTML/CSS/JavaScript experience. I eventually told her I would no longer be able to maintain the site, and recommended her to find a professional dev, which she did (<a href="https://mishkanholdingsllc.com/" target="_blank" rel="noopener noreferrer">https://mishkanholdingsllc.com/</a>).</p>
+<p>Despite those first few lousy forays into webdev, a family friend was impressed for reasons I can't fathom. He asked if I could make his wife a site for her own consulting practice, and I joyfully consented and proceeded to make this abomination: <a href="https://veracitypv.github.io/" target="_blank" rel="noopener noreferrer">https://veracitypv.github.io/</a>, again requiring many hours of effort. This looks pretty barebones, but trust that I put my heart and soul into it. After several rounds of feedback and many frustrating attempts at improvements in aesthetics, I told them about freelancer.com where they could hire a cheap dev from abroad who could spin up a much better site for a couple hundred USD. I think my family friends were grateful for my attempt, but they moved on to greener pastures and now they have a much more enticing landing page for her business: <a href="https://veracitypv.com/" target="_blank" rel="noopener noreferrer">https://veracitypv.com</a>.</p>
+<p>Some time during the construction of the above 3, I decided to make a personal site at shaunporwal.github.io, and this site for my own LLC. Because I had no aesthetic aspirations, I used previous code + GPT-3.5/4 to do most of the heavy lifting. My personal site was in the same league as my previous attempts, and at some point I became a bit shy of writing or sharing content about myself. I recently realized I am a very shy person. The site I initially made for my own company was absolutely barebones, with an empty homepage and a teams tab with myself and my college friend.</p>
+<p>Having made 4 shitty sites with only one of them actually being used anymore (decisioncurveanalysis.org), I learned my lesson: never make your own sites, just work off someone else's template. I realized I'd never make an aesthetic site by building from scratch. You'd have to be an intermediate webdev with a solid background in html/css/javascript at the very least to add cool animations and make it appealing.</p>
+<p>In 2024, I largely kept my toes far away from the font-end waters. However with increasing entrepreneurial ambition that lead to starting an LLC, I once again boomerang'ed back to the land of front-end, I looked up the GitHub profile of my friend from high school who is a very successful developer. He was and probably still is extremely intelligent, and so I sought to copy the template for his personal site. He used one from html5up.com which provides a bunch of free templates for anyone to download. The one issue is that it seems you'd have to alter low-level code like HTML/CSS/JavaScript and something called Sass (?), and that would be way too front-end-code-heavy for me.</p>
+<p>That was one rabbit hole I could've gone down, but instead I decided to look up other options on GitHub, and I found Docusaurus, a documentation template by Facebook/Meta. It has a learning curve, but with some minor modifications and troubleshooting, I was able to change up the site to suit my needs of linking to and writing about my projects just fine. The cherry on top is that it looks great and doesn't have any gimmicky animations!</p>
+<p>So here I am in my personal webdev journey. I still can't code comfortably in HTML/CSS/JavaScript, but I know what not to do in making a site I want to maintain myself: (1) don't write the code yourself as much as possible, (2) pick an aesthetic template, (3) rely heavily on ChatGPT for customizations.</p>]]></content:encoded>
+            <category>Web Development</category>
+            <category>Design</category>
+        </item>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://juntotechnologies.com/blog/welcome</link>
@@ -27,56 +47,6 @@
 <p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://juntotechnologies.com/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
 <p>The blog supports tags as well!</p>
 <p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content:encoded>
-            <category>Hola</category>
-        </item>
-        <item>
-            <title><![CDATA[MDX Blog Post]]></title>
-            <link>https://juntotechnologies.com/blog/mdx-blog-post</link>
-            <guid>https://juntotechnologies.com/blog/mdx-blog-post</guid>
-            <pubDate>Sun, 01 Aug 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></description>
-            <content:encoded><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p></div></div>
-<!-- -->
-<p>For example, use JSX to create an interactive button:</p>
-<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<button>Click me!</button>]]></content:encoded>
-            <category>Hola</category>
-        </item>
-        <item>
-            <title><![CDATA[Long Blog Post]]></title>
-            <link>https://juntotechnologies.com/blog/long-blog-post</link>
-            <guid>https://juntotechnologies.com/blog/long-blog-post</guid>
-            <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[This is the summary of a very long blog post,]]></description>
-            <content:encoded><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
-            <category>Hola</category>
-        </item>
-        <item>
-            <title><![CDATA[First Blog Post]]></title>
-            <link>https://juntotechnologies.com/blog/first-blog-post</link>
-            <guid>https://juntotechnologies.com/blog/first-blog-post</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet...]]></description>
-            <content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet...</p>
-<p>...consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content:encoded>
             <category>Hola</category>
         </item>
     </channel>
