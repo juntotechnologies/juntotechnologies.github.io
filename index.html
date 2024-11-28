@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -223,69 +220,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -293,16 +227,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -328,6 +252,9 @@ div.tocify {
 <li>
   <a href="services.html">Services</a>
 </li>
+<li>
+  <a href="contact.html">Contact Us</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -349,122 +276,167 @@ div.tocify {
 .title {
   display: none;
 }
+h1, h2, h3 {
+  font-family: 'Arial', sans-serif;
+  color: #003366;
+}
+.section-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ff6600;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+.contact-details {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #555;
+}
 </style>
 <div id="bringing-data-to-life" class="section level1">
 <h1>Bringing Data to Life</h1>
-<div id="who-we-are" class="section level2">
-<h2>Who We Are</h2>
-<p>Junto Technologies is a full-service Contract Research Organization
-(CRO) providing innovative, data-driven solutions for the biotech,
-pharma, and healthcare industries. With over 10 years of combined
+<div class="section-title">
+Who We Are
+</div>
+<p>Junto Technologies is a full-service <strong>Contract Research
+Organization (CRO)</strong> providing innovative, data-driven solutions
+for the <strong>biotech</strong>, <strong>pharma</strong>, and
+<strong>healthcare</strong> industries. With over 10 years of combined
 experience in clinical data analysis and business operations, we deliver
 scalable, modern solutions tailored to our clients’ needs.</p>
 <div id="mission" class="section level3">
 <h3>Mission</h3>
 <ul>
-<li>Accelerating the approval of new drug applications and medical
-devices.</li>
-<li>Enhancing client satisfaction through innovative, data-driven
-solutions.</li>
-<li>Delivering cost-effective approaches to clinical and preclinical
-research.</li>
+<li>🚀 <strong>Accelerating</strong> the approval of new drug
+applications and medical devices.<br />
+</li>
+<li>🤝 <strong>Enhancing</strong> client satisfaction through
+innovative, data-driven solutions.<br />
+</li>
+<li>💡 <strong>Delivering</strong> cost-effective approaches to clinical
+and preclinical research.</li>
 </ul>
 </div>
 <div id="vision" class="section level3">
 <h3>Vision</h3>
-<p>To establish Junto Technologies as a leader in end-to-end solutions
-for the biotech, pharma, and healthcare sectors.</p>
+<p>To establish Junto Technologies as a leader in <strong>end-to-end
+solutions</strong> for the biotech, pharma, and healthcare sectors.</p>
 <hr />
+<div class="section-title">
+Capabilities and Expertise
 </div>
 </div>
-<div id="capabilities-and-expertise" class="section level2">
-<h2>Capabilities and Expertise</h2>
 <div id="key-projects-and-experiences" class="section level3">
 <h3>Key Projects and Experiences</h3>
 <ul>
-<li><strong>Observational Smoking Study:</strong> Survey data analysis
-to understand smoking-related behaviors and outcomes.</li>
-<li><strong>IBS Study:</strong> Proteomic analysis to identify key
-protein expressions in Irritable Bowel Syndrome.</li>
-<li><strong>Central Line Infection Project:</strong> Machine learning
-for clinical outcomes, focusing on bloodstream infections using LASSO,
-Random Forest, and XGBoost.</li>
-<li><strong>Decision Curve Analysis Python Library:</strong> Development
-of an open-source Python library for healthcare applications.</li>
-<li><strong>Electric Vehicle Data Analysis:</strong> Exploration of EV
-population trends and demographics using interactive dashboards.</li>
-<li><strong>Bioinformatics Research:</strong> Detection and analysis of
-structural variants in genomic studies with advanced
-visualizations.</li>
+<li><strong>Observational Smoking Study</strong><br />
+Survey data analysis to understand smoking-related behaviors and
+outcomes.<br />
+</li>
+<li><strong>IBS Study</strong><br />
+Proteomic analysis to identify key protein expressions in Irritable
+Bowel Syndrome.<br />
+</li>
+<li><strong>Central Line Infection Project</strong><br />
+Machine learning for clinical outcomes, focusing on bloodstream
+infections using <strong>LASSO</strong>, <strong>Random Forest</strong>,
+and <strong>XGBoost</strong>.<br />
+</li>
+<li><strong>Decision Curve Analysis Python Library</strong><br />
+Development of an open-source Python library for healthcare
+applications.<br />
+</li>
+<li><strong>Electric Vehicle Data Analysis</strong><br />
+Exploration of EV population trends and demographics using interactive
+dashboards.<br />
+</li>
+<li><strong>Bioinformatics Research</strong><br />
+Detection and analysis of structural variants in genomic studies with
+advanced visualizations.</li>
 </ul>
 </div>
 <div id="technological-capabilities" class="section level3">
 <h3>Technological Capabilities</h3>
 <ul>
-<li><strong>Programming and Tools:</strong> Python, R, Bash, Oracle
-Database, SQL Server, PostgreSQL, AWS, EPIC workflows, REDCap, ETL
-pipelines</li>
-<li><strong>Biostatistics:</strong> Regression (linear/logistic),
-survival analysis, time series analysis, decision curve analysis</li>
-<li><strong>Machine Learning:</strong> High-Performance Computing (HPC),
-Large Language Models (LLMs)</li>
-<li><strong>Visualization:</strong> Tableau, RShiny, PowerBI,
-Streamlit</li>
-<li><strong>Data Transformation:</strong> SAS to R and R to SAS
-translations</li>
-<li><strong>Version Control:</strong> Git, CI/CD</li>
+<li><strong>Programming and Tools:</strong><br />
+Python, R, Bash, Oracle Database, SQL Server, PostgreSQL, AWS, EPIC
+workflows, REDCap, ETL pipelines.<br />
+</li>
+<li><strong>Biostatistics:</strong><br />
+Regression (linear/logistic), survival analysis, time series analysis,
+decision curve analysis.<br />
+</li>
+<li><strong>Machine Learning:</strong><br />
+High-Performance Computing (HPC), Large Language Models (LLMs).<br />
+</li>
+<li><strong>Visualization:</strong><br />
+Tableau, RShiny, PowerBI, Streamlit.<br />
+</li>
+<li><strong>Data Transformation:</strong><br />
+SAS to R and R to SAS translations.<br />
+</li>
+<li><strong>Version Control:</strong><br />
+Git, CI/CD.</li>
 </ul>
 <hr />
+<div class="section-title">
+Interactive Features
 </div>
 </div>
-<div id="interactive-features" class="section level2">
-<h2>Interactive Features</h2>
 <div id="data-visualization-gallery" class="section level3">
 <h3>Data Visualization Gallery</h3>
 <ul>
-<li>Custom dashboards and interactive tools built with Tableau,
-Streamlit, and RShiny.</li>
+<li>🌟 <strong>Custom dashboards</strong> and interactive tools built
+with Tableau, Streamlit, and RShiny.</li>
 </ul>
 </div>
 <div id="tool-demos" class="section level3">
 <h3>Tool Demos</h3>
 <ul>
-<li>Live demonstrations of tools like the Decision Curve Analysis Python
-Library.</li>
+<li>🛠️ Live demonstrations of tools like the <strong>Decision Curve
+Analysis Python Library</strong>.</li>
 </ul>
 </div>
 <div id="case-studies" class="section level3">
 <h3>Case Studies</h3>
 <ul>
-<li>Interactive examples of impactful projects, including
-before-and-after visualizations.</li>
+<li>📊 <strong>Interactive examples</strong> of impactful projects,
+including before-and-after visualizations.</li>
 </ul>
 <hr />
+<div class="section-title">
+Contact Us
 </div>
-</div>
-<div id="contact-us" class="section level2">
-<h2>Contact Us</h2>
 <p>Feel free to reach out for collaboration or inquiries.</p>
+<div class="contact-details">
 <ul>
 <li><strong>Email:</strong> <a href="mailto:shaun.porwal@gmail.com"
-class="email">shaun.porwal@gmail.com</a></li>
-<li><strong>Phone:</strong> 732-318-7592</li>
+class="email">shaun.porwal@gmail.com</a><br />
+</li>
+<li><strong>Phone:</strong> 732-318-7592<br />
+</li>
 <li><strong>Address:</strong> 310 E 44th St, New York, NY, 10017,
-USA</li>
+USA<br />
+</li>
 </ul>
+</div>
 <hr />
-<div id="footer" class="section level3">
-<h3>Footer</h3>
-<p><small>© 2024 Junto Technologies. All Rights Reserved. | Privacy
-Policy | Terms of Service</small></p>
-</div>
+<footer>
+<small>© 2024 Junto Technologies. All Rights Reserved. |
+<a href="#">Privacy Policy</a> | <a href="#">Terms of
+Service</a></small>
+</footer>
 </div>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -497,35 +469,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

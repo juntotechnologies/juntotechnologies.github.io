@@ -9,6 +9,8 @@ navbar:
       href: team.html
     - text: Services
       href: services.html
+    - text: Contact Us
+      href: contact.html
 output:
   html_document:
     theme: yeti
