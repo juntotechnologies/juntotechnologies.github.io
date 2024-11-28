@@ -3,10 +3,12 @@ output_dir: "."
 navbar:
   title: "Junto Technologies"
   left:
-    - text: Home
+    - text: About Us
       href: index.html
     - text: Team
       href: team.html
+    - text: Services
+      href: services.html
 output:
   html_document:
     theme: yeti

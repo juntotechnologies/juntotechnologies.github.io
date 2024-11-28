@@ -11,7 +11,7 @@
 
 
 
-<title>JT: Homepage</title>
+<title>Our Team</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,9 +29,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -61,7 +58,8 @@ if (window.hljs) {
 
 
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="teamstyle.css" type="text/css" />
+<link rel="stylesheet" href="index.css" type="text/css" />
 
 
 
@@ -223,69 +221,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -293,16 +228,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -320,13 +245,10 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">About Us</a>
+  <a href="index.html">Home</a>
 </li>
 <li>
   <a href="team.html">Team</a>
-</li>
-<li>
-  <a href="services.html">Services</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -340,131 +262,62 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">JT: Homepage</h1>
+<h1 class="title toc-ignore">Our Team</h1>
 
 </div>
 
 
-<style>
-.title {
-  display: none;
-}
-</style>
-<div id="bringing-data-to-life" class="section level1">
-<h1>Bringing Data to Life</h1>
-<div id="who-we-are" class="section level2">
-<h2>Who We Are</h2>
-<p>Junto Technologies is a full-service Contract Research Organization
-(CRO) providing innovative, data-driven solutions for the biotech,
-pharma, and healthcare industries. With over 10 years of combined
-experience in clinical data analysis and business operations, we deliver
-scalable, modern solutions tailored to our clients’ needs.</p>
-<div id="mission" class="section level3">
-<h3>Mission</h3>
-<ul>
-<li>Accelerating the approval of new drug applications and medical
-devices.</li>
-<li>Enhancing client satisfaction through innovative, data-driven
-solutions.</li>
-<li>Delivering cost-effective approaches to clinical and preclinical
-research.</li>
-</ul>
+<h1 class="heading">
+Meet the Team
+</h1>
+<div class="image-container">
+<div class="image" onclick="fetch_info(0)">
+<img src="images/1.jpg">
 </div>
-<div id="vision" class="section level3">
-<h3>Vision</h3>
-<p>To establish Junto Technologies as a leader in end-to-end solutions
-for the biotech, pharma, and healthcare sectors.</p>
-<hr />
+<div class="image" onclick="fetch_info(1)">
+<img src="images/2.png">
+</div>
+<div class="image" onclick="fetch_info(2)">
+<img src="images/3.jpg">
+</div>
+<div class="image" onclick="fetch_info(3)">
+<img src="images/2.png">
+</div>
+<div class="image" onclick="fetch_info(4)">
+<img src="images/5.png">
 </div>
 </div>
-<div id="capabilities-and-expertise" class="section level2">
-<h2>Capabilities and Expertise</h2>
-<div id="key-projects-and-experiences" class="section level3">
-<h3>Key Projects and Experiences</h3>
-<ul>
-<li><strong>Observational Smoking Study:</strong> Survey data analysis
-to understand smoking-related behaviors and outcomes.</li>
-<li><strong>IBS Study:</strong> Proteomic analysis to identify key
-protein expressions in Irritable Bowel Syndrome.</li>
-<li><strong>Central Line Infection Project:</strong> Machine learning
-for clinical outcomes, focusing on bloodstream infections using LASSO,
-Random Forest, and XGBoost.</li>
-<li><strong>Decision Curve Analysis Python Library:</strong> Development
-of an open-source Python library for healthcare applications.</li>
-<li><strong>Electric Vehicle Data Analysis:</strong> Exploration of EV
-population trends and demographics using interactive dashboards.</li>
-<li><strong>Bioinformatics Research:</strong> Detection and analysis of
-structural variants in genomic studies with advanced
-visualizations.</li>
-</ul>
-</div>
-<div id="technological-capabilities" class="section level3">
-<h3>Technological Capabilities</h3>
-<ul>
-<li><strong>Programming and Tools:</strong> Python, R, Bash, Oracle
-Database, SQL Server, PostgreSQL, AWS, EPIC workflows, REDCap, ETL
-pipelines</li>
-<li><strong>Biostatistics:</strong> Regression (linear/logistic),
-survival analysis, time series analysis, decision curve analysis</li>
-<li><strong>Machine Learning:</strong> High-Performance Computing (HPC),
-Large Language Models (LLMs)</li>
-<li><strong>Visualization:</strong> Tableau, RShiny, PowerBI,
-Streamlit</li>
-<li><strong>Data Transformation:</strong> SAS to R and R to SAS
-translations</li>
-<li><strong>Version Control:</strong> Git, CI/CD</li>
-</ul>
-<hr />
+<div class="info-container">
+<img class="profile" id="profile" src="images/1.jpg">
+<div class="info">
+<pre><code>&lt;h1 class=&quot;name&quot; id=&quot;name&quot;&gt;Gurjot Grewal&lt;/h1&gt;
+&lt;h3 class=&quot;status&quot; id=&quot;status&quot;&gt;Senior Developer&lt;/h3&gt;
+&lt;p class=&quot;about&quot; id=&quot;about&quot;&gt;
+  Gurjot Grewal is a Toronto-based Senior Developer responsible for designing and building the &#39;Main Page&#39; of our startup company. He has extensive experience in Software Development, logo design, and video editing. He is currently completing a BASc in Software Engineering from the University of Ottawa.
+&lt;/p&gt;</code></pre>
 </div>
 </div>
-<div id="interactive-features" class="section level2">
-<h2>Interactive Features</h2>
-<div id="data-visualization-gallery" class="section level3">
-<h3>Data Visualization Gallery</h3>
-<ul>
-<li>Custom dashboards and interactive tools built with Tableau,
-Streamlit, and RShiny.</li>
-</ul>
-</div>
-<div id="tool-demos" class="section level3">
-<h3>Tool Demos</h3>
-<ul>
-<li>Live demonstrations of tools like the Decision Curve Analysis Python
-Library.</li>
-</ul>
-</div>
-<div id="case-studies" class="section level3">
-<h3>Case Studies</h3>
-<ul>
-<li>Interactive examples of impactful projects, including
-before-and-after visualizations.</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="contact-us" class="section level2">
-<h2>Contact Us</h2>
-<p>Feel free to reach out for collaboration or inquiries.</p>
-<ul>
-<li><strong>Email:</strong> <a href="mailto:shaun.porwal@gmail.com"
-class="email">shaun.porwal@gmail.com</a></li>
-<li><strong>Phone:</strong> 732-318-7592</li>
-<li><strong>Address:</strong> 310 E 44th St, New York, NY, 10017,
-USA</li>
-</ul>
-<hr />
-<div id="footer" class="section level3">
-<h3>Footer</h3>
-<p><small>© 2024 Junto Technologies. All Rights Reserved. | Privacy
-Policy | Terms of Service</small></p>
-</div>
-</div>
-</div>
+<script>
+  function fetch_info(i) {
+    let profile = ["images/1.jpg", "images/2.png", "images/3.jpg", "images/2.png", "images/5.png"];
+    let name = ["Gurjot Grewal", "Uzair Mohiuddin", "Alex Oprea", "Gianni Schiappa-Godard", "Bariq Talib"];
+    let status = ["Senior Developer", "Full-Stack Developer", "Full-Stack Developer", "Senior Developer", "Senior Developer"];
+    let about = [
+      " is a Toronto-based Senior Developer responsible for designing and building the 'Main Page'.",
+      " is a Full-Stack Developer responsible for designing and building the 'Meet the Team' page.",
+      " is a Full-Stack Developer responsible for designing and building the 'Prices' page.",
+      " is a Senior Developer responsible for designing and building the 'Contact Us' page.",
+      " is a Senior Developer responsible for designing and building the 'Products' page."
+    ];
+    document.getElementById("profile").src = profile[i];
+    document.getElementById("name").innerHTML = name[i];
+    document.getElementById("status").innerHTML = status[i];
+    document.getElementById("about").innerHTML = name[i] + about[i];
+  }
+</script>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -497,35 +350,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
