@@ -105,18 +105,6 @@ To establish Junto Technologies as a leader in **end-to-end solutions** for the 
 
 ---
 
-<div class="section-title">Contact Us</div>
-
-Feel free to reach out for collaboration or inquiries.
-
-<div class="contact-details">
-- **Email:** shaun.porwal@gmail.com  
-- **Phone:** 732-318-7592  
-- **Address:** 310 E 44th St, New York, NY, 10017, USA  
-</div>
-
----
-
 <footer>
 <small>© 2024 Junto Technologies. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></small>
 </footer>
