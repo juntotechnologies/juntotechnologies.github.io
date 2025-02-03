@@ -12,7 +12,7 @@ website:
   navbar:
     right:
       - text: "About Us"
-        href: pages/index.qmd
+        href: index.qmd
       - text: "Team"
         href: pages/team.qmd
       - text: "Services"
