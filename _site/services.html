@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Junto Technologies</title>
+<title>Services – Junto Technologies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="././assets/media/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,73 +67,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -150,7 +90,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Works</span></a>
   </li>  
   <li class="nav-item">
@@ -173,68 +113,79 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QW5hbHlzaXM=">Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGFzaGJvYXJk">Dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RWxlY3RyaWMlMjBWZWhpY2xlcw==">Electric Vehicles <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Services</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<section id="our-services" class="level2">
+<h2 class="anchored" data-anchor-id="our-services">Our Services</h2>
+<section id="biostatistics-and-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="biostatistics-and-analytics">Biostatistics and Analytics</h3>
+<ul>
+<li>Advanced statistical modeling</li>
+<li>Machine learning for clinical data</li>
+<li>Survival analyses and decision curve analyses</li>
+<li>Validation of statistical outputs</li>
+</ul>
+</section>
+<section id="fixed-cost-programming" class="level3">
+<h3 class="anchored" data-anchor-id="fixed-cost-programming">Fixed Cost Programming</h3>
+<ul>
+<li>Collaborative projects with no unexpected change orders</li>
+<li>Reproducible and transferable programming</li>
+</ul>
+</section>
+<section id="clinical-trial-support" class="level3">
+<h3 class="anchored" data-anchor-id="clinical-trial-support">Clinical Trial Support</h3>
+<ul>
+<li>Data integration, cleaning, and analysis</li>
+<li>Regulatory statistical report generation</li>
+<li>Bioequivalence/Bioavailability studies</li>
+</ul>
+</section>
+<section id="dashboardingsoftware-development" class="level3">
+<h3 class="anchored" data-anchor-id="dashboardingsoftware-development">Dashboarding/Software Development</h3>
+<ul>
+<li>Custom dashboards (Streamlit, Tableau, RShiny, PowerBI)</li>
+<li>Workflow automation and advanced visualization</li>
+</ul>
+</section>
+<section id="consultingtraining" class="level3">
+<h3 class="anchored" data-anchor-id="consultingtraining">Consulting/Training</h3>
+<ul>
+<li>SQL optimization</li>
+<li>SAS, R, and Python analytics training</li>
+<li>LLM integration for operational insights</li>
+</ul>
+<hr>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="RWxlY3RyaWMlMjBWZWhpY2xlcyUyQ0FuYWx5c2lzJTJDRGFzaGJvYXJk" data-listing-date-sort="1739163600000" data-listing-file-modified-sort="1738565965931" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./pages/works/seattle-evs-analysis/index.html" class="no-external"></a></p><a href="./pages/works/seattle-evs-analysis/index.html" class="no-external">
-<p><img loading="lazy" src="./pages/works/seattle-evs-analysis/seattle_evs.png" class="thumbnail-image"></p>
-</a><p><a href="./pages/works/seattle-evs-analysis/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./pages/works/seattle-evs-analysis/index.html" class="no-external">Seattle Evs Analysis</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./pages/works/seattle-evs-analysis/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RWxlY3RyaWMlMjBWZWhpY2xlcw=='); return false;">
-Electric Vehicles
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QW5hbHlzaXM='); return false;">
-Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('RGFzaGJvYXJk'); return false;">
-Dashboard
-</div>
-</div>
-<div class="listing-description">
-<a href="./pages/works/seattle-evs-analysis/index.html" class="no-external"></a>
-</div>
-</div>
-<div class="metadata">
-<a href="./pages/works/seattle-evs-analysis/index.html" class="no-external">
-<div class="listing-date">
-Feb 10, 2025
-</div>
-<div class="listing-author">
-Shaun Porwal
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
