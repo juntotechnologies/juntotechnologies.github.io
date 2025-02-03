@@ -11,8 +11,8 @@ website:
   favicon: "./assets/media/favicon.png"
   navbar:
     right:
-      - text: "About Us"
-        href: index.qmd
+      - text: Works
+        href: index.html
       - text: "Team"
         href: pages/team.qmd
       - text: "Services"
