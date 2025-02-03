@@ -1,0 +1,105 @@
+---
+title: "JT: Homepage"
+output:
+  html_document:
+    theme: yeti
+    css: styles.css
+    toc: false
+    toc_float: true
+---
+
+<style>
+.title {
+  display: none;
+}
+h1, h2, h3 {
+  font-family: 'Arial', sans-serif;
+  color: #003366;
+}
+.section-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ff6600;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+.contact-details {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #555;
+}
+</style>
+
+# Bringing Data to Life
+
+<div class="section-title">Who We Are</div>
+
+Junto Technologies is a full-service **Contract Research Organization (CRO)** providing innovative, data-driven solutions for the **biotech**, **pharma**, and **healthcare** industries. With over 10 years of combined experience in clinical data analysis and business operations, we deliver scalable, modern solutions tailored to our clients' needs.
+
+### Mission
+- 🚀 **Accelerating** the approval of new drug applications and medical devices.
+- 🤝 **Enhancing** client satisfaction through innovative, data-driven solutions.
+- 💡 **Delivering** cost-effective approaches to clinical and preclinical research.
+
+### Vision
+To establish Junto Technologies as a leader in **end-to-end solutions** for the biotech, pharma, and healthcare sectors.
+
+---
+
+<div class="section-title">Capabilities and Expertise</div>
+
+### Key Projects and Experiences
+- **Observational Smoking Study**
+  Survey data analysis to understand smoking-related behaviors and outcomes.
+- **IBS Study**
+  Proteomic analysis to identify key protein expressions in Irritable Bowel Syndrome.
+- **Central Line Infection Project**
+  Machine learning for clinical outcomes, focusing on bloodstream infections using **LASSO**, **Random Forest**, and **XGBoost**.
+- **Decision Curve Analysis Python Library**
+  Development of an open-source Python library for healthcare applications.
+- **Electric Vehicle Data Analysis**
+  Exploration of EV population trends and demographics using interactive dashboards.
+- **Bioinformatics Research**
+  Detection and analysis of structural variants in genomic studies with advanced visualizations.
+
+### Technological Capabilities
+- **Programming and Tools:**
+  Python, R, Bash, Oracle Database, SQL Server, PostgreSQL, AWS, EPIC workflows, REDCap, ETL pipelines.
+- **Biostatistics:**
+  Regression (linear/logistic), survival analysis, time series analysis, decision curve analysis.
+- **Machine Learning:**
+  High-Performance Computing (HPC), Large Language Models (LLMs).
+- **Visualization:**
+  Tableau, RShiny, PowerBI, Streamlit.
+- **Data Transformation:**
+  SAS to R and R to SAS translations.
+- **Version Control:**
+  Git, CI/CD.
+
+---
+
+<div class="section-title">Interactive Features</div>
+
+### Data Visualization Gallery
+- 🌟 **Custom dashboards** and interactive tools built with Tableau, Streamlit, and RShiny.
+
+### Tool Demos
+- 🛠️ Live demonstrations of tools like the **Decision Curve Analysis Python Library**.
+
+### Case Studies
+- 📊 **Interactive examples** of impactful projects, including before-and-after visualizations.
+
+---
+
+<footer>
+<small>© 2024 Junto Technologies. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></small>
+</footer>
+
+
+
