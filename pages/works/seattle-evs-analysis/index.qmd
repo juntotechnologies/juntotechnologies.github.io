@@ -1,0 +1,8 @@
+---
+title: "Seattle Evs Analysis"
+author: "Shaun Porwal"
+date: "2025-02-10"
+categories: [Electric Vehicles, Analysis, Dashboard]
+image: "./seattle_evs.png"
+draft: false
+---

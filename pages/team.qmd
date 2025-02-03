@@ -10,7 +10,7 @@ output:
 
 <div class="center">
   <h2>Shaun Porwal, M.S.</h2>
-  <img src="media/team_pics/porwal_pic.png" alt="porwal_pic">
+  <img src="../assets/media/team_pics/porwal_pic.png" alt="porwal_pic">
   <!-- <h3>Founder</h3> -->
 </div>
 
@@ -18,7 +18,7 @@ Shaun Porwal, based in New York, is a Biomedical Data Scientist with a B.E. in B
 
 <div class="center">
   <h2>Matthew Greenberg, M.B.A.</h2>
-  <img src="media/team_pics/greenberg_pic.png" alt="greenberg_pic">
+  <img src="../assets/media/team_pics/greenberg_pic.png" alt="greenberg_pic">
   <!-- <h3>Founder</h3> -->
 </div>
 
