@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: "."
+  output-dir: "./_site"
   title: "Junto Technologies"
 
 execute:
@@ -15,8 +15,6 @@ website:
         href: index.qmd
       - text: "Team"
         href: team.qmd
-      - text: "Team2"
-        href: team_2.qmd
       - text: "Services"
         href: services.qmd
       - text: "Contact Us"
