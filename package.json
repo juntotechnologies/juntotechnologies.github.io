@@ -1,0 +1,12 @@
+{
+  "name": "junto-technologies-site",
+  "version": "1.0.0",
+  "description": "Junto Technologies website with HTMX and Three.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "three": "^0.162.0"
+  }
+} 
