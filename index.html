@@ -8,24 +8,36 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <style>
+      /* Additional margin fix for header and footer */
+      #header .inner, #footer .inner {
+        margin: 0 auto;
+        max-width: 90em;
+        padding: 0 2em;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
       
-      <!-- Header loaded via HTMX -->
-      <div hx-get="components/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
+      <!-- Header -->
+      <header id="header" hx-get="components/header.html" hx-trigger="load" hx-swap="innerHTML"></header>
       
       <!-- Menu placeholder for navigation -->
-      <div id="menu"></div>
+      <nav id="menu" hx-get="components/nav.html" hx-trigger="load" hx-swap="innerHTML">
+        <!-- Navigation will be loaded here by HTMX -->
+      </nav>
       
       <!-- Main -->
       <div id="main">
-        <div hx-get="components/home-content.html" hx-trigger="load" hx-swap="outerHTML"></div>
+        <div class="inner" hx-get="components/home-content.html" hx-trigger="load" hx-swap="innerHTML">
+          <!-- Main content will be loaded here -->
+        </div>
       </div>
       
-      <!-- Footer loaded via HTMX -->
-      <div hx-get="components/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+      <!-- Footer -->
+      <footer id="footer" hx-get="components/footer.html" hx-trigger="load" hx-swap="innerHTML"></footer>
       
     </div>
 
