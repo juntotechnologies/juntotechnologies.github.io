@@ -9,6 +9,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="public/favicon.png">
     <style>
+      :root {
+        --accent-blue: #1E3A8A;
+        --accent-orange: #FB923C;
+        --border-soft: #e5e7eb;
+        --muted-text: #6b7280;
+        --nav-height: 4rem;
+        --page-max: 90em;
+        --shell-max: 72rem;
+      }
+
       @font-face {
         font-family: "Inter";
         font-style: normal;
@@ -29,7 +39,7 @@
       }
 
       body {
-        padding-top: 4rem;
+        padding-top: var(--nav-height);
       }
 
       #header {
@@ -46,12 +56,13 @@
       }
 
       #header .inner {
-        display: flex;
         align-items: center;
+        display: flex;
+        gap: 1.5rem;
+        height: var(--nav-height);
         justify-content: space-between;
-        height: 4rem;
         margin: 0 auto !important;
-        max-width: 72rem !important;
+        max-width: var(--shell-max) !important;
         padding: 0 1.5rem !important;
         width: 100% !important;
       }
@@ -91,20 +102,36 @@
         padding-left: 0 !important;
       }
 
+      #header nav {
+        align-items: center;
+        display: flex;
+        height: 100%;
+      }
+
       #header nav ul {
         align-items: center;
         display: flex;
         gap: 2rem;
+        height: 100%;
         list-style: none;
         margin: 0;
         padding: 0;
       }
 
+      #header nav li {
+        align-items: center;
+        display: flex;
+        height: 100%;
+      }
+
       #header nav a {
+        align-items: center;
         border: 0;
         color: #6b7280;
+        display: inline-flex;
         font-size: 0.875rem;
         font-weight: 500;
+        line-height: 1;
         text-decoration: none;
         transition: color 0.15s ease, background-color 0.15s ease;
       }
@@ -132,12 +159,133 @@
       /* Main content margins */
       #main .inner {
         margin: 0 auto !important;
-        max-width: 90em !important;
+        max-width: var(--page-max) !important;
         padding: 0 2em !important;
       }
 
-      #team {
-        margin-top: 4em;
+      .section-chip {
+        background: var(--accent-orange);
+        border-radius: 0.5rem;
+        color: #fff;
+        display: inline-flex;
+        font-size: 0.75rem;
+        font-weight: 650;
+        line-height: 1;
+        margin-bottom: 0.75rem;
+        padding: 0.35rem 0.6rem;
+      }
+
+      .section-heading {
+        color: var(--accent-blue);
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 750;
+        letter-spacing: 0;
+        line-height: 1.15;
+        margin-bottom: 0.75rem;
+      }
+
+      .section-lede {
+        color: var(--muted-text);
+        font-size: 1rem;
+        line-height: 1.625;
+        margin: 0 auto;
+        max-width: 56rem;
+      }
+
+      .team-section {
+        background: linear-gradient(135deg, #ffffff 0%, rgba(241, 245, 249, 0.65) 55%, #ffffff 100%);
+        margin-top: 4rem;
+        padding: 3rem 0 1rem;
+        position: relative;
+      }
+
+      .team-section::before {
+        background-image: radial-gradient(circle, rgba(59, 130, 246, 0.16) 1px, transparent 1px);
+        background-size: 20px 20px;
+        content: "";
+        inset: 0;
+        opacity: 0.22;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .team-intro,
+      .team-grid {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 56rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .team-intro {
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .team-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .team-card {
+        background: #fff;
+        border: 1px solid var(--border-soft);
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+        display: grid;
+        gap: 1.5rem;
+        overflow: hidden;
+        padding: 1.5rem;
+      }
+
+      .team-photo {
+        aspect-ratio: 1 / 1;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .team-photo img {
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+
+      .team-card:hover .team-photo img {
+        transform: scale(1.04);
+      }
+
+      .team-name {
+        color: var(--accent-blue);
+        font-size: 1.25rem;
+        font-weight: 750;
+        letter-spacing: 0;
+        line-height: 1.2;
+        margin: 0 0 0.35rem;
+      }
+
+      .team-role {
+        color: #3b82f6;
+        font-size: 0.875rem;
+        font-weight: 650;
+        margin: 0 0 0.85rem;
+      }
+
+      .team-bio {
+        color: var(--muted-text);
+        font-size: 0.875rem;
+        line-height: 1.625;
+        margin: 0;
+      }
+
+      .team-bio strong {
+        color: #374151;
+      }
+
+      .team-bio a {
+        color: #2563eb;
+        font-weight: 650;
       }
 
       #work,
@@ -148,9 +296,15 @@
 
       #footer .inner {
         margin: 0 auto !important;
-        max-width: 90em !important;
+        max-width: var(--page-max) !important;
         padding: 0 2em !important;
         width: 100% !important;
+      }
+
+      @media screen and (min-width: 737px) {
+        .team-card {
+          grid-template-columns: minmax(13rem, 1fr) 2fr;
+        }
       }
 
       @media screen and (max-width: 736px) {
@@ -264,12 +418,24 @@
           </section>
 
           <section id="team">
-            <h2>Team</h2>
-            <div class="row">
-              <div class="col-4 col-6-medium col-12-small">
-                <span class="image fit"><img src="public/team_pics/porwal_pic.png" alt="Shaun Porwal" /></span>
-                <h3>Shaun Porwal</h3>
-                <p>Founder</p>
+            <div class="team-section">
+              <div class="team-intro">
+                <span class="section-chip">Our Team</span>
+                <h2 class="section-heading">Work Directly With the Builder</h2>
+                <p class="section-lede">Shaun works directly with companies to understand their operations and design software that reflects how their teams actually work.</p>
+              </div>
+
+              <div class="team-grid">
+                <article class="team-card">
+                  <div class="team-photo">
+                    <img src="public/team_pics/porwal_pic.png" alt="Shaun Porwal" />
+                  </div>
+                  <div class="team-copy">
+                    <h3 class="team-name">Shaun Porwal</h3>
+                    <p class="team-role">Machine Learning Engineer</p>
+                    <p class="team-bio">Shaun builds <strong>biomedical AI systems</strong> across agentic workflows, survival modeling, and biology models. He recently worked as a <strong>founding engineer at a biotech startup</strong> and previously built clinical ML tools at <strong>Memorial Sloan Kettering Cancer Center</strong>, where he created <a href="https://github.com/MSKCC-Epi-Bio/dcurves" target="_blank" rel="noreferrer">dcurves</a>. He also has <strong>hands-on chemistry experience</strong> in labs and manufacturing across the U.S., Taiwan, and Japan, and holds degrees in biomedical engineering and biomedical data science.</p>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
