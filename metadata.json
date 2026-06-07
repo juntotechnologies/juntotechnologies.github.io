@@ -1,0 +1,83 @@
+{
+  "site": {
+    "title": "Junto Technologies",
+    "name": "Junto Technologies",
+    "logo": "public/junto-tech-logo.png",
+    "favicon": "public/favicon.png"
+  },
+  "palette": {
+    "brown": "#674A40",
+    "teal": "#50A3A4",
+    "gold": "#FCAF38",
+    "red": "#F95335"
+  },
+  "contact": {
+    "email": "shaun.porwal@juntotechnologies.com"
+  },
+  "nav": [
+    { "label": "Work", "href": "#work" },
+    { "label": "Team", "href": "#team" },
+    { "label": "Contact", "action": "contact", "primary": true }
+  ],
+  "hero": {
+    "heading": "Technical expertise for complex client work",
+    "body": "Junto Technologies leverages expertise in healthcare, software, engineering, machine learning, and statistics to serve its clients."
+  },
+  "work": {
+    "id": "work",
+    "items": [
+      {
+        "title": "Healthcare",
+        "body": "Clinical, operational, and analytical context for health-focused work.",
+        "image": "images/pic01.jpg",
+        "style": "style1"
+      },
+      {
+        "title": "Software",
+        "body": "Practical systems thinking for building, improving, and connecting technology.",
+        "image": "images/pic02.jpg",
+        "style": "style2"
+      },
+      {
+        "title": "Engineering",
+        "body": "Structured problem solving across technical, operational, and product challenges.",
+        "image": "images/pic03.jpg",
+        "style": "style3"
+      },
+      {
+        "title": "Machine Learning",
+        "body": "Modern modeling approaches for data-rich questions and applied decision support.",
+        "image": "images/pic04.jpg",
+        "style": "style4"
+      },
+      {
+        "title": "Statistics",
+        "body": "Quantitative rigor for interpreting evidence and communicating uncertainty.",
+        "image": "images/pic05.jpg",
+        "style": "style5"
+      }
+    ]
+  },
+  "team": {
+    "id": "team",
+    "eyebrow": "Our Team",
+    "heading": "Work Directly With the Builder",
+    "body": "Shaun works directly with companies to understand their operations and design software that reflects how their teams actually work.",
+    "members": [
+      {
+        "name": "Shaun Porwal",
+        "role": "Machine Learning Engineer",
+        "image": "public/team_pics/shaun.jpeg",
+        "alt": "Shaun Porwal",
+        "bioHtml": "Shaun builds <strong>biomedical AI systems</strong> across agentic workflows, survival modeling, and biology models. He recently worked as a <strong>founding engineer at a biotech startup</strong> and previously built clinical ML tools at <strong>Memorial Sloan Kettering Cancer Center</strong>, where he created <a href=\"https://github.com/MSKCC-Epi-Bio/dcurves\" target=\"_blank\" rel=\"noreferrer\">dcurves</a>. He also has <strong>hands-on chemistry experience</strong> in labs and manufacturing across the U.S., Taiwan, and Japan, and holds degrees in biomedical engineering and biomedical data science."
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "All rights reserved",
+    "attribution": {
+      "label": "Design: HTML5 UP",
+      "href": "http://html5up.net"
+    }
+  }
+}
