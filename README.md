@@ -1,19 +1,19 @@
 # Junto Technologies Website
 
-A component-based website using HTMX and Three.js.
+A static one-page website for Junto Technologies.
 
 ## Structure
 
-- `components/` - Reusable HTML components
-  - `tiles/` - Individual tile components for the home page
+- `index.html` - Main landing page content
 - `assets/` - CSS, JavaScript, and assets
 - `images/` - Image files
+- `public/` - Logo, favicon, and team images
+- `server.js` - Local static file server
 
 ## Running Locally
 
 ```bash
-npm install
-npm start
+npm run dev
 ```
 
 Visit: http://localhost:3000 (or alternate port if shown in console)
