@@ -113,6 +113,9 @@
         align-items: center;
         display: flex;
         height: 100%;
+        position: static !important;
+        right: auto !important;
+        top: auto !important;
       }
 
       #header nav ul {
@@ -125,7 +128,7 @@
         padding: 0;
       }
 
-      #header nav li {
+      #header nav ul li {
         align-items: center;
         display: flex;
         height: 100%;
@@ -133,6 +136,7 @@
 
       #header .nav-link {
         align-items: center;
+        background: transparent;
         border: 0;
         border-radius: 0.5rem;
         color: var(--muted-text);
@@ -141,8 +145,11 @@
         font-weight: 500;
         height: 2.25rem;
         justify-content: center;
+        letter-spacing: 0;
         line-height: 1;
         padding: 0 0.8rem;
+        position: static;
+        text-transform: none;
         text-decoration: none;
         transition: color 0.15s ease, background-color 0.15s ease;
         white-space: nowrap;
