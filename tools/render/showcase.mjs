@@ -44,11 +44,21 @@ function flowItem(project) {
   return `<li class="facts__flow"><ol class="flow" aria-label="${escapeHtml(project.flow.label)}">${steps}</ol></li>`
 }
 
+function clipSources(clip) {
+  return `<source src="${clip.mp4}" type="video/mp4" /><source src="${clip.webm}" type="video/webm" />`
+}
+
+/** The still is the poster. The clip loads only when a script asks for it, so a still page costs no video bytes. */
+function clipVideo(project) {
+  const { preview: shot, clip } = project
+  const flags = 'data-clip muted loop playsinline preload="none"'
+  const size = `width="${shot.width}" height="${shot.height}"`
+  return `<video class="frame__image" ${flags} poster="${shot.file}" ${size} role="img" aria-label="${escapeHtml(shot.alt)}">${clipSources(clip)}</video>`
+}
+
 function preview(project) {
-  const { preview: shot, look } = project
-  const image = `<img class="frame__image" src="${shot.file}" width="${shot.width}" height="${shot.height}" alt="${escapeHtml(shot.alt)}" loading="lazy" decoding="async" />`
-  const bar = `<span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">${escapeHtml(look.host)}</span></span>`
-  return `<div class="panel__preview"><div class="frame">${bar}${image}</div></div>`
+  const bar = `<span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">${escapeHtml(project.look.host)}</span></span>`
+  return `<div class="panel__preview"><div class="frame">${bar}${clipVideo(project)}</div></div>`
 }
 
 function head(project) {

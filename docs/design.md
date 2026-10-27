@@ -55,6 +55,7 @@ Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter`, a c
 | Arrow glide | Links | `.icon--arrow-right` | translate |
 | Press | Buttons, tabs | `:active` | scale |
 | Preview zoom | Preview frames | `.frame:hover .frame__image` | scale |
+| Demo clip | Preview frames, played by `clips.js` while on screen in the selected panel | `.frame video[data-clip]` | video frames |
 | Curve draw | dcurves illustration | `.curve__cover` | translate |
 | Pointer glow | Buttons and cards | `--glow` | background image |
 | Lit dots | Hero | `.hero__lit` | opacity, mask |
@@ -72,11 +73,13 @@ A visitor who asks for reduced motion sees a static page.
 - The pointer glow does not follow the pointer. The edge light and the lit dots stay off.
 - Each animation stops. Each transition lasts 0.01 ms.
 - The curve cover is hidden, so the lines show at once.
+- Each demo clip stays on its still and never loads. The same holds when the browser asks to save data.
 - The tabs still work.
 
 ### Without JavaScript
 
 - Each section and each panel shows in full.
+- Each preview shows its still. The clip needs the script.
 - `theme-init.js` sets the feature classes `tabs-on` and `reveal-on`. Without them the page shows everything.
 - A feature class goes after 3 s when its script has not started.
 

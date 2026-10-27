@@ -14,6 +14,7 @@ The global rules in `~/AGENTS.md` apply here. This file adds the rules for this 
 | `npm run downloads` | Read the dcurves download count from its badge and write `data/downloads.json`. Needs network. The monthly workflow `.github/workflows/refresh-downloads.yml` runs it. Run it by hand to refresh early. |
 | `npm run check:fit` | Fail when a card in `tools/checks/fit.json` is taller than an iPhone 15 Pro screen below the header. Needs the Playwright browsers. |
 | `npm run previews` | Capture the preview image of each featured project from its live site. |
+| `npm run clips` | Record a looping clip of each featured demo from its scene in `data/projects.json`. Writes MP4 and WebM files to `assets/video/`. Needs network, the Playwright browsers and `ffmpeg`. |
 | `npm run og` | Render the social image `assets/img/og.png` from the data. |
 | `npm run check:upstream` | Compare the hub with each project's own source. Needs network. |
 | `npm run check:links` | Check that each link answers. Needs network. |

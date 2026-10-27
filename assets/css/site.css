@@ -1844,3 +1844,8 @@ a:hover {
     display: none;
   }
 }
+
+/* Demo clips (clips.js). The video fills the frame like the still. The look surface shows until the poster paints. */
+.frame video[data-clip] {
+  background: var(--look-surface);
+}
