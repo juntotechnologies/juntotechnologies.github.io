@@ -13,6 +13,7 @@ The hub is a calm, neutral frame. A project shows its own look only inside its p
 | Layout | The top of `site.css` names the two breakpoints. Below the first, the page has one column. |
 | Buttons | Buttons in one row share one width. They stack at full width when the row is too narrow. One primary button for each card. |
 | Links | A first-party link ends with an arrow right. An external link ends with an arrow out and opens a new tab. |
+| Hero | The title has its own row. The text and the buttons sit below it at every width. `npm run check:fit` checks the order at seven widths. |
 
 ## Phones
 
