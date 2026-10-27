@@ -1,0 +1,12 @@
+{
+  "dcurves": {
+    "package": "dcurves",
+    "label": "PyPI downloads",
+    "count": 79704,
+    "measured": "2026-10-27",
+    "source": "pepy.tech",
+    "page": "https://pepy.tech/projects/dcurves",
+    "badge": "https://static.pepy.tech/personalized-badge/dcurves?period=total&units=none&left_color=grey&right_color=blue&left_text=downloads",
+    "method": "The total on the pepy.tech badge for the dcurves package on PyPI."
+  }
+}

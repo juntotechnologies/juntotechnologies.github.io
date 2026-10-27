@@ -8,6 +8,8 @@ Node scripts that build, check and capture. They run on a developer machine. The
 | `build.mjs` | Writes the generated files. |
 | `files.mjs` | Maps the data to generated file contents. Pure. |
 | `docs.mjs` | Swaps a `<!-- gen:name -->` block in Markdown. |
+| `badge.mjs` | Pure steps of the download refresh: read the badge count and make the next entry. |
+| `refreshDownloads.mjs` | Writes `data/downloads.json` from each badge. Needs network. |
 | `capturePreviews.mjs` | Saves a preview image of each featured project. |
 | `ogImage.mjs` | Saves the social image. Its styles are in `og.css`. |
 | `lastModified.mjs` | Reads the date of the last commit for the sitemap. |

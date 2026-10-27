@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Downloads",
+  "type": "object",
+  "minProperties": 1,
+  "additionalProperties": { "$ref": "#/$defs/entry" },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package", "label", "count", "measured", "source", "page", "badge", "method"],
+      "properties": {
+        "package": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "label": { "type": "string", "minLength": 1 },
+        "count": { "type": "integer", "minimum": 0 },
+        "measured": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "source": { "type": "string", "minLength": 1 },
+        "page": { "type": "string", "pattern": "^https://[^ ]+$" },
+        "badge": { "type": "string", "pattern": "^https://[^ ]+$" },
+        "method": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

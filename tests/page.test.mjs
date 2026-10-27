@@ -1,6 +1,7 @@
 /** Tests for the built page: ids and anchors, images, public-safety words, and each project card. */
 import assert from "node:assert/strict"
 import { test } from "node:test"
+import { formatCount } from "../tools/render/stat.mjs"
 import { data, html } from "./built.mjs"
 
 const FEATURED = data.projects.projects.filter(isFeatured)
@@ -115,9 +116,20 @@ test("the open source section names dcurves before bioeq and hct-equity", () => 
   assert.ok(order.every(isFound))
 })
 
-test("the dcurves entry states the verified facts and no count", () => {
+test("the dcurves entry states the verified facts and the measured download count", () => {
+  const entry = data.downloads.dcurves
   assert.match(html, /Apache-2\.0 license/)
-  assert.doesNotMatch(html, /\bstars?\b|downloads?\b/i)
+  assert.ok(html.includes(formatCount(entry.count)))
+  assert.ok(html.includes(`Per ${entry.source}`))
+})
+
+test("the page states no star count and no other download count", () => {
+  assert.doesNotMatch(html, /\bstars?\b/i)
+  assert.equal(html.match(/class="stat"/g).length, 1)
+})
+
+test("the dcurves card links the decision curve analysis website", () => {
+  assert.match(html, /href="https:\/\/mskcc-epi-bio\.github\.io\/decisioncurveanalysis\/"/)
 })
 
 test("the illustration says that it shows no real data", () => {

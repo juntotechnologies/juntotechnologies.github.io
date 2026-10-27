@@ -69,6 +69,7 @@
     { "text": "ink", "on": "sunken", "min": 4.5 },
     { "text": "ink-2", "on": "sunken", "min": 4.5 },
     { "text": "ink-3", "on": "sunken", "min": 4.5 },
+    { "text": "accent", "on": "sunken", "min": 4.5 },
     { "text": "brand", "on": "bg", "min": 4.5 },
     { "text": "accent", "on": "bg", "min": 4.5 },
     { "text": "accent", "on": "surface", "min": 4.5 },

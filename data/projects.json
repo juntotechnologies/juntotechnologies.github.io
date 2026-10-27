@@ -50,6 +50,7 @@
       "name": "dcurves",
       "tier": "more",
       "lead": true,
+      "downloads": "dcurves",
       "kind": "Python package",
       "status": "Apache-2.0 license",
       "summary": "A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.",
@@ -61,7 +62,10 @@
       "note": "Shaun created dcurves. The repository belongs to the MSKCC-Epi-Bio organization on GitHub.",
       "links": {
         "primary": { "label": "dcurves on GitHub", "href": "https://github.com/MSKCC-Epi-Bio/dcurves", "scope": "external" },
-        "secondary": [{ "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" }]
+        "secondary": [
+          { "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" },
+          { "label": "DCA website", "href": "https://mskcc-epi-bio.github.io/decisioncurveanalysis/", "scope": "external" }
+        ]
       },
       "illustration": { "title": "A decision curve", "caption": "Illustration only. Not real data.", "legend": ["Model", "Treat all", "Treat none"] }
     },
