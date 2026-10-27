@@ -1,5 +1,5 @@
-/** Check (browser): at each width in `fit.json`, no sideways scroll, no heading over the line limit, and equal outer margins. Needs the Playwright browsers. */
-import { describeHeading, describeMargins, describeOverflow, overflowBy, tooManyLines, unevenMargins } from "./layoutBudget.mjs"
+/** Check (browser): at each width in `fit.json`, no sideways scroll, no heading over the line limit, equal outer margins and blocks in reading order. Needs the Playwright browsers. */
+import { describeHeading, describeMargins, describeOrder, describeOverflow, misordered, overflowBy, tooManyLines, unevenMargins } from "./layoutBudget.mjs"
 
 /** Runs in the page. It reads one heading: its words, its height and its line height. */
 function headingRow(node) {
@@ -12,6 +12,12 @@ function headingRow(node) {
 function frameRow(node) {
   const box = node.getBoundingClientRect()
   return { left: box.left, right: box.right }
+}
+
+/** Runs in the page. It reads where one block sits from the top of the page. */
+function boxRow(node) {
+  const box = node.getBoundingClientRect()
+  return { top: box.top + window.scrollY, bottom: box.bottom + window.scrollY }
 }
 
 /** Runs in the page. It reads the width of the page and of the screen. */
@@ -39,10 +45,18 @@ async function allFrames(page, selectors) {
   return (await Promise.all(selectors.map(framesOf.bind(null, page)))).flat()
 }
 
+async function boxesOf(page, selector) {
+  return (await rowsOf(page, selector, boxRow)).map(withSelector.bind(null, selector)).slice(0, 1)
+}
+
+async function orderedBoxes(page, pairs) {
+  return (await Promise.all(pairs.flat().map(boxesOf.bind(null, page)))).flat()
+}
+
 async function measure(page, rules) {
   const widths = await page.evaluate(pageWidths)
   const headings = await rowsOf(page, rules.headings, headingRow)
-  return { widths, headings, frames: await allFrames(page, rules.frames) }
+  return { widths, headings, frames: await allFrames(page, rules.frames), boxes: await orderedBoxes(page, rules.order) }
 }
 
 function faultsOf(rules, width, found) {
@@ -50,7 +64,8 @@ function faultsOf(rules, width, found) {
   const sideways = pixels ? [describeOverflow(width, pixels)] : []
   const headings = tooManyLines(found.headings, rules.maxHeadingLines).map(describeHeading.bind(null, width, rules.maxHeadingLines))
   const uneven = unevenMargins(found.frames, found.widths.client, rules.marginTolerance)
-  return [...sideways, ...headings, ...uneven.map(describeMargins.bind(null, width, found.widths.client))]
+  const order = misordered(found.boxes, rules.order, rules.marginTolerance).map(describeOrder.bind(null, width))
+  return [...sideways, ...headings, ...uneven.map(describeMargins.bind(null, width, found.widths.client)), ...order]
 }
 
 async function faultsAt(browser, port, rules, width) {

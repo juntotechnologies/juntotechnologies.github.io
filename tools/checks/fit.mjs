@@ -52,7 +52,7 @@ async function layoutCheck(browser, port) {
   const { layout } = rules
   const faults = await layoutFaults(browser, port, layout)
   faults.forEach(reportLayout)
-  console.log(faults.length ? `${faults.length} layout fault(s)` : `layout ok: ${layout.widths.join(", ")} px have no sideways scroll, no heading over ${layout.maxHeadingLines} lines and equal margins`)
+  console.log(faults.length ? `${faults.length} layout fault(s)` : `layout ok: ${layout.widths.join(", ")} px have no sideways scroll, no heading over ${layout.maxHeadingLines} lines, equal margins and the hero text below its title`)
   return faults.length
 }
 

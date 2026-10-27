@@ -1,4 +1,4 @@
-/** Pure steps of the layout check: lines in a heading, uneven outer margins and sideways scroll. */
+/** Pure steps of the layout check: lines in a heading, uneven outer margins, sideways scroll and reading order. */
 
 /** The number of text lines in a heading: its height over its line height. */
 export function linesOf(row) {
@@ -45,4 +45,28 @@ export function describeMargins(width, clientWidth, frame) {
 
 export function describeOverflow(width, pixels) {
   return `${width} px: the page scrolls sideways by ${pixels} px`
+}
+
+function hasSelector(selector, box) {
+  return box.selector === selector
+}
+
+function boxFor(boxes, selector) {
+  const found = boxes.find(hasSelector.bind(null, selector))
+  if (!found) throw new Error(`no element matches ${selector}`)
+  return found
+}
+
+function isMisordered(boxes, tolerance, pair) {
+  const [above, below] = pair.map(boxFor.bind(null, boxes))
+  return above.bottom > below.top + tolerance
+}
+
+/** The pairs where the first block ends below the top of the second. Each box is { selector, top, bottom }. */
+export function misordered(boxes, pairs, tolerance) {
+  return pairs.filter(isMisordered.bind(null, boxes, tolerance))
+}
+
+export function describeOrder(width, pair) {
+  return `${width} px: ${pair[0]} ends below the top of ${pair[1]}`
 }
