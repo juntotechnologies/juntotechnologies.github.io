@@ -1,8 +1,9 @@
-/** Check (browser): on an iPhone 15 Pro screen, each card named in `fit.json` is shorter than the screen below the sticky header. Needs the Playwright browsers. */
+/** Check (browser): on an iPhone 15 Pro screen, each card named in `fit.json` is shorter than the screen below the sticky header. At each width, the page has no sideways scroll, no long heading and equal margins. Needs the Playwright browsers. */
 import { createServer } from "node:http"
 import { chromium, devices } from "playwright"
 import { serveFile } from "../../server/static.mjs"
 import { describe, roomBelow, tooTall } from "./fitBudget.mjs"
+import { layoutFaults } from "./layout.mjs"
 import rules from "./fit.json" with { type: "json" }
 
 function rowOf(selector, box) {
@@ -35,16 +36,34 @@ function report(room, row) {
   console.error(`fit: ${describe(room, row)}`)
 }
 
-async function main() {
-  const server = createServer(serveFile).listen(0, "127.0.0.1")
-  const browser = await chromium.launch()
-  const { room, rows } = await measure(await open(browser, server.address().port))
+async function cardFaults(browser, port) {
+  const { room, rows } = await measure(await open(browser, port))
   const faults = tooTall(rows, room)
   faults.forEach(report.bind(null, room))
   console.log(faults.length ? `${faults.length} card(s) too tall` : `fit ok: ${rows.length} cards fit ${Math.round(room)} px on ${rules.device}`)
+  return faults.length
+}
+
+function reportLayout(line) {
+  console.error(`layout: ${line}`)
+}
+
+async function layoutCheck(browser, port) {
+  const { layout } = rules
+  const faults = await layoutFaults(browser, port, layout)
+  faults.forEach(reportLayout)
+  console.log(faults.length ? `${faults.length} layout fault(s)` : `layout ok: ${layout.widths.join(", ")} px have no sideways scroll, no heading over ${layout.maxHeadingLines} lines and equal margins`)
+  return faults.length
+}
+
+async function main() {
+  const server = createServer(serveFile).listen(0, "127.0.0.1")
+  const browser = await chromium.launch()
+  const port = server.address().port
+  const failed = (await cardFaults(browser, port)) + (await layoutCheck(browser, port))
   await browser.close()
   server.close()
-  process.exitCode = faults.length ? 1 : 0
+  process.exitCode = failed ? 1 : 0
 }
 
 await main()

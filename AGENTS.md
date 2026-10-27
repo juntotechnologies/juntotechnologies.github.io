@@ -12,7 +12,7 @@ The global rules in `~/AGENTS.md` apply here. This file adds the rules for this 
 | `npm run build` | Write `index.html`, `assets/css/tokens.css` and the generated doc blocks from `data/`. |
 | `npm run check` | Lint, test and check for stale generated files. Run it before every commit. |
 | `npm run downloads` | Read the dcurves download count from its badge and write `data/downloads.json`. Needs network. The monthly workflow `.github/workflows/refresh-downloads.yml` runs it. Run it by hand to refresh early. |
-| `npm run check:fit` | Fail when a card in `tools/checks/fit.json` is taller than an iPhone 15 Pro screen below the header. Needs the Playwright browsers. |
+| `npm run check:fit` | Fail when a card in `tools/checks/fit.json` is taller than an iPhone 15 Pro screen below the header. At 360, 390, 820 and 1440 px, also fail on sideways scroll, a heading of more than two lines, or unequal left and right margins. Needs the Playwright browsers. |
 | `npm run previews` | Capture the preview image of each featured project from its live site. |
 | `npm run clips` | Record a looping clip of each featured demo from its scene in `data/projects.json`. Writes MP4 and WebM files to `assets/video/`. Needs network, the Playwright browsers and `ffmpeg`. |
 | `npm run og` | Render the social image `assets/img/og.png` from the data. |
@@ -40,7 +40,7 @@ Never edit a generated file. Change the source and run `npm run build`.
 - Say what each project is. Bench Bridge is a demo with sample data. Write "Source on GitHub", not "open source".
 - Use "open source" only for a project with an open license.
 - State no star count. State a download count only for dcurves. It comes from `data/downloads.json` and shows its source and date. The monthly workflow `.github/workflows/refresh-downloads.yml` refreshes it. `npm run downloads` still works by hand. Never state a count in a discovery file or in the structured data.
-- On an iPhone 15 Pro screen, each card in `tools/checks/fit.json` must fit the screen below the sticky header. Run `npm run check:fit` after a change to a card or to its CSS.
+- On an iPhone 15 Pro screen, each card in `tools/checks/fit.json` must fit the screen below the sticky header. Run `npm run check:fit` after a change to a card or to its CSS. It also checks sideways scroll, heading lines and outer margins at four widths.
 - Never write the email address in a discovery file or in the structured data.
 - Check each claim against the project's repository. Record the evidence in `docs/projects.md`.
 - Never write the tailnet name in a file. `server/tailnet.mjs` reads it from `tailscale status`.
