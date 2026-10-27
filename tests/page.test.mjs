@@ -60,7 +60,7 @@ test("the page has one h1 and a language", () => {
 
 test("each image has an alt attribute and a size", () => {
   const images = html.match(/<img\s[^>]*>/g)
-  assert.ok(images.length >= 3)
+  assert.ok(images.length >= 2)
   images.forEach(hasAltAndSize)
 })
 

@@ -11,6 +11,9 @@ Node scripts that build, check and capture. They run on a developer machine. The
 | `badge.mjs` | Pure steps of the download refresh: read the badge count and make the next entry. |
 | `refreshDownloads.mjs` | Writes `data/downloads.json` from each badge. Needs network. The monthly workflow `.github/workflows/refresh-downloads.yml` runs it. |
 | `capturePreviews.mjs` | Saves a preview image of each featured project. |
+| `recordClips.mjs` | Records each featured demo with its scene, then encodes the MP4 and WebM clip. Needs network and `ffmpeg`. |
+| `clip.mjs` | Pure steps of the clip command: the ffmpeg filter, the ffmpeg arguments and the size check. |
+| `clipScene.mjs` | Plays a clip scene on a page. One handler for each step type. |
 | `ogImage.mjs` | Saves the social image. Its styles are in `og.css`. |
 | `lastModified.mjs` | Reads the date of the last commit for the sitemap. |
 | `data/` | Loads and validates the data files. |
@@ -20,5 +23,5 @@ Node scripts that build, check and capture. They run on a developer machine. The
 
 ## Rules
 - One job for each function. No nested functions or arrow callbacks. Use a named function and `.bind`.
-- Keep rendering pure. Reading and writing files stays in `build.mjs`, `drift.mjs`, `capturePreviews.mjs` and `ogImage.mjs`.
+- Keep rendering pure. Reading and writing files stays in `build.mjs`, `drift.mjs`, `capturePreviews.mjs`, `recordClips.mjs` and `ogImage.mjs`.
 - Pass dependencies in as arguments.

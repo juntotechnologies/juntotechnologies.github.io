@@ -20,6 +20,34 @@
       },
       "look": { "surface": "#eff6ff", "ink": "#1e3a8a", "accent": "#3b82f6", "host": "cheminventory.co" },
       "preview": { "file": "assets/img/projects/cheminventory.webp", "width": 1280, "height": 800, "alt": "The ChemInventory demo: a table of chemicals with product number, batch, name, CAS number and actions." },
+      "clip": {
+        "mp4": "assets/video/cheminventory.mp4",
+        "webm": "assets/video/cheminventory.webm",
+        "width": 960,
+        "height": 600,
+        "fps": 24,
+        "seconds": 8,
+        "maxKilobytes": 450,
+        "quality": { "mp4Crf": 23, "webmCrf": 34 },
+        "scene": {
+          "targets": { "search": "input[placeholder^=\"Search\"]", "pageTwo": "button:text-is(\"2\")", "pageOne": "button:text-is(\"1\")" },
+          "steps": [
+            { "do": "wait", "ms": 900 },
+            { "do": "type", "target": "search", "text": "ace", "delayMs": 170 },
+            { "do": "wait", "ms": 1100 },
+            { "do": "clear", "target": "search" },
+            { "do": "wait", "ms": 500 },
+            { "do": "type", "target": "search", "text": "chlor", "delayMs": 150 },
+            { "do": "wait", "ms": 1000 },
+            { "do": "clear", "target": "search" },
+            { "do": "wait", "ms": 500 },
+            { "do": "click", "target": "pageTwo" },
+            { "do": "wait", "ms": 1000 },
+            { "do": "click", "target": "pageOne" },
+            { "do": "wait", "ms": 600 }
+          ]
+        }
+      },
       "capture": { "url": "https://demo.cheminventory.co/", "width": 1000, "height": 720, "clip": { "x": 0, "y": 56, "width": 1000, "height": 625 } },
       "backlink": { "text": "A Junto Technologies project", "placement": "Footer of cheminventory.co, below the copyright line." }
     },
@@ -42,6 +70,28 @@
       },
       "look": { "surface": "#f3eee3", "ink": "#1c1b19", "accent": "#e8590c", "host": "bench-bridge.juntotechnologies.com" },
       "preview": { "file": "assets/img/projects/bench-bridge.webp", "width": 1280, "height": 800, "alt": "Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." },
+      "clip": {
+        "mp4": "assets/video/bench-bridge.mp4",
+        "webm": "assets/video/bench-bridge.webm",
+        "width": 960,
+        "height": 600,
+        "fps": 24,
+        "seconds": 9,
+        "maxKilobytes": 450,
+        "quality": { "mp4Crf": 23, "webmCrf": 34 },
+        "scene": {
+          "targets": { "hplc": "text=HPLC system", "assembled": "role=button[name=/assembled/i]", "run": "role=button[name=/run bridge/i]" },
+          "steps": [
+            { "do": "wait", "ms": 800 },
+            { "do": "click", "target": "hplc" },
+            { "do": "wait", "ms": 800 },
+            { "do": "click", "target": "assembled" },
+            { "do": "wait", "ms": 700 },
+            { "do": "click", "target": "run" },
+            { "do": "wait", "ms": 5200 }
+          ]
+        }
+      },
       "capture": { "url": "https://bench-bridge.juntotechnologies.com/", "width": 1120, "height": 700, "clip": { "x": 0, "y": 0, "width": 1120, "height": 700 } },
       "backlink": { "text": "Junto Technologies", "placement": "Top bar, left of the fleet card. It shows an arrow and the words. On a narrow window it shows the arrow only." }
     },

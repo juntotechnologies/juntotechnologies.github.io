@@ -44,6 +44,7 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `cheminventory` points: roles admin, manager, chemist | `shared/platform/access-control.ts`. |
 | `cheminventory` note: demo resets | The banner on `demo.cheminventory.co`. |
 | `cheminventory` look | `app/color-palette.css` in `chem-inventory-site`. `npm run check:upstream` compares it. |
+| `cheminventory` and `bench-bridge` clips | `npm run clips` records the live demo URL in `capture.url`, with the scene in `clip.scene`. Each clip shows sample data only. The Bench Bridge clip shows the demo run, not an instrument. |
 | `bench-bridge` instruments | `shared/data/devices.json` in `bench-bridge`. `npm run check:upstream` compares it. |
 | `bench-bridge` look | `design/tokens.json` in `bench-bridge`. `npm run check:upstream` compares it. |
 | `bench-bridge` points and note | The live demo. Each run shows the capture, parse, normalize, map and deliver steps. The bridge kit drawings are concept drawings. |
