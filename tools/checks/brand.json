@@ -1,0 +1,4 @@
+{
+  "banned": ["software"],
+  "files": ["data/site.json", "data/projects.json", "index.html", "llms.txt", "agents.txt"]
+}
