@@ -118,9 +118,9 @@ test("an equal size is within budget and one byte more is not", () => {
   assert.ok(!isWithinBudget(450001, clip))
 })
 
-test("the clip script plays only on screen, honors reduced motion and saves data", () => {
+test("the clip script plays only on screen and in the selected panel, honors reduced motion and saves data", () => {
   const script = readFileSync(inRoot("assets/js/clips.js"), "utf8")
-  for (const word of ["IntersectionObserver", "visibilitychange", "prefers-reduced-motion: reduce", "saveData"]) assert.ok(script.includes(word), word)
+  for (const word of ["IntersectionObserver", "MutationObserver", "is-selected", "visibilitychange", "prefers-reduced-motion: reduce", "saveData"]) assert.ok(script.includes(word), word)
 })
 
 test("the page loads the clip script", () => {

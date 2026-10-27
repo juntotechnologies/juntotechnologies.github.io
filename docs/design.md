@@ -55,7 +55,7 @@ Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter`, a c
 | Arrow glide | Links | `.icon--arrow-right` | translate |
 | Press | Buttons, tabs | `:active` | scale |
 | Preview zoom | Preview frames | `.frame:hover .frame__image` | scale |
-| Demo clip | Preview frames, played by `clips.js` while on screen | `.frame video[data-clip]` | video frames |
+| Demo clip | Preview frames, played by `clips.js` while on screen in the selected panel | `.frame video[data-clip]` | video frames |
 | Curve draw | dcurves illustration | `.curve__cover` | translate |
 | Pointer glow | Buttons and cards | `--glow` | background image |
 | Lit dots | Hero | `.hero__lit` | opacity, mask |
