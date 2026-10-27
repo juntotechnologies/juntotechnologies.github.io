@@ -4,6 +4,8 @@ The public front page of Junto Technologies, at `https://juntotechnologies.com/`
 
 The global rules in `~/AGENTS.md` apply here. This file adds the rules for this repo.
 
+Shared design rules: skill `site-taste` in `agent-skills`. This repo keeps its own design choices in `docs/design.md`. Run the skill's `taste.py sites` command after a design change to find drift.
+
 ## Commands
 
 | Command | Job |
