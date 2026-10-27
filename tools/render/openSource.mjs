@@ -4,6 +4,7 @@ import { actionRow, factList, noteLine, statusChip } from "./card.mjs"
 import { renderCurve } from "./curve.mjs"
 import { anchor } from "./links.mjs"
 import { sectionHead } from "./sectionHead.mjs"
+import { statFor } from "./stat.mjs"
 
 function isOpen(project) {
   return project.tier === "more"
@@ -17,12 +18,13 @@ function isTile(project) {
   return !isLead(project)
 }
 
-function lead(project) {
+function lead(downloads, project) {
   return `<article class="lead card card--lift reveal" id="${project.id}" style="--i:1">
         <div class="lead__text">
           ${statusChip(project)}
           <h3 class="lead__name">${escapeHtml(project.name)}</h3>
           <p class="lead__summary">${escapeHtml(project.summary)}</p>
+          ${statFor(downloads, project)}
           ${factList(project.points)}
           ${actionRow(project)}
           ${noteLine(project.note)}
@@ -40,13 +42,13 @@ function tile(project, index) {
       </article>`
 }
 
-export function renderOpenSource(section, projects) {
+export function renderOpenSource(section, projects, downloads) {
   const open = projects.filter(isOpen)
   const tiles = open.filter(isTile).map(tile).join("\n        ")
   return `<section class="section" id="open-source" aria-labelledby="open-source-title">
       ${sectionHead(section, "open-source-title")}
       <div class="open">
-        ${open.filter(isLead).map(lead).join("")}
+        ${open.filter(isLead).map(lead.bind(null, downloads)).join("")}
         <div class="tiles">
         ${tiles}
         </div>

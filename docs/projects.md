@@ -30,7 +30,7 @@ Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the
 - Say what each project is. ChemInventory is live software. Bench Bridge is a demo with sample data and a mock LIMS.
 - Write "Source on GitHub" for Bench Bridge. The repository has no license, so "open source" is wrong.
 - Use "open source" only for a project that has an open license. The evidence rows below name each license.
-- State no star count and no download count.
+- State no star count. State a download count only for dcurves, from `data/downloads.json`, with its source and date.
 - Check each claim against the project's own repository before you publish it.
 
 ## Evidence
@@ -51,6 +51,8 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
 | `dcurves` points | Its README: binary and survival outcomes, net benefit, interventions avoided, `pip install dcurves`. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
 | `dcurves` documentation link | `https://mskcc-epi-bio.github.io/dcurves/` answers with HTTP 200. |
+| `dcurves` DCA website link | `https://mskcc-epi-bio.github.io/decisioncurveanalysis/` answers with HTTP 200 and the title "DCA: Homepage". The repository `MSKCC-Epi-Bio/decisioncurveanalysis` lists `decisioncurveanalysis.org` as its homepage, and that address redirects with HTTP 301 to the Pages address. Shaun is the top contributor of the repository (`gh api repos/MSKCC-Epi-Bio/decisioncurveanalysis/contributors`). |
+| `dcurves` download count | `data/downloads.json`. The count is the total on the pepy.tech badge for the dcurves package on PyPI. The card shows it rounded down to the thousand, with the source and the date. `npm run downloads` refreshes it. |
 | `dcurves` note | Shaun is the top contributor of the repository, and his biography on the hub says he created it. The repository sits in the `MSKCC-Epi-Bio` organization. |
 | `dcurves` illustration | A drawing of the shape of a decision curve. It holds no data. The page labels it "Illustration only. Not real data." |
 | `bioeq` | Repository `bioeq`. MIT license. Modules `crossover2x2`, `parallel` and `replicate_crossover`. |

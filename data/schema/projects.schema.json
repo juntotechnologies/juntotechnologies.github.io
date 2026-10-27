@@ -30,6 +30,7 @@
         "summary": { "type": "string" },
         "live": { "type": "boolean" },
         "lead": { "type": "boolean" },
+        "downloads": { "type": "string", "pattern": "^[a-z0-9-]+$" },
         "instruments": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
         "flow": {
           "type": "object",
