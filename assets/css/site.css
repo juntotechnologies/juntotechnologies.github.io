@@ -100,6 +100,18 @@ a:hover {
   background: color-mix(in srgb, var(--bg) 84%, transparent);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
+  transition-property: border-color, box-shadow;
+  transition-duration: var(--motion-base);
+  transition-timing-function: var(--ease-out);
+}
+
+/* At the top of the page the header has no edge. After the page moves, it gets a hairline and a soft shadow. */
+[data-scroll="top"] .header {
+  border-bottom-color: transparent;
+}
+
+[data-scroll="away"] .header {
+  box-shadow: var(--shadow-header);
 }
 
 .header__inner {
@@ -248,8 +260,8 @@ a:hover {
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition-property: background-color, border-color, color, scale, translate;
-  transition-duration: var(--motion-fast);
+  transition-property: background-color, border-color, color, scale, translate, --glow, --gx, --gy;
+  transition-duration: var(--motion-fast), var(--motion-fast), var(--motion-fast), var(--motion-fast), var(--motion-fast), var(--motion-glow), var(--motion-follow), var(--motion-follow);
   transition-timing-function: var(--ease-out);
 }
 
@@ -266,12 +278,14 @@ a:hover {
 .button--primary {
   background: var(--accent);
   color: var(--on-accent);
+  box-shadow: var(--shadow-raise-accent);
 }
 
 .button--quiet {
   border-color: var(--line);
   background: var(--surface);
   color: var(--ink);
+  box-shadow: var(--shadow-raise);
 }
 
 .actions {
@@ -307,13 +321,22 @@ a:hover {
     translate: 0 -1px;
   }
 
+  .button:hover,
+  .card:hover {
+    --glow: 1;
+  }
+
+  .hero:hover .hero__lit {
+    opacity: 0.55;
+  }
+
   .button--primary:hover {
-    background: var(--accent-strong);
+    background-color: var(--accent-strong);
     color: var(--on-accent);
   }
 
   .button--quiet:hover {
-    background: var(--sunken);
+    background-color: var(--sunken);
     color: var(--ink);
   }
 
@@ -323,6 +346,131 @@ a:hover {
 
   a:hover > .icon--arrow-up-right {
     translate: 2px -2px;
+  }
+}
+
+/* Alive. Light follows the pointer. JS writes --gx and --gy. The registered properties let CSS ease them and fade --glow. */
+
+@property --glow {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --gx {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --gy {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --hx {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+@property --hy {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+.button,
+.card {
+  --glow-color: var(--glow-tint);
+  background-image: radial-gradient(var(--glow-size) circle at var(--gx) var(--gy), color-mix(in srgb, var(--glow-color) calc(var(--glow) * 100%), transparent), transparent);
+}
+
+.button--primary {
+  --glow-color: var(--glow-on-accent);
+}
+
+/* In the hero, dots near the pointer light up. The hero holds --hx and --hy, so the lit layer reads them. */
+.hero {
+  transition-property: --hx, --hy;
+  transition-duration: var(--motion-follow);
+  transition-timing-function: var(--ease-out);
+}
+
+.hero__lit {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  overflow: clip;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-mask-image: radial-gradient(circle var(--glow-size) at var(--hx) var(--hy), black, transparent);
+  mask-image: radial-gradient(circle var(--glow-size) at var(--hx) var(--hy), black, transparent);
+  transition: opacity var(--motion-glow) var(--ease-out);
+}
+
+.hero__lit::before {
+  content: "";
+  position: absolute;
+  inset: -24px;
+  background-image: radial-gradient(circle, var(--accent) 1.25px, transparent 1.75px);
+  background-size: 24px 24px;
+  animation: drift 48s linear infinite;
+}
+
+/* The main button has a light that circles its edge. The ring is the gap between the fill and the edge. */
+.button--sheen {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.button--sheen::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 50%;
+  width: 220%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: conic-gradient(transparent 0 62%, var(--sheen) 90%, transparent 100%);
+  animation: sheen var(--sheen-duration) linear infinite;
+}
+
+.button--sheen::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  border-radius: inherit;
+  background: inherit;
+}
+
+/* One word of the hero heading moves through the accent colors. Each color passes the text contrast test on the page. */
+.hero__accent {
+  color: var(--accent);
+  background-image: linear-gradient(100deg, var(--accent), var(--brand), var(--accent-strong), var(--accent));
+  background-size: 220% 100%;
+  animation: shimmer var(--shimmer-duration) ease-in-out infinite alternate;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .hero__accent {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+@media (forced-colors: active) {
+  .hero__accent {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: inherit;
   }
 }
 
@@ -475,8 +623,11 @@ a:hover {
   isolation: isolate;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--surface);
+  background-color: var(--surface);
   box-shadow: var(--shadow-card);
+  transition-property: --glow, --gx, --gy;
+  transition-duration: var(--motion-glow), var(--motion-follow), var(--motion-follow);
+  transition-timing-function: var(--ease-out);
 }
 
 /* A softer, higher shadow sits on a second layer. Only its opacity changes. */
@@ -1433,11 +1584,27 @@ a:hover {
   from {
     opacity: 0;
     translate: 0 var(--reveal-distance);
+    scale: 0.985;
+    filter: blur(4px);
   }
 
   to {
     opacity: 1;
     translate: 0 0;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes sheen {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 100% 0;
   }
 }
 
@@ -1659,6 +1826,10 @@ a:hover {
   }
 
   .curve__cover {
+    display: none;
+  }
+
+  .button--sheen::before {
     display: none;
   }
 }

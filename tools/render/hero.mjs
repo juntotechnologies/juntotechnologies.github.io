@@ -1,14 +1,16 @@
 /** The hero: one heading, one sentence, two buttons and the areas of work. Soft art sits behind it. */
 import { escapeHtml } from "./escape.mjs"
+import { emphasize } from "./heading.mjs"
 
 const ART = '<div class="hero__art" aria-hidden="true"><span class="hero__dots"></span><span class="hero__glow"></span></div>'
+const LIT = '<div class="hero__lit" aria-hidden="true"></div>'
 
 function area(label) {
   return `<li>${escapeHtml(label)}</li>`
 }
 
 function action(item) {
-  const kind = item.primary ? "button--primary" : "button--quiet"
+  const kind = item.primary ? "button--primary button--sheen" : "button--quiet"
   return `<a class="button button--large ${kind}" href="${item.href}">${escapeHtml(item.label)}</a>`
 }
 
@@ -23,9 +25,10 @@ function aside(hero) {
 }
 
 export function renderHero(hero) {
-  const title = `<h1 id="hero-title" class="hero__title">${escapeHtml(hero.heading)}</h1>`
+  const title = `<h1 id="hero-title" class="hero__title">${emphasize(hero.heading, hero.accent)}</h1>`
   return `<section class="hero" aria-labelledby="hero-title">
       ${ART}
+      ${LIT}
       <div class="hero__layout">${title}${aside(hero)}</div>
       ${areas(hero)}
     </section>`

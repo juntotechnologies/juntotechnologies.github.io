@@ -24,6 +24,7 @@
       "required": ["heading", "body", "actions", "areasLabel", "expertise"],
       "properties": {
         "heading": { "type": "string" },
+        "accent": { "type": "string" },
         "body": { "type": "string" },
         "actions": { "type": "array", "minItems": 1, "maxItems": 2, "items": { "type": "object", "additionalProperties": false, "required": ["label", "href"], "properties": { "label": { "type": "string" }, "href": { "type": "string", "pattern": "^#[a-z-]+$" }, "primary": { "type": "boolean" } } } },
         "areasLabel": { "type": "string" },

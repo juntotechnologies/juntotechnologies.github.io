@@ -13,6 +13,7 @@
   ],
   "hero": {
     "heading": "Make your lab modern",
+    "accent": "modern",
     "body": "Junto Technologies modernizes chemistry labs. It tracks what a lab holds and designs ways to connect older instruments to lab systems. It also applies machine learning and statistics to biomedical questions.",
     "actions": [
       { "label": "See the projects", "href": "#projects", "primary": true },
