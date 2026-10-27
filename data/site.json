@@ -32,7 +32,7 @@
   },
   "team": {
     "heading": "Work directly with the builder",
-    "body": "Shaun works with companies to understand their operations. He designs software that fits how their teams work.",
+    "body": "Shaun works with companies to understand their operations, then designs software that fits how their teams work.",
     "members": [
       {
         "name": "Shaun Porwal",
@@ -40,7 +40,7 @@
         "image": "public/team_pics/shaun-720.webp",
         "imageSize": 720,
         "alt": "Portrait of Shaun Porwal",
-        "bio": "Shaun builds **biomedical AI systems** across agentic workflows, survival modeling, and biology models. He recently worked as a **founding engineer at a biotech startup** and previously built clinical ML tools at **Memorial Sloan Kettering Cancer Center**, where he created [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves). He also has **hands-on chemistry experience** in labs and manufacturing across the U.S., Taiwan, and Japan, and holds degrees in biomedical engineering and biomedical data science."
+        "bio": "Shaun builds **biomedical AI systems** across agentic workflows, survival modeling, and biology models. Shaun recently worked as a **founding engineer at a biotech startup** and previously built clinical ML tools at **Memorial Sloan Kettering Cancer Center**, creating [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves). **Hands-on chemistry experience** spans labs and manufacturing across the U.S., Taiwan, and Japan. Degrees: biomedical engineering and biomedical data science."
       }
     ]
   },
