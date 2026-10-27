@@ -17,8 +17,10 @@
 | Tier | Shown as | Fields it needs |
 | --- | --- | --- |
 | `featured` | A tab and a panel with a preview of the project's own look | `look`, `preview`, `capture`, `backlink`, `points`, `note` |
-| `more` | A tile in "Open source" | The common fields only |
-| `more` with `lead` | The large entry at the top of "Open source", with an illustration | `points`, `note`, `illustration` |
+| `more` | A tile in "Open source" with its picture | `illustration` |
+| `more` with `lead` | The large entry at the top of "Open source" | `illustration`, `note` |
+
+The `illustration` field has a `kind`: `decision-curve`, `equivalence` or `calibration`. `data/schema/projects.schema.json` holds the fields of each kind. `links.learn` is an optional text link that sits in the caption of the picture.
 
 Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the steps strip. `instruments` gives the count in the first fact.
 
@@ -50,14 +52,16 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `bench-bridge` points and note | The live demo. Each run shows the capture, parse, normalize, map and deliver steps. The bridge kit drawings are concept drawings. |
 | `bench-bridge` steps strip and instrument count | The pipeline strip in the live demo shows Capture, Parse, Normalize, Map and Deliver. The strip on the hub shows the first, second and last step. The count comes from `instruments`. |
 | `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
-| `dcurves` points | Its README: binary and survival outcomes, net benefit, interventions avoided, `pip install dcurves`. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
+| `dcurves` summary | Its README: decision curve analysis, net benefit, binary and survival outcomes. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
 | `dcurves` documentation link | `https://mskcc-epi-bio.github.io/dcurves/` answers with HTTP 200. |
 | `dcurves` DCA website link | `https://mskcc-epi-bio.github.io/decisioncurveanalysis/` answers with HTTP 200 and the title "DCA: Homepage". The repository `MSKCC-Epi-Bio/decisioncurveanalysis` lists `decisioncurveanalysis.org` as its homepage, and that address redirects with HTTP 301 to the Pages address. Shaun is the top contributor of the repository (`gh api repos/MSKCC-Epi-Bio/decisioncurveanalysis/contributors`). |
 | `dcurves` download count | `data/downloads.json`. The count is the total on the pepy.tech badge for the dcurves package on PyPI. The card shows it rounded down to the thousand, with the source and the date. The monthly workflow `.github/workflows/refresh-downloads.yml` refreshes it. `npm run downloads` still works by hand. |
 | `dcurves` note | Shaun is the top contributor of the repository, and his biography on the hub says he created it. The repository sits in the `MSKCC-Epi-Bio` organization. |
-| `dcurves` illustration | A drawing of the shape of a decision curve. It holds no data. The page labels it "Illustration only. Not real data." |
+| `dcurves` illustration | Sample curves from a calibrated model with normal scores (`prevalence` 0.2, `separation` 1.5). The maths is in `assets/js/decision-curve.js`. The values are not data. The page labels the picture "Illustration only. Not real data." |
 | `bioeq` | Repository `bioeq`. MIT license. Modules `crossover2x2`, `parallel` and `replicate_crossover`. |
+| `bioeq` illustration | `crossover2x2.py` and `parallel.py` compare the 90% confidence interval with the 80-125% limits. The drawing shows invented numbers. The page labels it "Illustration only. Not real data." |
 | `hct-equity` | Repository `hct-equity`. MIT license. Its README says the work is exploratory, not peer reviewed, and uses synthetic Kaggle data. |
+| `hct-equity` illustration | Its README and `figures/fairness_calibration_by_group.png` show calibration by group. The drawing shows invented curves and no race group name. The page labels it "Illustration only. Not real data." |
 
 ## Left out on purpose
 

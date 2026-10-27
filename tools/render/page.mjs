@@ -9,7 +9,7 @@ import { renderProjects } from "./showcase.mjs"
 import { renderTeam } from "./team.mjs"
 
 const SKIP_LINK = '<a class="skip-link" href="#main">Skip to content</a>'
-const SCRIPTS = ['<script type="module" src="assets/js/theme.js"></script>', '<script type="module" src="assets/js/tabs.js"></script>', '<script type="module" src="assets/js/reveal.js"></script>', '<script type="module" src="assets/js/glow.js"></script>', '<script type="module" src="assets/js/scroll-state.js"></script>', '<script type="module" src="assets/js/clips.js"></script>']
+const SCRIPTS = ['<script type="module" src="assets/js/theme.js"></script>', '<script type="module" src="assets/js/tabs.js"></script>', '<script type="module" src="assets/js/reveal.js"></script>', '<script type="module" src="assets/js/glow.js"></script>', '<script type="module" src="assets/js/scroll-state.js"></script>', '<script type="module" src="assets/js/clips.js"></script>', '<script type="module" src="assets/js/curve.js"></script>']
 
 function main(data) {
   const { site, projects, downloads } = data

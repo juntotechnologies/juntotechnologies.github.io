@@ -1,7 +1,7 @@
-/** The open source section: one lead entry with an illustration, then the other public code as tiles. */
+/** The open source section: one lead entry, then the other public code as tiles. Each entry shows its own picture. */
 import { escapeHtml } from "./escape.mjs"
-import { actionRow, factList, noteLine, statusChip } from "./card.mjs"
-import { renderCurve } from "./curve.mjs"
+import { actionRow, noteLine, statusChip } from "./card.mjs"
+import { renderFigure } from "./figure.mjs"
 import { anchor } from "./links.mjs"
 import { sectionHead } from "./sectionHead.mjs"
 import { statFor } from "./stat.mjs"
@@ -25,17 +25,17 @@ function lead(downloads, project) {
           <h3 class="lead__name">${escapeHtml(project.name)}</h3>
           <p class="lead__summary">${escapeHtml(project.summary)}</p>
           ${statFor(downloads, project)}
-          ${factList(project.points)}
           ${actionRow(project)}
           ${noteLine(project.note)}
         </div>
-        ${renderCurve(project.illustration)}
+        ${renderFigure(project)}
       </article>`
 }
 
 function tile(project, index) {
   const link = anchor({ ...project.links.primary, label: project.name }, "tile__link")
   return `<article class="tile card card--lift reveal" id="${project.id}" style="--i:${index + 2}">
+        ${renderFigure(project)}
         ${statusChip(project)}
         <h3 class="tile__name">${link}</h3>
         <p class="tile__summary">${escapeHtml(project.summary)}</p>

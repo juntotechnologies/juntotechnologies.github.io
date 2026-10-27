@@ -103,21 +103,21 @@
       "downloads": "dcurves",
       "kind": "Python package",
       "status": "Apache-2.0 license",
-      "summary": "A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.",
-      "points": [
-        "Evaluates models for binary and survival outcomes.",
-        "Calculates net benefit and interventions avoided.",
-        "Installs from PyPI with pip."
-      ],
-      "note": "Shaun created dcurves. The repository belongs to the MSKCC-Epi-Bio organization on GitHub.",
+      "summary": "A Python package for decision curve analysis. It measures model performance with clinical consequences in mind.",
+      "note": "Created by Shaun. Owner: MSKCC-Epi-Bio.",
       "links": {
         "primary": { "label": "dcurves on GitHub", "href": "https://github.com/MSKCC-Epi-Bio/dcurves", "scope": "external" },
-        "secondary": [
-          { "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" },
-          { "label": "DCA website", "href": "https://mskcc-epi-bio.github.io/decisioncurveanalysis/", "scope": "external" }
-        ]
+        "secondary": [{ "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" }],
+        "learn": { "label": "What is a decision curve?", "href": "https://mskcc-epi-bio.github.io/decisioncurveanalysis/", "scope": "external" }
       },
-      "illustration": { "title": "A decision curve", "caption": "Illustration only. Not real data.", "legend": ["Model", "Treat all", "Treat none"] }
+      "illustration": {
+        "kind": "decision-curve",
+        "caption": "Illustration only. Not real data.",
+        "prevalence": 0.2,
+        "separation": 1.5,
+        "axes": { "x": "Threshold probability", "y": "Net benefit" },
+        "lines": { "model": "Model", "all": "Treat all", "none": "Treat none" }
+      }
     },
     {
       "id": "bioeq",
@@ -126,7 +126,8 @@
       "kind": "Python package",
       "status": "MIT license",
       "summary": "A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.",
-      "links": { "primary": { "label": "bioeq on GitHub", "href": "https://github.com/juntotechnologies/bioeq", "scope": "external" }, "secondary": [] }
+      "links": { "primary": { "label": "bioeq on GitHub", "href": "https://github.com/juntotechnologies/bioeq", "scope": "external" }, "secondary": [] },
+      "illustration": { "kind": "equivalence", "caption": "Illustration only. Not real data.", "limits": [80, 125], "centre": 100, "estimate": 101.5, "interval": [94, 109], "confidence": 90 }
     },
     {
       "id": "hct-equity",
@@ -134,8 +135,15 @@
       "tier": "more",
       "kind": "Research code",
       "status": "Exploratory",
-      "summary": "Models that compare survival predictions across race groups, with calibration and decision curve analysis. It uses synthetic data from a Kaggle competition. It is not peer reviewed.",
-      "links": { "primary": { "label": "hct-equity on GitHub", "href": "https://github.com/juntotechnologies/hct-equity", "scope": "external" }, "secondary": [] }
+      "summary": "Compares survival predictions across race groups, with calibration and decision curves. Uses synthetic Kaggle data. Not peer reviewed.",
+      "links": { "primary": { "label": "hct-equity on GitHub", "href": "https://github.com/juntotechnologies/hct-equity", "scope": "external" }, "secondary": [] },
+      "illustration": {
+        "kind": "calibration",
+        "caption": "Illustration only. Not real data.",
+        "reference": "Perfect",
+        "axes": { "x": "Predicted risk", "y": "Observed risk" },
+        "groups": [{ "label": "Group A", "exponent": 1.15 }, { "label": "Group B", "exponent": 1.7 }]
+      }
     }
   ]
 }
