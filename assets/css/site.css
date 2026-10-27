@@ -1690,21 +1690,29 @@ a:hover {
 
   .hero__layout {
     grid-template-columns: var(--grid-12);
-    gap: var(--space-5);
-    align-items: end;
+    gap: var(--space-6) var(--space-5);
+    align-items: start;
     justify-items: stretch;
   }
 
   .hero__title {
-    grid-column: 1 / span 7;
+    grid-column: 1 / -1;
   }
 
   .hero__aside {
-    grid-column: 8 / span 5;
-    justify-items: start;
+    grid-column: 1 / -1;
+    grid-template-columns: var(--grid-12);
+    gap: var(--space-5);
+    align-items: center;
+    justify-items: stretch;
+  }
+
+  .hero__body {
+    grid-column: 1 / span 6;
   }
 
   .hero__actions {
+    grid-column: 8 / span 5;
     max-width: none;
   }
 
