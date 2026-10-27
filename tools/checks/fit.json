@@ -1,5 +1,5 @@
 {
   "device": "iPhone 15 Pro",
   "header": ".header",
-  "cards": [".showcase", ".lead", ".tile"]
+  "cards": [".showcase", ".lead", ".tile", ".person"]
 }
