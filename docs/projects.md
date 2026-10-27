@@ -7,6 +7,7 @@
 | --- | --- | --- | --- | --- | --- |
 | ChemInventory | featured | Product | Live | https://cheminventory.co/ | first-party |
 | Bench Bridge | featured | Demo | Sample data | https://bench-bridge.juntotechnologies.com/ | first-party |
+| dcurves | more | Python package | Apache-2.0 license | https://github.com/MSKCC-Epi-Bio/dcurves | external |
 | bioeq | more | Python package | MIT license | https://github.com/juntotechnologies/bioeq | external |
 | hct-equity | more | Research code | Exploratory | https://github.com/juntotechnologies/hct-equity | external |
 <!-- /gen -->
@@ -15,8 +16,11 @@
 
 | Tier | Shown as | Fields it needs |
 | --- | --- | --- |
-| `featured` | A card with a preview of the project's own look | `look`, `preview`, `capture`, `backlink`, `points`, `note` |
-| `more` | A row in "Code and research" | The common fields only |
+| `featured` | A tab and a panel with a preview of the project's own look | `look`, `preview`, `capture`, `backlink`, `points`, `note` |
+| `more` | A tile in "Open source" | The common fields only |
+| `more` with `lead` | The large entry at the top of "Open source", with an illustration | `points`, `note`, `illustration` |
+
+Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the steps strip. `instruments` gives the count in the first fact.
 
 ## Rules for the public site
 
@@ -25,11 +29,13 @@
 - Make no claim of Part 11 compliance.
 - Say what each project is. ChemInventory is live software. Bench Bridge is a demo with sample data and a mock LIMS.
 - Write "Source on GitHub" for Bench Bridge. The repository has no license, so "open source" is wrong.
+- Use "open source" only for a project that has an open license. The evidence rows below name each license.
+- State no star count and no download count.
 - Check each claim against the project's own repository before you publish it.
 
 ## Evidence
 
-Each row names a claim in `data/projects.json` and the file that supports it. Checked on 2026-10-26.
+Each row names a claim in `data/projects.json` and the file that supports it. Checked on 2026-10-27.
 
 | Claim location | Evidence |
 | --- | --- |
@@ -41,8 +47,14 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `bench-bridge` instruments | `shared/data/devices.json` in `bench-bridge`. `npm run check:upstream` compares it. |
 | `bench-bridge` look | `design/tokens.json` in `bench-bridge`. `npm run check:upstream` compares it. |
 | `bench-bridge` points and note | The live demo. Each run shows the capture, parse, normalize, map and deliver steps. The bridge kit drawings are concept drawings. |
+| `bench-bridge` steps strip and instrument count | The pipeline strip in the live demo shows Capture, Parse, Normalize, Map and Deliver. The strip on the hub shows the first, second and last step. The count comes from `instruments`. |
+| `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
+| `dcurves` points | Its README: binary and survival outcomes, net benefit, interventions avoided, `pip install dcurves`. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
+| `dcurves` documentation link | `https://mskcc-epi-bio.github.io/dcurves/` answers with HTTP 200. |
+| `dcurves` note | Shaun is the top contributor of the repository, and his biography on the hub says he created it. The repository sits in the `MSKCC-Epi-Bio` organization. |
+| `dcurves` illustration | A drawing of the shape of a decision curve. It holds no data. The page labels it "Illustration only. Not real data." |
 | `bioeq` | Repository `bioeq`. MIT license. Modules `crossover2x2`, `parallel` and `replicate_crossover`. |
-| `hct-equity` | Repository `hct-equity`. Its README says the work is exploratory, not peer reviewed, and uses synthetic Kaggle data. |
+| `hct-equity` | Repository `hct-equity`. MIT license. Its README says the work is exploratory, not peer reviewed, and uses synthetic Kaggle data. |
 
 ## Left out on purpose
 

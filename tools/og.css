@@ -1,0 +1,82 @@
+/* Styles of the social image. The colours are custom properties that tools/render/ogHtml.mjs writes from data/design.json. */
+
+html,
+body {
+  margin: 0;
+  width: 1200px;
+  height: 630px;
+}
+
+body {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  box-sizing: border-box;
+  padding: 64px 72px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, sans-serif;
+}
+
+.dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--line) 1.5px, transparent 2px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse at 82% 18%, black, transparent 72%);
+}
+
+.glow {
+  position: absolute;
+  top: -380px;
+  right: -280px;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+}
+
+.brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--brand);
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.copy {
+  position: relative;
+}
+
+h1 {
+  max-width: 920px;
+  margin: 0;
+  font-size: 104px;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+p {
+  max-width: 880px;
+  margin: 28px 0 0;
+  color: var(--ink-2);
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+.host {
+  position: relative;
+  color: var(--ink-3);
+  font-size: 24px;
+  font-weight: 500;
+}

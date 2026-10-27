@@ -2,7 +2,7 @@
 
 The public hub for Junto Technologies: `https://juntotechnologies.com/`.
 
-It shows each Junto project as a card that previews the project's own look. The hub itself is a calm, neutral frame.
+It shows the featured projects in one tabbed card. Each tab previews the project's own look. The hub itself is a calm, neutral frame. A section for open source code follows, with dcurves first.
 
 ## Run it
 
@@ -19,10 +19,12 @@ npm run dev
 | --- | --- | --- |
 | Page text, contact, team | `data/site.json` | `npm run build` |
 | A project or its links | `data/projects.json` | `npm run build` |
-| A color, radius or motion value | `data/design.json` | `npm run build` |
+| A color, size, radius or motion value | `data/design.json` | `npm run build` |
+| A crawler, an agent rule or the social card | `data/discovery.json` | `npm run build` |
 | A preview image | none | `npm run previews` |
+| The social image | none | `npm run og` |
 
-Never edit `index.html`, `assets/css/tokens.css` or a generated block in `docs/`. The build writes them.
+Never edit a generated file: `index.html`, `assets/css/tokens.css`, `robots.txt`, `sitemap.xml`, `llms.txt`, `agents.txt`, `.well-known/agents.json` or a generated block in `docs/`. The build writes them.
 
 Run `npm run check` before each commit.
 
@@ -33,6 +35,8 @@ Run `npm run check` before each commit.
 | [docs/linking.md](docs/linking.md) | Where links open, deep links, how to add a project |
 | [docs/backlinks.md](docs/backlinks.md) | The link from each project site back to the hub |
 | [docs/projects.md](docs/projects.md) | Project list, public-site rules, evidence for each claim |
+| [docs/design.md](docs/design.md) | Design rules, tabs, motion effects, tokens |
+| [docs/discovery.md](docs/discovery.md) | Files for search engines and agents, and where they live |
 
 ## Deploy
 

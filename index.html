@@ -7,9 +7,20 @@
     <title>Junto Technologies</title>
     <meta name="description" content="Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions." />
     <link rel="canonical" href="https://juntotechnologies.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Junto Technologies" />
     <meta property="og:title" content="Junto Technologies" />
     <meta property="og:description" content="Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions." />
     <meta property="og:url" content="https://juntotechnologies.com/" />
+    <meta property="og:image" content="https://juntotechnologies.com/assets/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Junto Technologies. Software for real lab work." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Junto Technologies" />
+    <meta name="twitter:description" content="Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions." />
+    <meta name="twitter:image" content="https://juntotechnologies.com/assets/img/og.png" />
+    <meta name="twitter:image:alt" content="Junto Technologies. Software for real lab work." />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#171311" />
     <link rel="icon" type="image/png" href="public/favicon.png" />
@@ -17,6 +28,7 @@
     <script src="assets/js/theme-init.js"></script>
     <link rel="stylesheet" href="assets/css/tokens.css" />
     <link rel="stylesheet" href="assets/css/site.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://juntotechnologies.com/#organization","name":"Junto Technologies","url":"https://juntotechnologies.com/","logo":"https://juntotechnologies.com/public/junto-tech-logo.png","description":"Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions.","sameAs":["https://github.com/juntotechnologies"],"contactPoint":{"@type":"ContactPoint","contactType":"General inquiries","url":"https://cal.com/shaun-porwal-junto/30min"}},{"@type":"WebSite","@id":"https://juntotechnologies.com/#website","name":"Junto Technologies","url":"https://juntotechnologies.com/","description":"Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions.","inLanguage":"en","publisher":{"@id":"https://juntotechnologies.com/#organization"}},{"@type":"SoftwareApplication","@id":"https://juntotechnologies.com/#cheminventory","name":"ChemInventory","url":"https://cheminventory.co/","description":"Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://juntotechnologies.com/#organization"}},{"@type":"SoftwareApplication","@id":"https://juntotechnologies.com/#bench-bridge","name":"Bench Bridge","url":"https://bench-bridge.juntotechnologies.com/","description":"A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.","applicationCategory":"BusinessApplication","operatingSystem":"Web","publisher":{"@id":"https://juntotechnologies.com/#organization"}}]}</script>
   </head>
   <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,62 +40,70 @@
       </a>
       <nav class="nav" aria-label="Main"><ul class="nav__list"><li><a class="nav__link" href="#projects">Projects</a></li><li><a class="nav__link" href="#team">Team</a></li><li><a class="nav__link nav__link--contact" href="#contact">Contact</a></li></ul>
         <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false" data-theme-toggle>
-          <span class="theme-toggle__icon theme-toggle__icon--sun"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
-          <span class="theme-toggle__icon theme-toggle__icon--moon"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun"><svg class="icon icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon"><svg class="icon icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></span>
         </button>
       </nav>
     </div>
   </header>
   <main id="main" class="main">
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="hero__title">Software for real lab work</h1>
-      <p class="hero__body">Junto Technologies builds tools for chemistry labs. It also applies machine learning and statistics to biomedical questions.</p>
-      <ul class="hero__areas" aria-label="Areas of work"><li class="chip">Healthcare</li><li class="chip">Software</li><li class="chip">Engineering</li><li class="chip">Machine learning</li><li class="chip">Statistics</li></ul>
+      <div class="hero__art" aria-hidden="true"><span class="hero__dots"></span><span class="hero__glow"></span></div>
+      <div class="hero__layout"><h1 id="hero-title" class="hero__title">Software for real lab work</h1><div class="hero__aside"><p class="hero__body">Junto Technologies builds tools for chemistry labs. It also applies machine learning and statistics to biomedical questions.</p><p class="actions hero__actions"><a class="button button--large button--primary" href="#projects">See the projects</a><a class="button button--large button--quiet" href="#contact">Get in touch</a></p></div></div>
+      <div class="hero__areas"><p id="areas-label" class="hero__areas-label">Areas of work</p><ul class="hero__areas-list" aria-labelledby="areas-label"><li>Healthcare</li><li>Software</li><li>Engineering</li><li>Machine learning</li><li>Statistics</li></ul></div>
     </section>
     <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section__head"><h2 id="projects-title" class="section__title">Projects</h2><p class="section__body">Each project has its own site and its own look. Select a card to open it.</p></div>
-      <article class="project" id="cheminventory" style="--look-surface:#eff6ff;--look-ink:#1e3a8a;--look-accent:#3b82f6">
-        <div class="project__body">
-          <p class="project__meta"><span class="chip chip--label">Product</span><span class="chip chip--label">Live</span></p>
-          <h3 class="project__name"><span class="project__mark" aria-hidden="true"></span>ChemInventory</h3>
-          <p class="project__summary">Chemical inventory software that fits how each lab works. It gives a lab one record of what it holds, where it is, and who changed it.</p>
-          <ul class="project__points"><li>Tracks chemicals, locations, orders and batch documents.</li><li>Keeps a change history with the user and the time.</li><li>Gives each person a role: admin, manager or chemist.</li></ul>
-          <p class="project__note">The demo uses sample data. Changes reset when you refresh.</p>
-          <p class="project__actions"><a class="button button--primary project__primary" href="https://cheminventory.co/">Open ChemInventory</a><a class="button button--quiet project__secondary" href="https://demo.cheminventory.co/">Try the demo</a></p>
+      <div class="section__head reveal"><h2 id="projects-title" class="section__title">Projects</h2><p class="section__body">Each project has its own site and its own look.</p></div>
+      <div class="showcase card reveal" style="--i:1">
+        <div class="tabs" role="tablist" aria-label="Choose a project" style="--tabs:2"><a class="tabs__tab" role="tab" id="tab-cheminventory" href="#cheminventory" aria-controls="cheminventory" aria-selected="true" tabindex="0" style="--look-surface:#eff6ff;--look-accent:#3b82f6"><span class="mark" aria-hidden="true"></span>ChemInventory</a><a class="tabs__tab" role="tab" id="tab-bench-bridge" href="#bench-bridge" aria-controls="bench-bridge" aria-selected="false" tabindex="-1" style="--look-surface:#f3eee3;--look-accent:#e8590c"><span class="mark" aria-hidden="true"></span>Bench Bridge</a><span class="tabs__indicator" aria-hidden="true"></span></div>
+        <div class="panels">
+        <article class="panel is-selected" role="tabpanel" id="cheminventory" aria-labelledby="tab-cheminventory" style="--look-surface:#eff6ff;--look-accent:#3b82f6">
+          <div class="panel__head"><p class="chip"><span class="chip__kind">Product</span><span class="chip__status"><span class="chip__dot" aria-hidden="true"></span>Live</span></p><h3 class="panel__name"><span class="mark" aria-hidden="true"></span>ChemInventory</h3><p class="panel__summary">Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.</p></div>
+          <div class="panel__preview"><div class="frame"><span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">cheminventory.co</span></span><img class="frame__image" src="assets/img/projects/cheminventory.webp" width="1280" height="800" alt="The ChemInventory demo: a table of chemicals with product number, batch, name, CAS number and actions." loading="lazy" decoding="async" /></div></div>
+          <ul class="facts"><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Tracks chemicals, locations, orders and batch documents.</span></li><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Keeps a change history with the user and the time.</span></li><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Gives each person a role: admin, manager or chemist.</span></li></ul>
+          <div class="panel__actions"><p class="actions"><a class="button button--primary" href="https://cheminventory.co/">Open ChemInventory<svg class="icon icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button--quiet" href="https://demo.cheminventory.co/">Try the demo<svg class="icon icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p><p class="note">The demo uses sample data. Changes reset on refresh.</p></div>
+        </article>
+        <article class="panel" role="tabpanel" id="bench-bridge" aria-labelledby="tab-bench-bridge" style="--look-surface:#f3eee3;--look-accent:#e8590c">
+          <div class="panel__head"><p class="chip"><span class="chip__kind">Demo</span><span class="chip__status">Sample data</span></p><h3 class="panel__name"><span class="mark" aria-hidden="true"></span>Bench Bridge</h3><p class="panel__summary">A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.</p></div>
+          <div class="panel__preview"><div class="frame"><span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">bench-bridge.juntotechnologies.com</span></span><img class="frame__image" src="assets/img/projects/bench-bridge.webp" width="1280" height="800" alt="Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." loading="lazy" decoding="async" /></div></div>
+          <ul class="facts"><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Six instruments in the demo.</span></li><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Concept drawings show the tap hardware for each instrument.</span></li><li class="facts__flow"><ol class="flow" aria-label="Steps of a run"><li class="flow__step" style="--i:0">Capture</li><li class="flow__step" style="--i:1">Parse</li><li class="flow__step" style="--i:2">Deliver</li></ol></li></ul>
+          <div class="panel__actions"><p class="actions"><a class="button button--primary" href="https://bench-bridge.juntotechnologies.com/">Open the demo<svg class="icon icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button button--quiet" href="https://github.com/juntotechnologies/bench-bridge" target="_blank" rel="noopener noreferrer">Source on GitHub<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p><p class="note">Runs in your browser with sample data and a mock LIMS. No real instrument is connected.</p></div>
+        </article>
         </div>
-        <div class="project__preview"><div class="frame"><span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">cheminventory.co</span></span><img class="frame__image" src="assets/img/projects/cheminventory.webp" width="1280" height="800" alt="The ChemInventory demo: a table of chemicals with product number, batch, name, location and quantity." loading="lazy" decoding="async" /></div></div>
-      </article>
-      <article class="project" id="bench-bridge" style="--look-surface:#f3eee3;--look-ink:#1c1b19;--look-accent:#e8590c">
-        <div class="project__body">
-          <p class="project__meta"><span class="chip chip--label">Demo</span><span class="chip chip--label">Sample data</span></p>
-          <h3 class="project__name"><span class="project__mark" aria-hidden="true"></span>Bench Bridge</h3>
-          <p class="project__summary">A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger. It reads each instrument&#39;s own output, applies the lab&#39;s rules and delivers the records.</p>
-          <ul class="project__points"><li>Instruments in the demo: Analytical balance, HPLC system, GC system, GC-MS, pH meter, Karl Fischer titrator.</li><li>Each run shows the raw capture, the parsed readings, the rules and the delivered records.</li><li>Concept drawings show the tap hardware that would connect to each instrument.</li></ul>
-          <p class="project__note">The demo runs in your browser with sample data and a mock LIMS. No real instrument or LIMS is connected.</p>
-          <p class="project__actions"><a class="button button--primary project__primary" href="https://bench-bridge.juntotechnologies.com/">Open the demo</a><a class="button button--quiet project__secondary" href="https://github.com/juntotechnologies/bench-bridge" target="_blank" rel="noopener noreferrer">Source on GitHub<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
-        </div>
-        <div class="project__preview"><div class="frame"><span class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__host">bench-bridge.juntotechnologies.com</span></span><img class="frame__image" src="assets/img/projects/bench-bridge.webp" width="1280" height="768" alt="Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." loading="lazy" decoding="async" /></div></div>
-      </article>
+      </div>
     </section>
-    <section class="section" id="code" aria-labelledby="code-title">
-      <div class="section__head"><h2 id="code-title" class="section__title">Code and research</h2><p class="section__body">Public code from Junto work. Each link opens GitHub in a new tab.</p></div>
-      <ul class="more">
-      <li class="more__row" id="bioeq">
-        <div class="more__name"><a class="more__link" href="https://github.com/juntotechnologies/bioeq" target="_blank" rel="noopener noreferrer">bioeq<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></div>
-        <p class="more__meta"><span class="chip chip--label">Python package</span><span class="chip chip--label">MIT license</span></p>
-        <p class="more__summary">A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.</p>
-      </li>
-      <li class="more__row" id="hct-equity">
-        <div class="more__name"><a class="more__link" href="https://github.com/juntotechnologies/hct-equity" target="_blank" rel="noopener noreferrer">hct-equity<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></div>
-        <p class="more__meta"><span class="chip chip--label">Research code</span><span class="chip chip--label">Exploratory</span></p>
-        <p class="more__summary">Models that compare survival predictions across race groups, with calibration and decision curve analysis. It uses synthetic data from a Kaggle competition. It is not peer reviewed.</p>
-      </li>
-      </ul>
+    <section class="section" id="open-source" aria-labelledby="open-source-title">
+      <div class="section__head reveal"><h2 id="open-source-title" class="section__title">Open source</h2><p class="section__body">Public code under open licenses. Each link opens in a new tab.</p></div>
+      <div class="open">
+        <article class="lead card card--lift reveal" id="dcurves" style="--i:1">
+        <div class="lead__text">
+          <p class="chip"><span class="chip__kind">Python package</span><span class="chip__status">Apache-2.0 license</span></p>
+          <h3 class="lead__name">dcurves</h3>
+          <p class="lead__summary">A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.</p>
+          <ul class="facts"><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Evaluates models for binary and survival outcomes.</span></li><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Calculates net benefit and interventions avoided.</span></li><li><svg class="icon icon--check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Installs from PyPI with pip.</span></li></ul>
+          <p class="actions"><a class="button button--primary" href="https://github.com/MSKCC-Epi-Bio/dcurves" target="_blank" rel="noopener noreferrer">dcurves on GitHub<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a><a class="button button--quiet" href="https://mskcc-epi-bio.github.io/dcurves/" target="_blank" rel="noopener noreferrer">Documentation<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
+          <p class="note">Shaun created dcurves. The repository belongs to the MSKCC-Epi-Bio organization on GitHub.</p>
+        </div>
+        <figure class="curve"><div class="curve__plot"><svg class="curve__svg" viewBox="0 0 360 212" aria-hidden="true" focusable="false"><path class="curve__area" d="M44 44C124 46 184 58 232 92S312 142 344 148H44Z" /><path class="curve__axis" d="M44 16V196H344" /><path class="curve__none" d="M44 148H344" /><path class="curve__all" d="M44 44 330 176" /><path class="curve__model" d="M44 44C124 46 184 58 232 92S312 142 344 148" /></svg><span class="curve__cover" aria-hidden="true"></span></div><ul class="legend"><li class="legend__item"><span class="legend__swatch legend__swatch--model" aria-hidden="true"></span>Model</li><li class="legend__item"><span class="legend__swatch legend__swatch--all" aria-hidden="true"></span>Treat all</li><li class="legend__item"><span class="legend__swatch legend__swatch--none" aria-hidden="true"></span>Treat none</li></ul><figcaption class="curve__caption"><strong>A decision curve</strong><span>Illustration only. Not real data.</span></figcaption></figure>
+      </article>
+        <div class="tiles">
+        <article class="tile card card--lift reveal" id="bioeq" style="--i:2">
+        <p class="chip"><span class="chip__kind">Python package</span><span class="chip__status">MIT license</span></p>
+        <h3 class="tile__name"><a class="tile__link" href="https://github.com/juntotechnologies/bioeq" target="_blank" rel="noopener noreferrer">bioeq<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+        <p class="tile__summary">A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.</p>
+      </article>
+        <article class="tile card card--lift reveal" id="hct-equity" style="--i:3">
+        <p class="chip"><span class="chip__kind">Research code</span><span class="chip__status">Exploratory</span></p>
+        <h3 class="tile__name"><a class="tile__link" href="https://github.com/juntotechnologies/hct-equity" target="_blank" rel="noopener noreferrer">hct-equity<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+        <p class="tile__summary">Models that compare survival predictions across race groups, with calibration and decision curve analysis. It uses synthetic data from a Kaggle competition. It is not peer reviewed.</p>
+      </article>
+        </div>
+      </div>
     </section>
     <section class="section" id="team" aria-labelledby="team-title">
-      <div class="section__head"><h2 id="team-title" class="section__title">Work directly with the builder</h2><p class="section__body">Shaun works with companies to understand their operations. He designs software that fits how their teams work.</p></div>
-      <article class="person">
-        <img class="person__photo" src="public/team_pics/shaun.webp" width="160" height="160" alt="Portrait of Shaun Porwal" loading="lazy" decoding="async" />
+      <div class="section__head reveal"><h2 id="team-title" class="section__title">Work directly with the builder</h2><p class="section__body">Shaun works with companies to understand their operations. He designs software that fits how their teams work.</p></div>
+      <article class="person card reveal" style="--i:1">
+        <img class="person__photo" src="public/team_pics/shaun-720.webp" width="720" height="720" alt="Portrait of Shaun Porwal" loading="lazy" decoding="async" />
         <div class="person__text">
           <h3 class="person__name">Shaun Porwal</h3>
           <p class="person__role">Machine Learning Engineer</p>
@@ -92,19 +112,20 @@
       </article>
     </section>
     <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact__box">
-        <h2 id="contact-title" class="contact__title">Have a lab problem to solve?</h2>
-        <p class="contact__body">Write to Shaun, or book a 30 minute call.</p>
-        <p class="contact__actions"><a class="button button--primary" href="mailto:shaun.porwal@juntotechnologies.com"><svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email Shaun</a><a class="button button--quiet" href="https://cal.com/shaun-porwal-junto/30min" target="_blank" rel="noopener noreferrer">Book a call<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <div class="contact__box reveal">
+        <div class="contact__text"><h2 id="contact-title" class="contact__title">Have a lab problem to solve?</h2><p class="contact__body">Write to Shaun, or book a 30 minute call.</p></div>
+        <p class="actions contact__actions"><a class="button button--large button--primary" href="mailto:shaun.porwal@juntotechnologies.com"><svg class="icon icon--mail" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email Shaun</a><a class="button button--large button--quiet" href="https://cal.com/shaun-porwal-junto/30min" target="_blank" rel="noopener noreferrer">Book a call<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
       </div>
     </section>
   </main>
   <footer class="footer">
     <div class="footer__inner">
       <p class="footer__copy">© Junto Technologies. All rights reserved.</p>
-      <p class="footer__links"><a class="footer__link" href="https://github.com/juntotechnologies" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <p class="footer__links"><a class="footer__link" href="https://github.com/juntotechnologies" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
     </div>
   </footer>
   <script type="module" src="assets/js/theme.js"></script>
+  <script type="module" src="assets/js/tabs.js"></script>
+  <script type="module" src="assets/js/reveal.js"></script>
   </body>
 </html>

@@ -14,15 +14,21 @@
   "hero": {
     "heading": "Software for real lab work",
     "body": "Junto Technologies builds tools for chemistry labs. It also applies machine learning and statistics to biomedical questions.",
+    "actions": [
+      { "label": "See the projects", "href": "#projects", "primary": true },
+      { "label": "Get in touch", "href": "#contact" }
+    ],
+    "areasLabel": "Areas of work",
     "expertise": ["Healthcare", "Software", "Engineering", "Machine learning", "Statistics"]
   },
   "projects": {
     "heading": "Projects",
-    "body": "Each project has its own site and its own look. Select a card to open it."
+    "body": "Each project has its own site and its own look.",
+    "tabsLabel": "Choose a project"
   },
   "more": {
-    "heading": "Code and research",
-    "body": "Public code from Junto work. Each link opens GitHub in a new tab."
+    "heading": "Open source",
+    "body": "Public code under open licenses. Each link opens in a new tab."
   },
   "team": {
     "heading": "Work directly with the builder",
@@ -31,7 +37,8 @@
       {
         "name": "Shaun Porwal",
         "role": "Machine Learning Engineer",
-        "image": "public/team_pics/shaun.webp",
+        "image": "public/team_pics/shaun-720.webp",
+        "imageSize": 720,
         "alt": "Portrait of Shaun Porwal",
         "bio": "Shaun builds **biomedical AI systems** across agentic workflows, survival modeling, and biology models. He recently worked as a **founding engineer at a biotech startup** and previously built clinical ML tools at **Memorial Sloan Kettering Cancer Center**, where he created [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves). He also has **hands-on chemistry experience** in labs and manufacturing across the U.S., Taiwan, and Japan, and holds degrees in biomedical engineering and biomedical data science."
       }

@@ -49,3 +49,21 @@ function projectRow(project) {
 export function projectTable(data) {
   return table(["Project", "Tier", "Kind", "Status", "Primary link", "Tab"], data.projects.projects.map(projectRow))
 }
+
+function colorRow([name, token]) {
+  return [`\`--${name}\``, token.light, token.dark, token.use]
+}
+
+/** One row for each color token: the name, the light value, the dark value and the use. */
+export function colorTable(data) {
+  return table(["Token", "Light", "Dark", "Use"], Object.entries(data.design.color).map(colorRow))
+}
+
+function fixedRow([name, value]) {
+  return [`\`--${name}\``, `\`${value}\``]
+}
+
+/** One row for each fixed token: spacing, type, radius, motion and layout. */
+export function tokenTable(data) {
+  return table(["Token", "Value"], Object.entries(data.design.fixed).map(fixedRow))
+}

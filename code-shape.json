@@ -3,5 +3,5 @@
   "maxComplexity": 5,
   "maxDepth": 1,
   "maxParams": 4,
-  "agentsMdIgnore": ["node_modules", "proof", ".git", "public", "img"]
+  "agentsMdIgnore": ["node_modules", "proof", ".git", ".well-known", "public", "img"]
 }
