@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Discovery",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["crawlers", "agents", "structured", "og"],
+  "properties": {
+    "crawlers": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[A-Za-z*-]+$" } },
+    "agents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "may", "mayNot"],
+      "properties": {
+        "summary": { "type": "string" },
+        "may": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "mayNot": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "structured": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contactType", "applicationCategory", "operatingSystem"],
+      "properties": { "contactType": { "type": "string" }, "applicationCategory": { "type": "string" }, "operatingSystem": { "type": "string" } }
+    },
+    "og": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["image", "width", "height", "card", "type"],
+      "properties": {
+        "image": { "type": "string" },
+        "width": { "const": 1200 },
+        "height": { "const": 630 },
+        "card": { "enum": ["summary", "summary_large_image"] },
+        "type": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# Junto Technologies
+
+> Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions.
+
+## Projects
+
+- [ChemInventory](https://cheminventory.co/): Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.
+- [Bench Bridge](https://bench-bridge.juntotechnologies.com/): A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.
+
+## Open source
+
+- [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves): A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.
+- [bioeq](https://github.com/juntotechnologies/bioeq): A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.
+- [hct-equity](https://github.com/juntotechnologies/hct-equity): Models that compare survival predictions across race groups, with calibration and decision curve analysis. It uses synthetic data from a Kaggle competition. It is not peer reviewed.
+
+## Contact
+
+- [Book a call](https://cal.com/shaun-porwal-junto/30min)
+- [Contact section](https://juntotechnologies.com/#contact)

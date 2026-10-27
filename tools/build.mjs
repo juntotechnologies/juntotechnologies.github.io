@@ -1,7 +1,9 @@
 /** Build command: writes every generated file from the JSON data files. Run it after a data change. */
-import { readFileSync, writeFileSync } from "node:fs"
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { dirname } from "node:path"
 import { loadData } from "./data/load.mjs"
 import { generatedFiles } from "./files.mjs"
+import { dateOfLastCommit } from "./lastModified.mjs"
 import { inRoot } from "./paths.mjs"
 
 function readText(relative) {
@@ -9,8 +11,9 @@ function readText(relative) {
 }
 
 function write([relative, content]) {
+  mkdirSync(dirname(inRoot(relative)), { recursive: true })
   writeFileSync(inRoot(relative), content)
   console.log(`wrote ${relative}`)
 }
 
-generatedFiles(loadData(), readText).forEach(write)
+generatedFiles(loadData(), readText, dateOfLastCommit()).forEach(write)

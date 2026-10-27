@@ -9,6 +9,7 @@ import { inRoot } from "./paths.mjs"
 
 const QUALITY = "82"
 const SETTLE_MS = 1500
+const SCALE = 2
 
 function isFeatured(project) {
   return project.tier === "featured"
@@ -16,7 +17,7 @@ function isFeatured(project) {
 
 async function shoot(browser, project, png) {
   const { capture } = project
-  const page = await browser.newPage({ viewport: { width: capture.width, height: capture.height }, colorScheme: "light" })
+  const page = await browser.newPage({ viewport: { width: capture.width, height: capture.height }, deviceScaleFactor: SCALE, colorScheme: "light" })
   await page.goto(capture.url, { waitUntil: "networkidle" })
   await page.waitForTimeout(SETTLE_MS)
   await page.screenshot({ path: png, clip: capture.clip })

@@ -1,7 +1,8 @@
-/** Check: fails when a generated file on disk differs from what the data files produce. */
+/** Check: fails when a generated file on disk differs from what the data files produce. The sitemap date is the one value that git sets, so it keeps the date on disk. */
 import { existsSync, readFileSync } from "node:fs"
 import { loadData } from "../data/load.mjs"
 import { generatedFiles } from "../files.mjs"
+import { dateInSitemap } from "../lastModified.mjs"
 import { inRoot } from "../paths.mjs"
 
 function readText(relative) {
@@ -16,6 +17,10 @@ function report([relative]) {
   console.error(`stale: ${relative}. Run npm run build.`)
 }
 
-const stale = generatedFiles(loadData(), readText).filter(isStale)
+function sitemapDate() {
+  return existsSync(inRoot("sitemap.xml")) ? dateInSitemap(readText("sitemap.xml")) : ""
+}
+
+const stale = generatedFiles(loadData(), readText, sitemapDate()).filter(isStale)
 stale.forEach(report)
 process.exitCode = stale.length ? 1 : 0

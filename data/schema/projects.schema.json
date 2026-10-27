@@ -28,7 +28,21 @@
         "kind": { "type": "string" },
         "status": { "type": "string" },
         "summary": { "type": "string" },
+        "live": { "type": "boolean" },
+        "lead": { "type": "boolean" },
         "instruments": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "flow": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label", "steps"],
+          "properties": { "label": { "type": "string" }, "steps": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 4 } }
+        },
+        "illustration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "caption", "legend"],
+          "properties": { "title": { "type": "string" }, "caption": { "type": "string" }, "legend": { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 3 } }
+        },
         "points": { "type": "array", "items": { "type": "string" } },
         "note": { "type": "string" },
         "links": {
@@ -79,6 +93,10 @@
             "required": ["look", "preview", "capture", "backlink", "points", "note"],
             "properties": { "look": true, "preview": true, "capture": true, "backlink": true, "points": true, "note": true }
           }
+        },
+        {
+          "if": { "properties": { "lead": { "const": true } }, "required": ["lead"] },
+          "then": { "required": ["points", "note", "illustration"], "properties": { "tier": { "const": "more" }, "points": true, "note": true, "illustration": true } }
         }
       ]
     }

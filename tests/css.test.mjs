@@ -1,10 +1,12 @@
 /** Tests for the stylesheet: colors come from tokens, and each token that CSS reads exists. */
 import assert from "node:assert/strict"
+import { readFileSync } from "node:fs"
 import { test } from "node:test"
-import { css, tokensCss } from "./built.mjs"
+import { inRoot } from "../tools/paths.mjs"
+import { css, html, tokensCss } from "./built.mjs"
 
 const COLOR_LITERAL = /#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(|\boklch\(/
-const LOOK_TOKENS = ["look-surface", "look-ink", "look-accent"]
+const LOOK_TOKENS = ["look-surface", "look-accent"]
 
 function withoutComments(text) {
   return text.replace(/\/\*[\s\S]*?\*\//g, "")
@@ -22,21 +24,83 @@ test("transition never uses all", () => {
   assert.doesNotMatch(css, /transition(-property)?:\s*all/)
 })
 
-test("each token that site.css reads is defined", () => {
+test("each custom property that site.css reads is defined in tokens.css, in site.css or inline in the page", () => {
   const used = new Set([...css.matchAll(/var\(--([a-z0-9-]+)/g)].map(tokenName))
   const missing = [...used].filter(isUndefined)
   assert.deepEqual(missing, [])
 })
 
 function isUndefined(name) {
-  return !LOOK_TOKENS.includes(name) && !tokensCss.includes(`--${name}:`)
+  return !LOOK_TOKENS.includes(name) && !tokensCss.includes(`--${name}:`) && !css.includes(`--${name}:`) && !html.includes(`--${name}:`)
 }
 
 test("site.css honors reduced motion", () => {
   assert.match(css, /prefers-reduced-motion: reduce/)
 })
 
-test("the stretched card link stays above the preview, also while pressed", () => {
-  assert.match(css, /\.project__primary::after \{[^}]*z-index: 1;/)
-  assert.match(css, /\.project__primary:active \{\s*scale: none;/)
+test("the stretched tile link stays above the tile", () => {
+  assert.match(css, /\.tile__link::after \{[^}]*z-index: 1;/)
+})
+
+const MOTION_PROPERTIES = ["opacity", "translate", "transform", "scale", "filter", "color", "background-color", "border-color", "visibility"]
+
+function trimmed(name) {
+  return name.trim()
+}
+
+function propertiesOf(match) {
+  return match[1].split(",").map(trimmed)
+}
+
+function isNotMotion(name) {
+  return !MOTION_PROPERTIES.includes(name)
+}
+
+function isNotMotionOrNone(name) {
+  return name !== "none" && isNotMotion(name)
+}
+
+test("each transition names only properties that the GPU can composite, or a colour", () => {
+  const lists = [...css.matchAll(/transition-property:\s*([^;]+);/g)].map(propertiesOf)
+  assert.ok(lists.length > 5)
+  assert.deepEqual(lists.flat().filter(isNotMotion), [])
+})
+
+test("each shorthand transition names a property", () => {
+  const shorthand = [...css.matchAll(/\n\s+transition:\s*([a-z-]+)\s/g)].map(tokenName)
+  assert.deepEqual(shorthand.filter(isNotMotionOrNone), [])
+})
+
+test("the panels share one grid cell, so the card never changes height", () => {
+  assert.match(css, /\.tabs-on \.panel \{[^}]*grid-area: 1 \/ 1;/)
+})
+
+test("without the feature classes the page shows everything", () => {
+  assert.doesNotMatch(css, /\n\.reveal \{[^}]*opacity: 0;/)
+  assert.match(css, /\.reveal-on \.reveal \{[^}]*opacity: 0;/)
+  assert.match(css, /\.tabs \{[^}]*display: none;/)
+})
+
+const DESIGN_DOC = readFileSync(inRoot("docs/design.md"), "utf8")
+
+function motionSection() {
+  return DESIGN_DOC.split("## Motion")[1].split("### Reduced motion")[0]
+}
+
+function ruleCell(line) {
+  return line.split("|")[3].trim().replaceAll("`", "")
+}
+
+function isEffectRow(line) {
+  return line.startsWith("| ") && line.includes("`")
+}
+
+function isMissingFromCss(rule) {
+  return !css.includes(rule)
+}
+
+test("each effect in docs/design.md names a rule or keyframes that site.css holds", () => {
+  const rules = motionSection().split("\n").filter(isEffectRow).map(ruleCell)
+  assert.ok(rules.length >= 12)
+  assert.deepEqual(rules.filter(isMissingFromCss), [])
 })

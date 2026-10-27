@@ -1,0 +1,17 @@
+{
+  "name": "Junto Technologies",
+  "url": "https://juntotechnologies.com/",
+  "summary": "This site is the public front page of Junto Technologies. It has no login and no form.",
+  "mayDo": [
+    "Read each public page.",
+    "Follow each link on a page."
+  ],
+  "mayNotDo": [
+    "Post a form.",
+    "Send a message for a person.",
+    "Book a call for a person."
+  ],
+  "contact": "https://cal.com/shaun-porwal-junto/30min",
+  "sitemap": "https://juntotechnologies.com/sitemap.xml",
+  "llms": "https://juntotechnologies.com/llms.txt"
+}

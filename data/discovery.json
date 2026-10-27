@@ -1,0 +1,20 @@
+{
+  "crawlers": ["*", "GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "CCBot"],
+  "agents": {
+    "summary": "This site is the public front page of Junto Technologies. It has no login and no form.",
+    "may": ["Read each public page.", "Follow each link on a page."],
+    "mayNot": ["Post a form.", "Send a message for a person.", "Book a call for a person."]
+  },
+  "structured": {
+    "contactType": "General inquiries",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web"
+  },
+  "og": {
+    "image": "assets/img/og.png",
+    "width": 1200,
+    "height": 630,
+    "card": "summary_large_image",
+    "type": "website"
+  }
+}

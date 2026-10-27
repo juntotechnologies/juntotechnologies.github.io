@@ -26,20 +26,22 @@ The hub links to each Junto project. Each project site links back to the hub.
 Each external link has three parts:
 
 1. `target="_blank"` and `rel="noopener noreferrer"`.
-2. An arrow icon after the label.
+2. An arrow-out icon after the label.
 3. Hidden text "(opens in a new tab)" for screen readers.
 
-`tools/render/links.mjs` writes these parts. A first-party link has none of them.
+`tools/render/links.mjs` writes these parts. A first-party link has an arrow-right icon and no other part.
 
 ## Deep links
 
-Each project card has an `id`. The `id` equals the project `id` in `data/projects.json`.
+Each featured project has one tab panel. Each other project has one entry in the open source section. The element `id` equals the project `id` in `data/projects.json`.
 
-- `https://juntotechnologies.com/#cheminventory` scrolls to the ChemInventory card.
-- `https://juntotechnologies.com/#bench-bridge` scrolls to the Bench Bridge card.
-- The target card gets a highlight through the CSS `:target` rule.
+- `https://juntotechnologies.com/#cheminventory` opens the ChemInventory tab and scrolls to it.
+- `https://juntotechnologies.com/#bench-bridge` opens the Bench Bridge tab and scrolls to it.
+- The tab script reads the hash. A click on a tab writes the hash with `history.replaceState`.
+- With JavaScript off, the browser scrolls to the panel. All panels show.
+- An open source entry gets a highlight through the CSS `:target` rule.
 
-A project `id` must not change. A change breaks every backlink to that card.
+A project `id` must not change. A change breaks every backlink to that panel.
 
 ## Backlink rules
 
@@ -52,7 +54,7 @@ A project `id` must not change. A change breaks every backlink to that card.
 ## Add a project
 
 1. Add an entry to `data/projects.json`. Follow `data/schema/projects.schema.json`.
-2. Run `npm run previews`. It saves a preview image for each featured project.
+2. For a featured project, run `npm run previews`. It saves a preview image.
 3. Run `npm run build`. It writes `index.html`, `assets/css/tokens.css` and the generated doc blocks.
 4. Run `npm run check`. Fix each failure.
 5. Add the backlink to the project site. Use the entry in [backlinks.md](backlinks.md).

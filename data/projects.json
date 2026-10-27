@@ -6,20 +6,21 @@
       "tier": "featured",
       "kind": "Product",
       "status": "Live",
-      "summary": "Chemical inventory software that fits how each lab works. It gives a lab one record of what it holds, where it is, and who changed it.",
+      "live": true,
+      "summary": "Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.",
       "points": [
         "Tracks chemicals, locations, orders and batch documents.",
         "Keeps a change history with the user and the time.",
         "Gives each person a role: admin, manager or chemist."
       ],
-      "note": "The demo uses sample data. Changes reset when you refresh.",
+      "note": "The demo uses sample data. Changes reset on refresh.",
       "links": {
         "primary": { "label": "Open ChemInventory", "href": "https://cheminventory.co/", "scope": "first-party" },
         "secondary": [{ "label": "Try the demo", "href": "https://demo.cheminventory.co/", "scope": "first-party" }]
       },
       "look": { "surface": "#eff6ff", "ink": "#1e3a8a", "accent": "#3b82f6", "host": "cheminventory.co" },
-      "preview": { "file": "assets/img/projects/cheminventory.webp", "width": 1280, "height": 800, "alt": "The ChemInventory demo: a table of chemicals with product number, batch, name, location and quantity." },
-      "capture": { "url": "https://demo.cheminventory.co/", "width": 1280, "height": 860, "clip": { "x": 0, "y": 52, "width": 1280, "height": 800 } },
+      "preview": { "file": "assets/img/projects/cheminventory.webp", "width": 1280, "height": 800, "alt": "The ChemInventory demo: a table of chemicals with product number, batch, name, CAS number and actions." },
+      "capture": { "url": "https://demo.cheminventory.co/", "width": 1000, "height": 720, "clip": { "x": 0, "y": 56, "width": 1000, "height": 625 } },
       "backlink": { "text": "A Junto Technologies project", "placement": "Footer of cheminventory.co, below the copyright line." }
     },
     {
@@ -28,21 +29,41 @@
       "tier": "featured",
       "kind": "Demo",
       "status": "Sample data",
-      "summary": "A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger. It reads each instrument's own output, applies the lab's rules and delivers the records.",
+      "summary": "A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.",
       "instruments": ["Analytical balance", "HPLC system", "GC system", "GC-MS", "pH meter", "Karl Fischer titrator"],
+      "flow": { "label": "Steps of a run", "steps": ["Capture", "Parse", "Deliver"] },
       "points": [
-        "Each run shows the raw capture, the parsed readings, the rules and the delivered records.",
-        "Concept drawings show the tap hardware that would connect to each instrument."
+        "Concept drawings show the tap hardware for each instrument."
       ],
-      "note": "The demo runs in your browser with sample data and a mock LIMS. No real instrument or LIMS is connected.",
+      "note": "Runs in your browser with sample data and a mock LIMS. No real instrument is connected.",
       "links": {
         "primary": { "label": "Open the demo", "href": "https://bench-bridge.juntotechnologies.com/", "scope": "first-party" },
         "secondary": [{ "label": "Source on GitHub", "href": "https://github.com/juntotechnologies/bench-bridge", "scope": "external" }]
       },
       "look": { "surface": "#f3eee3", "ink": "#1c1b19", "accent": "#e8590c", "host": "bench-bridge.juntotechnologies.com" },
-      "preview": { "file": "assets/img/projects/bench-bridge.webp", "width": 1280, "height": 768, "alt": "Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." },
-      "capture": { "url": "https://bench-bridge.juntotechnologies.com/", "width": 1600, "height": 960, "clip": { "x": 0, "y": 0, "width": 1600, "height": 960 } },
+      "preview": { "file": "assets/img/projects/bench-bridge.webp", "width": 1280, "height": 800, "alt": "Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." },
+      "capture": { "url": "https://bench-bridge.juntotechnologies.com/", "width": 1120, "height": 700, "clip": { "x": 0, "y": 0, "width": 1120, "height": 700 } },
       "backlink": { "text": "Junto Technologies", "placement": "Top bar, left of the fleet card. It shows an arrow and the words. On a narrow window it shows the arrow only." }
+    },
+    {
+      "id": "dcurves",
+      "name": "dcurves",
+      "tier": "more",
+      "lead": true,
+      "kind": "Python package",
+      "status": "Apache-2.0 license",
+      "summary": "A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.",
+      "points": [
+        "Evaluates models for binary and survival outcomes.",
+        "Calculates net benefit and interventions avoided.",
+        "Installs from PyPI with pip."
+      ],
+      "note": "Shaun created dcurves. The repository belongs to the MSKCC-Epi-Bio organization on GitHub.",
+      "links": {
+        "primary": { "label": "dcurves on GitHub", "href": "https://github.com/MSKCC-Epi-Bio/dcurves", "scope": "external" },
+        "secondary": [{ "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" }]
+      },
+      "illustration": { "title": "A decision curve", "caption": "Illustration only. Not real data.", "legend": ["Model", "Treat all", "Treat none"] }
     },
     {
       "id": "bioeq",
