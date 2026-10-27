@@ -1,6 +1,6 @@
 # server/
 
-The dev server. It serves the repo root as static files. GitHub Pages serves the live site, so this code never ships.
+The dev server. It serves the repo root as static files. Netlify serves the live site, so this code never ships.
 
 ## Domain
 - `npm run dev` binds to all interfaces and prints one link: the tailnet link.

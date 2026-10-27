@@ -1,6 +1,6 @@
 # Junto Technologies hub
 
-The public front page of Junto Technologies, at `https://juntotechnologies.com/`. It lists the Junto projects and links to each one. It is static HTML. GitHub Pages serves the repo root from `main`.
+The public front page of Junto Technologies, at `https://juntotechnologies.com/`. It lists the Junto projects and links to each one. It is static HTML. Netlify serves the repo root.
 
 The global rules in `~/AGENTS.md` apply here. This file adds the rules for this repo.
 
@@ -50,4 +50,5 @@ First-party links open in the same tab. External links open in a new tab. See `d
 ## Delivery
 
 - Work on a branch. Open a pull request. Only Shaun merges.
-- The live site changes when a pull request merges to `main`.
+- Netlify builds a preview for each pull request. Walk the preview before you report the work done.
+- The live site changes after a merge. The `CNAME` file is from GitHub Pages and has no effect on Netlify.

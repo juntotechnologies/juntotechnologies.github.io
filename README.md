@@ -36,7 +36,7 @@ Run `npm run check` before each commit.
 
 ## Deploy
 
-GitHub Pages serves the repo root from `main`. The live site changes when a pull request merges.
+Netlify serves the repo root at `juntotechnologies.com`. It builds a preview for each pull request. Check the preview before a merge. The live site changes after the merge.
 
 ## License
 
