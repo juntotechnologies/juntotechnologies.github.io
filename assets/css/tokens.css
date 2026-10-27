@@ -65,7 +65,6 @@
   --motion-glow: 0.4s;
   --motion-follow: 0.22s;
   --sheen-duration: 6s;
-  --shimmer-duration: 7s;
 }
 
 @media (prefers-color-scheme: dark) {
