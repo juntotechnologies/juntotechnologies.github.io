@@ -1633,6 +1633,14 @@ a:hover {
     gap: 6px;
     padding-left: var(--space-2);
   }
+
+  .tabs {
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  .tabs__tab {
+    padding-inline: var(--space-2);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
