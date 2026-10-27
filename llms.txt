@@ -9,9 +9,9 @@
 
 ## Open source
 
-- [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves): A Python package for decision curve analysis. The method evaluates and compares prediction models and diagnostic tests by their clinical consequences.
+- [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves): A Python package for decision curve analysis. It measures model performance with clinical consequences in mind.
 - [bioeq](https://github.com/juntotechnologies/bioeq): A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.
-- [hct-equity](https://github.com/juntotechnologies/hct-equity): Models that compare survival predictions across race groups, with calibration and decision curve analysis. It uses synthetic data from a Kaggle competition. It is not peer reviewed.
+- [hct-equity](https://github.com/juntotechnologies/hct-equity): Compares survival predictions across race groups, with calibration and decision curves. Uses synthetic Kaggle data. Not peer reviewed.
 
 ## Contact
 

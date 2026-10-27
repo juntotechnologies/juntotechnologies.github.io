@@ -1098,24 +1098,29 @@ a:hover {
   line-height: 1.3;
 }
 
-.curve {
+/* Figures: a sketch of each open source project on a quiet plate. The line roles are shared: main is the subject, side a comparison, ref a reference. */
+.figure {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-3);
   width: 100%;
-  max-width: 30rem;
   margin: 0;
   padding: var(--space-4);
   border-radius: var(--radius-md);
   background: var(--sunken);
 }
 
-.curve__plot {
+.curve {
+  max-width: 30rem;
+}
+
+.figure__plot {
   position: relative;
   overflow: hidden;
 }
 
-.curve__svg {
+.curve__svg,
+.plate__svg {
   display: block;
   width: 100%;
   height: auto;
@@ -1124,45 +1129,241 @@ a:hover {
   stroke-linejoin: round;
 }
 
-.curve__axis {
-  stroke: var(--ink-3);
+.line--main {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.line--side {
+  stroke: var(--ink-2);
   stroke-width: 1.5;
 }
 
-.curve__none {
+.line--ref {
   stroke: var(--ink-3);
   stroke-width: 1.5;
   stroke-dasharray: 5 5;
 }
 
-.curve__all {
-  stroke: var(--ink-2);
+.dot {
+  stroke: var(--sunken);
+  stroke-width: 2;
+}
+
+.dot--main {
+  fill: var(--accent);
+}
+
+.dot--side {
+  fill: var(--ink-2);
+}
+
+.dot--ref {
+  fill: var(--ink-3);
+}
+
+/* A ring that grows and fades around a live point, like the status dot. */
+.ping {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 2.4s var(--ease-out) infinite;
+}
+
+.curve__axis,
+.plate__axis {
+  stroke: var(--ink-3);
   stroke-width: 1.5;
 }
 
-.curve__model {
-  stroke: var(--accent);
-  stroke-width: 3;
-}
-
-.curve__area {
+.curve__area,
+.plate__band {
   fill: var(--accent-soft);
   stroke: none;
 }
 
+.curve__rule {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.plate__limit {
+  stroke: var(--ink-2);
+  stroke-width: 1.5;
+}
+
+/* The y axis name runs up the left edge, centred on the plot area. */
+.figure__y {
+  position: absolute;
+  top: var(--plot-top);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--plot-span);
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  rotate: 180deg;
+  writing-mode: vertical-rl;
+}
+
+.plate__ticks {
+  position: relative;
+  height: 1.25rem;
+  color: var(--ink-3);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.plate__tick {
+  position: absolute;
+  top: 0;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+/* The range input lies on the x axis. Its thumb sits on the vertical line, so the two always agree. */
+.curve__stage {
+  position: relative;
+  touch-action: pan-y;
+}
+
+.curve__range {
+  position: absolute;
+  top: var(--axis-at);
+  left: calc(var(--plot-left) - 11px);
+  display: none;
+  width: calc(100% - var(--plot-left) - var(--plot-right) + 22px);
+  height: var(--touch);
+  margin: 0;
+  background: transparent;
+  cursor: grab;
+  translate: 0 -50%;
+  appearance: none;
+}
+
+.curve--live .curve__range {
+  display: block;
+}
+
+.curve--live .curve__stage {
+  cursor: ew-resize;
+}
+
+.curve__range::-webkit-slider-runnable-track {
+  height: var(--touch);
+  background: transparent;
+}
+
+.curve__range::-moz-range-track {
+  height: var(--touch);
+  background: transparent;
+}
+
+.curve__range::-webkit-slider-thumb {
+  width: 22px;
+  height: 22px;
+  margin-top: calc((var(--touch) - 22px) / 2);
+  border: 3px solid var(--sunken);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: var(--shadow-raise-accent);
+  appearance: none;
+}
+
+.curve__range::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--sunken);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: var(--shadow-raise-accent);
+}
+
+.curve__range:focus-visible {
+  outline: none;
+}
+
+.curve__range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.curve__range:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The ring invites a drag. It stops once the visitor has moved the line. */
+.curve.is-touched .ping {
+  display: none;
+}
+
+.curve__x {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.curve__output {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.readout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.readout__item {
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+  text-align: center;
+}
+
+.readout dt {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+
+.readout dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--text-lg);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
 /* Without the scroll reveal the cover sits off the plot, so the lines show at once. */
-.curve__cover {
+.figure__cover {
   position: absolute;
   inset: 0 0 0 -32px;
   background: linear-gradient(to right, transparent, var(--sunken) 32px);
   translate: 105% 0;
 }
 
-.reveal-on .curve__cover {
+.reveal-on .figure__cover {
   translate: 0 0;
 }
 
-.reveal-on .is-visible .curve__cover {
+.reveal-on .is-visible .figure__cover {
   translate: 105% 0;
   transition: translate 1.6s var(--ease-reveal) 0.35s;
 }
@@ -1191,25 +1392,37 @@ a:hover {
   border-top: 3px solid var(--accent);
 }
 
-.legend__swatch--all {
+.legend__swatch--side {
   border-top: 1.5px solid var(--ink-2);
 }
 
-.legend__swatch--none {
+.legend__swatch--ref {
   border-top: 1.5px dashed var(--ink-3);
 }
 
-.curve__caption {
-  display: grid;
-  gap: 2px;
+.legend__swatch--band {
+  height: 10px;
+  border-top: 0;
+  border-radius: 2px;
+  background: var(--accent-soft);
+}
+
+.figure__caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) var(--space-3);
   color: var(--ink-3);
   font-size: var(--text-xs);
   text-align: center;
 }
 
-.curve__caption strong {
-  color: var(--ink-2);
+.figure__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
   font-weight: 600;
+  text-decoration: none;
 }
 
 .tiles {
@@ -1718,14 +1931,21 @@ a:hover {
     display: none;
   }
 
-  .panel,
-  .lead__text {
+  .panel {
     gap: var(--space-3);
+  }
+
+  .lead__text {
+    gap: var(--space-2);
   }
 
   .lead {
     gap: 0;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .lead__name {
+    font-size: var(--title-3);
   }
 
   .stat {
@@ -1733,7 +1953,8 @@ a:hover {
   }
 
   .lead .curve {
-    display: none;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
   }
 
   .panel__summary,
@@ -1753,6 +1974,11 @@ a:hover {
 
   .actions .button--quiet:nth-child(2):last-child {
     grid-column: 1 / -1;
+  }
+
+  .lead .actions .button--primary,
+  .lead .actions .button--quiet:nth-child(2):last-child {
+    grid-column: auto;
   }
 
   .actions,
@@ -1825,7 +2051,8 @@ a:hover {
     translate: none !important;
   }
 
-  .curve__cover {
+  .figure__cover,
+  .ping {
     display: none;
   }
 
@@ -1840,7 +2067,8 @@ a:hover {
     translate: none !important;
   }
 
-  .curve__cover {
+  .figure__cover,
+  .ping {
     display: none;
   }
 }

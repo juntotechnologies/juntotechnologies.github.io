@@ -56,7 +56,8 @@ Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter`, a c
 | Press | Buttons, tabs | `:active` | scale |
 | Preview zoom | Preview frames | `.frame:hover .frame__image` | scale |
 | Demo clip | Preview frames, played by `clips.js` while on screen in the selected panel | `.frame video[data-clip]` | video frames |
-| Curve draw | dcurves illustration | `.curve__cover` | translate |
+| Figure draw | Open source figures | `.figure__cover` | translate |
+| Live ring | Open source figures: the thumb, the estimate, the curve marks | `.ping` | opacity, scale |
 | Pointer glow | Buttons and cards | `--glow` | background image |
 | Lit dots | Hero | `.hero__lit` | opacity, mask |
 | Edge light | Main hero button | `sheen` | rotate |
@@ -72,7 +73,8 @@ A visitor who asks for reduced motion sees a static page.
 - The scroll reveal stays off. All content shows.
 - The pointer glow does not follow the pointer. The edge light and the lit dots stay off.
 - Each animation stops. Each transition lasts 0.01 ms.
-- The curve cover is hidden, so the lines show at once.
+- The figure cover and the live rings are hidden, so the lines show at once.
+- The dcurves slider still works. The visitor moves it, so it is not an effect.
 - Each demo clip stays on its still and never loads. The same holds when the browser asks to save data.
 - The tabs still work.
 
@@ -80,6 +82,7 @@ A visitor who asks for reduced motion sees a static page.
 
 - Each section and each panel shows in full.
 - Each preview shows its still. The clip needs the script.
+- The dcurves figure shows the net benefit at threshold 0.00. The slider needs the script and stays hidden.
 - `theme-init.js` sets the feature classes `tabs-on` and `reveal-on`. Without them the page shows everything.
 - A feature class goes after 3 s when its script has not started.
 
