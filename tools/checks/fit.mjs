@@ -1,4 +1,4 @@
-/** Check (browser): on an iPhone 15 Pro screen, each project card is shorter than the screen below the sticky header. Needs the Playwright browsers. */
+/** Check (browser): on an iPhone 15 Pro screen, each card named in `fit.json` is shorter than the screen below the sticky header. Needs the Playwright browsers. */
 import { createServer } from "node:http"
 import { chromium, devices } from "playwright"
 import { serveFile } from "../../server/static.mjs"

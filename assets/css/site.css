@@ -1545,7 +1545,7 @@ a:hover {
   }
 }
 
-/* A phone: each project card fits one screen. The screenshot hides, and type and gaps tighten. */
+/* A phone: each project card and the team card fit one screen. The screenshot hides, and type and gaps tighten. */
 @media (max-width: 560px) {
   .panel__preview {
     display: none;
@@ -1591,6 +1591,23 @@ a:hover {
   .actions,
   .lead .actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .person {
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .person__photo {
+    width: 7.5rem;
+  }
+
+  .person__role {
+    margin-block: var(--space-1) var(--space-3);
+  }
+
+  .person__bio {
+    line-height: 1.45;
   }
 }
 
