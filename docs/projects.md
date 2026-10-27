@@ -16,13 +16,15 @@
 
 | Tier | Shown as | Fields it needs |
 | --- | --- | --- |
-| `featured` | A tab and a panel with a preview of the project's own look | `look`, `preview`, `capture`, `backlink`, `points`, `note` |
+| `featured` | A tab and a panel: the project's own picture first, then a one-line summary, the buttons and a note | `look`, `preview`, `clip`, `capture`, `backlink`, `note` |
 | `more` | A tile in "Open source" with its picture | `illustration` |
 | `more` with `lead` | The large entry at the top of "Open source" | `illustration`, `note` |
 
 The `illustration` field has a `kind`: `decision-curve`, `equivalence` or `calibration`. `data/schema/projects.schema.json` holds the fields of each kind. `links.learn` is an optional text link that sits in the caption of the picture.
 
-Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the steps strip. `instruments` gives the count in the first fact.
+Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the steps strip. `instruments` shows nothing on the page. It keeps the list that `npm run check:upstream` compares with the Bench Bridge repository.
+
+A panel holds no fact list. The picture and the clip carry the detail. Keep the summary to one short sentence.
 
 ## Rules for the public site
 
@@ -41,16 +43,15 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 
 | Claim location | Evidence |
 | --- | --- |
-| `cheminventory` points: chemicals, locations, orders, batch documents | Private repository `chem-inventory`. Server modules `inventory`, `orders` and `documents`. The demo table has a Location column. |
-| `cheminventory` points: change history with user and time | `changeHistory` in `shared/platform/schema.ts`. It stores `userId` and `changeDate`. |
-| `cheminventory` points: roles admin, manager, chemist | `shared/platform/access-control.ts`. |
 | `cheminventory` note: demo resets | The banner on `demo.cheminventory.co`. |
 | `cheminventory` look | `app/color-palette.css` in `chem-inventory-site`. `npm run check:upstream` compares it. |
+| `cheminventory` summary | `cheminventory.co`: chemical inventory for labs. |
 | `cheminventory` and `bench-bridge` clips | `npm run clips` records the live demo URL in `capture.url`, with the scene in `clip.scene`. Each clip shows sample data only. The Bench Bridge clip shows the demo run, not an instrument. |
 | `bench-bridge` instruments | `shared/data/devices.json` in `bench-bridge`. `npm run check:upstream` compares it. |
 | `bench-bridge` look | `design/tokens.json` in `bench-bridge`. `npm run check:upstream` compares it. |
-| `bench-bridge` points and note | The live demo. Each run shows the capture, parse, normalize, map and deliver steps. The bridge kit drawings are concept drawings. |
-| `bench-bridge` steps strip and instrument count | The pipeline strip in the live demo shows Capture, Parse, Normalize, Map and Deliver. The strip on the hub shows the first, second and last step. The count comes from `instruments`. |
+| `bench-bridge` summary | `README.md` in `bench-bridge`: one reading becomes a sample result in the LIMS and a use entry in the controlled-substance ledger. Both are mock in the demo. |
+| `bench-bridge` note | The live demo. It runs with sample data and a mock LIMS, and no real instrument is connected. The bridge kit drawings are concept drawings. |
+| `bench-bridge` steps strip | The pipeline strip in the live demo shows Capture, Parse, Normalize, Map and Deliver. The strip on the hub shows the first, second and last step. |
 | `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
 | `dcurves` summary | Its README: decision curve analysis, net benefit, binary and survival outcomes. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
 | `dcurves` documentation link | `https://mskcc-epi-bio.github.io/dcurves/` answers with HTTP 200. |

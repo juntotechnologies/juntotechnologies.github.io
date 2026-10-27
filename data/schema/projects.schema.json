@@ -130,7 +130,6 @@
           "properties": { "label": { "type": "string" }, "steps": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 4 } }
         },
         "illustration": { "oneOf": [{ "$ref": "#/$defs/decisionCurve" }, { "$ref": "#/$defs/equivalence" }, { "$ref": "#/$defs/calibration" }] },
-        "points": { "type": "array", "items": { "type": "string" } },
         "note": { "type": "string" },
         "links": {
           "type": "object",
@@ -178,8 +177,8 @@
         {
           "if": { "properties": { "tier": { "const": "featured" } } },
           "then": {
-            "required": ["look", "preview", "clip", "capture", "backlink", "points", "note"],
-            "properties": { "look": true, "preview": true, "clip": true, "capture": true, "backlink": true, "points": true, "note": true }
+            "required": ["look", "preview", "clip", "capture", "backlink", "note"],
+            "properties": { "look": true, "preview": true, "clip": true, "capture": true, "backlink": true, "note": true }
           }
         },
         {
