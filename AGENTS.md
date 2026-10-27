@@ -11,7 +11,7 @@ The global rules in `~/AGENTS.md` apply here. This file adds the rules for this 
 | `npm run dev` | Serve the repo. It prints the tailnet link only. |
 | `npm run build` | Write `index.html`, `assets/css/tokens.css` and the generated doc blocks from `data/`. |
 | `npm run check` | Lint, test and check for stale generated files. Run it before every commit. |
-| `npm run downloads` | Read the dcurves download count from its badge and write `data/downloads.json`. Then run `npm run build`. Needs network. |
+| `npm run downloads` | Read the dcurves download count from its badge and write `data/downloads.json`. Needs network. The monthly workflow `.github/workflows/refresh-downloads.yml` runs it. Run it by hand to refresh early. |
 | `npm run check:fit` | Fail when a project card is taller than an iPhone 15 Pro screen below the header. Needs the Playwright browsers. |
 | `npm run previews` | Capture the preview image of each featured project from its live site. |
 | `npm run og` | Render the social image `assets/img/og.png` from the data. |
@@ -37,7 +37,7 @@ Never edit a generated file. Change the source and run `npm run build`.
 - State no price. Make no claim of Part 11 compliance.
 - Say what each project is. Bench Bridge is a demo with sample data. Write "Source on GitHub", not "open source".
 - Use "open source" only for a project with an open license.
-- State no star count. State a download count only for dcurves. It comes from `data/downloads.json` and shows its source and date. Refresh it with `npm run downloads`. Never state a count in a discovery file or in the structured data.
+- State no star count. State a download count only for dcurves. It comes from `data/downloads.json` and shows its source and date. The monthly workflow `.github/workflows/refresh-downloads.yml` refreshes it. `npm run downloads` still works by hand. Never state a count in a discovery file or in the structured data.
 - On an iPhone 15 Pro screen, each project card must fit the screen below the sticky header. Run `npm run check:fit` after a change to a card or to its CSS.
 - Never write the email address in a discovery file or in the structured data.
 - Check each claim against the project's repository. Record the evidence in `docs/projects.md`.
@@ -60,6 +60,7 @@ First-party links open in the same tab. External links open in a new tab. See `d
 
 - Work on a branch. Open a pull request. Merge it after `npm run check` and `npm run check:fit` pass, the preview walk at 360, 390, 820 and 1440 px passes, and no review is open. Shaun authorized merges to `main` for this site on 2026-10-27. Walk the live site after the merge.
 - Never merge or push to `main` for a change that touches ChemInventory: its app, its demo or `cheminventory.co`. A production application serves other users, so Shaun reviews and merges that change. A hub card about ChemInventory is hub work and follows the rule above.
+- One exception to the pull request rule: the workflow `.github/workflows/refresh-downloads.yml` pushes the monthly download refresh straight to `main`. Shaun approved this on 2026-10-27. A count refresh is low risk and easy to undo.
 - Netlify builds a preview for each pull request. Walk the preview before you report the work done.
 - Netlify publishes the repo root. The discovery files sit at the root, so they answer at `/robots.txt` and the other root addresses.
 - The live site changes after a merge. The `CNAME` file is from GitHub Pages and has no effect on Netlify.
