@@ -1,0 +1,53 @@
+{
+  "color": {
+    "bg": { "light": "#faf8f5", "dark": "#171311", "use": "The page" },
+    "surface": { "light": "#ffffff", "dark": "#211b18", "use": "A card" },
+    "sunken": { "light": "#f2ede6", "dark": "#1c1613", "use": "A quiet band behind cards" },
+    "ink": { "light": "#2a211d", "dark": "#f3ede6", "use": "Text" },
+    "ink-2": { "light": "#5b4c45", "dark": "#c2b5aa", "use": "Secondary text" },
+    "ink-3": { "light": "#74665e", "dark": "#a1948a", "use": "Captions and labels" },
+    "line": { "light": "rgba(42, 33, 29, 0.12)", "dark": "rgba(243, 237, 230, 0.12)", "use": "A hairline border" },
+    "brand": { "light": "#674a40", "dark": "#d9b8a6", "use": "The Junto brown, for the wordmark" },
+    "accent": { "light": "#1f6f70", "dark": "#7fd0d1", "use": "Links, focus and the primary button" },
+    "accent-strong": { "light": "#14494a", "dark": "#a9e3e4", "use": "A link or a button on hover" },
+    "accent-soft": { "light": "rgba(31, 111, 112, 0.14)", "dark": "rgba(127, 208, 209, 0.18)", "use": "Focus ring and the target highlight" },
+    "on-accent": { "light": "#ffffff", "dark": "#0c1f1f", "use": "Text on the accent colour" },
+    "image-outline": { "light": "oklch(0 0 0 / 0.1)", "dark": "oklch(1 0 0 / 0.1)", "use": "A 1 px outline on an image" }
+  },
+  "shadow": {
+    "shadow-card": { "light": "0 1px 2px rgba(42, 33, 29, 0.06), 0 12px 32px -20px rgba(42, 33, 29, 0.3)", "dark": "0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -20px rgba(0, 0, 0, 0.7)", "use": "A card lifted from the page" },
+    "shadow-frame": { "light": "0 1px 2px rgba(42, 33, 29, 0.08), 0 20px 40px -24px rgba(42, 33, 29, 0.45)", "dark": "0 1px 2px rgba(0, 0, 0, 0.5), 0 20px 40px -24px rgba(0, 0, 0, 0.8)", "use": "A project preview frame" }
+  },
+  "fixed": {
+    "radius-xs": "6px",
+    "radius-sm": "10px",
+    "radius-md": "14px",
+    "radius-lg": "22px",
+    "radius-pill": "999px",
+    "gutter": "clamp(16px, 4vw, 32px)",
+    "shell": "72rem",
+    "touch": "44px",
+    "font-sans": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "motion-fast": "0.15s",
+    "motion-base": "0.2s",
+    "motion-enter": "0.3s",
+    "ease-out": "cubic-bezier(0.23, 1, 0.32, 1)",
+    "ease-icon": "cubic-bezier(0.2, 0, 0, 1)",
+    "motion-stagger": "60ms"
+  },
+  "pairs": [
+    { "text": "ink", "on": "bg", "min": 4.5 },
+    { "text": "ink", "on": "surface", "min": 4.5 },
+    { "text": "ink-2", "on": "bg", "min": 4.5 },
+    { "text": "ink-2", "on": "surface", "min": 4.5 },
+    { "text": "ink-3", "on": "bg", "min": 4.5 },
+    { "text": "ink-3", "on": "surface", "min": 4.5 },
+    { "text": "ink-3", "on": "sunken", "min": 4.5 },
+    { "text": "brand", "on": "bg", "min": 4.5 },
+    { "text": "accent", "on": "bg", "min": 4.5 },
+    { "text": "accent", "on": "surface", "min": 4.5 },
+    { "text": "accent", "on": "sunken", "min": 4.5 },
+    { "text": "accent-strong", "on": "bg", "min": 4.5 },
+    { "text": "on-accent", "on": "accent", "min": 4.5 }
+  ]
+}
