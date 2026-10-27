@@ -1,5 +1,12 @@
 {
   "device": "iPhone 15 Pro",
   "header": ".header",
-  "cards": [".showcase", ".lead", ".tile", ".person"]
+  "cards": [".showcase", ".lead", ".tile", ".person"],
+  "layout": {
+    "widths": [360, 390, 820, 1440],
+    "headings": "h1, h2, h3",
+    "maxHeadingLines": 2,
+    "frames": [".header__inner", ".hero__layout", ".section", ".footer__inner"],
+    "marginTolerance": 1
+  }
 }
