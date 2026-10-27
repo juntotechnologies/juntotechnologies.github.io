@@ -1,0 +1,5 @@
+[
+  { "project": "bench-bridge", "check": "bench-bridge-instruments", "url": "https://raw.githubusercontent.com/juntotechnologies/bench-bridge/main/shared/data/devices.json" },
+  { "project": "bench-bridge", "check": "bench-bridge-colors", "url": "https://raw.githubusercontent.com/juntotechnologies/bench-bridge/main/design/tokens.json" },
+  { "project": "cheminventory", "check": "cims-colors", "url": "https://raw.githubusercontent.com/juntotechnologies/chem-inventory-site/main/app/color-palette.css" }
+]

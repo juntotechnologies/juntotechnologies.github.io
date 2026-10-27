@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Design tokens",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["color", "shadow", "fixed", "pairs"],
+  "properties": {
+    "color": { "type": "object", "additionalProperties": { "$ref": "#/$defs/themed" } },
+    "shadow": { "type": "object", "additionalProperties": { "$ref": "#/$defs/themed" } },
+    "fixed": { "type": "object", "additionalProperties": { "type": "string" } },
+    "pairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "on", "min"],
+        "properties": { "text": { "type": "string" }, "on": { "type": "string" }, "min": { "type": "number" } }
+      }
+    }
+  },
+  "$defs": {
+    "themed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["light", "dark", "use"],
+      "properties": { "light": { "type": "string" }, "dark": { "type": "string" }, "use": { "type": "string" } }
+    }
+  }
+}

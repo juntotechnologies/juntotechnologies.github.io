@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Upstream sources that the hub restates",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["project", "check", "url"],
+    "properties": {
+      "project": { "type": "string" },
+      "check": { "enum": ["bench-bridge-instruments", "bench-bridge-colors", "cims-colors"] },
+      "url": { "type": "string", "pattern": "^https://raw.githubusercontent.com/" }
+    }
+  }
+}

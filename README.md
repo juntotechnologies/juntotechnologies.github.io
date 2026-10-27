@@ -1,26 +1,43 @@
-# Junto Technologies Website
+# Junto Technologies
 
-A static one-page website for Junto Technologies.
+The public hub for Junto Technologies: `https://juntotechnologies.com/`.
 
-## Structure
+It shows each Junto project as a card that previews the project's own look. The hub itself is a calm, neutral frame.
 
-- `index.html` - Static shell for the landing page
-- `metadata.json` - Editable site content, contact details, palette, nav, cards, team info, and footer metadata
-- `assets/` - CSS, JavaScript, and assets
-- `assets/css/site.css` - Site-specific styling layered on top of the HTML5 UP base
-- `assets/js/site.js` - Renders the page from `metadata.json`
-- `images/` - Image files
-- `public/` - Logo, favicon, and team images
-- `server.js` - Local static file server
-
-## Running Locally
+## Run it
 
 ```bash
+npm install
 npm run dev
 ```
 
-Visit: http://localhost:3000 (or alternate port if shown in console)
+`npm run dev` prints one link, the tailnet link. Open it from any device on the tailnet.
 
-## Deployment
+## Change it
 
-GitHub Pages deployment is configured via GitHub Actions workflow.
+| To change | Edit | Then run |
+| --- | --- | --- |
+| Page text, contact, team | `data/site.json` | `npm run build` |
+| A project or its links | `data/projects.json` | `npm run build` |
+| A color, radius or motion value | `data/design.json` | `npm run build` |
+| A preview image | none | `npm run previews` |
+
+Never edit `index.html`, `assets/css/tokens.css` or a generated block in `docs/`. The build writes them.
+
+Run `npm run check` before each commit.
+
+## Docs
+
+| File | Content |
+| --- | --- |
+| [docs/linking.md](docs/linking.md) | Where links open, deep links, how to add a project |
+| [docs/backlinks.md](docs/backlinks.md) | The link from each project site back to the hub |
+| [docs/projects.md](docs/projects.md) | Project list, public-site rules, evidence for each claim |
+
+## Deploy
+
+GitHub Pages serves the repo root from `main`. The live site changes when a pull request merges.
+
+## License
+
+See [LICENSE](LICENSE).

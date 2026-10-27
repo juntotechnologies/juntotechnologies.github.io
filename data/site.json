@@ -1,0 +1,47 @@
+{
+  "name": "Junto Technologies",
+  "url": "https://juntotechnologies.com/",
+  "description": "Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions.",
+  "logo": "public/junto-tech-logo.png",
+  "favicon": "public/favicon.png",
+  "contact": { "email": "shaun.porwal@juntotechnologies.com", "bookingUrl": "https://cal.com/shaun-porwal-junto/30min" },
+  "social": { "label": "GitHub", "href": "https://github.com/juntotechnologies" },
+  "nav": [
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Team", "href": "#team" },
+    { "label": "Contact", "href": "#contact", "primary": true }
+  ],
+  "hero": {
+    "heading": "Software for real lab work",
+    "body": "Junto Technologies builds tools for chemistry labs. It also applies machine learning and statistics to biomedical questions.",
+    "expertise": ["Healthcare", "Software", "Engineering", "Machine learning", "Statistics"]
+  },
+  "projects": {
+    "heading": "Projects",
+    "body": "Each project has its own site and its own look. Select a card to open it."
+  },
+  "more": {
+    "heading": "Code and research",
+    "body": "Public code from Junto work. Each link opens GitHub in a new tab."
+  },
+  "team": {
+    "heading": "Work directly with the builder",
+    "body": "Shaun works with companies to understand their operations. He designs software that fits how their teams work.",
+    "members": [
+      {
+        "name": "Shaun Porwal",
+        "role": "Machine Learning Engineer",
+        "image": "public/team_pics/shaun.webp",
+        "alt": "Portrait of Shaun Porwal",
+        "bio": "Shaun builds **biomedical AI systems** across agentic workflows, survival modeling, and biology models. He recently worked as a **founding engineer at a biotech startup** and previously built clinical ML tools at **Memorial Sloan Kettering Cancer Center**, where he created [dcurves](https://github.com/MSKCC-Epi-Bio/dcurves). He also has **hands-on chemistry experience** in labs and manufacturing across the U.S., Taiwan, and Japan, and holds degrees in biomedical engineering and biomedical data science."
+      }
+    ]
+  },
+  "contactBand": {
+    "heading": "Have a lab problem to solve?",
+    "body": "Write to Shaun, or book a 30 minute call.",
+    "emailLabel": "Email Shaun",
+    "bookingLabel": "Book a call"
+  },
+  "footer": { "copyright": "All rights reserved." }
+}

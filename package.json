@@ -1,9 +1,25 @@
 {
   "name": "junto-technologies-site",
-  "version": "1.0.0",
-  "description": "Junto Technologies static website",
+  "version": "2.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "description": "Junto Technologies hub site: the front page for every Junto project",
   "scripts": {
-    "dev": "node server.js",
-    "start": "npm run dev"
+    "dev": "node server/dev.mjs",
+    "build": "node tools/build.mjs",
+    "lint": "eslint . && node tools/checks/agents.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run lint && npm run test && node tools/checks/drift.mjs",
+    "check:links": "node tools/checks/links.mjs",
+    "check:upstream": "node tools/checks/upstream.mjs",
+    "previews": "node tools/capturePreviews.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "ajv": "^8.17.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "playwright": "1.64.1"
   }
 }

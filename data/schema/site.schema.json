@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site content",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "url", "description", "logo", "favicon", "contact", "social", "nav", "hero", "projects", "more", "team", "contactBand", "footer"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "pattern": "^https://[^ ]+/$" },
+    "description": { "type": "string", "minLength": 20, "maxLength": 200 },
+    "logo": { "type": "string" },
+    "favicon": { "type": "string" },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["email", "bookingUrl"],
+      "properties": { "email": { "type": "string", "pattern": "^[^ @]+@[^ @]+$" }, "bookingUrl": { "type": "string", "pattern": "^https://" } }
+    },
+    "social": { "$ref": "#/$defs/plainLink" },
+    "nav": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["label", "href"], "properties": { "label": { "type": "string" }, "href": { "type": "string", "pattern": "^#[a-z-]+$" }, "primary": { "type": "boolean" } } } },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading", "body", "expertise"],
+      "properties": { "heading": { "type": "string" }, "body": { "type": "string" }, "expertise": { "type": "array", "items": { "type": "string" }, "minItems": 1 } }
+    },
+    "projects": { "$ref": "#/$defs/section" },
+    "more": { "$ref": "#/$defs/section" },
+    "team": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading", "body", "members"],
+      "properties": {
+        "heading": { "type": "string" },
+        "body": { "type": "string" },
+        "members": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "role", "image", "alt", "bio"],
+            "properties": { "name": { "type": "string" }, "role": { "type": "string" }, "image": { "type": "string" }, "alt": { "type": "string" }, "bio": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "contactBand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading", "body", "emailLabel", "bookingLabel"],
+      "properties": { "heading": { "type": "string" }, "body": { "type": "string" }, "emailLabel": { "type": "string" }, "bookingLabel": { "type": "string" } }
+    },
+    "footer": { "type": "object", "additionalProperties": false, "required": ["copyright"], "properties": { "copyright": { "type": "string" } } }
+  },
+  "$defs": {
+    "section": { "type": "object", "additionalProperties": false, "required": ["heading", "body"], "properties": { "heading": { "type": "string" }, "body": { "type": "string" } } },
+    "plainLink": { "type": "object", "additionalProperties": false, "required": ["label", "href"], "properties": { "label": { "type": "string" }, "href": { "type": "string", "pattern": "^https://" } } }
+  }
+}
