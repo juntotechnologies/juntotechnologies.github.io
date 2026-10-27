@@ -31,7 +31,7 @@ test("each custom property that site.css reads is defined in tokens.css, in site
 })
 
 function isUndefined(name) {
-  return !LOOK_TOKENS.includes(name) && !tokensCss.includes(`--${name}:`) && !css.includes(`--${name}:`) && !html.includes(`--${name}:`)
+  return !LOOK_TOKENS.includes(name) && !tokensCss.includes(`--${name}:`) && !css.includes(`--${name}:`) && !css.includes(`@property --${name} `) && !html.includes(`--${name}:`)
 }
 
 test("site.css honors reduced motion", () => {
@@ -42,7 +42,8 @@ test("the stretched tile link stays above the tile", () => {
   assert.match(css, /\.tile__link::after \{[^}]*z-index: 1;/)
 })
 
-const MOTION_PROPERTIES = ["opacity", "translate", "transform", "scale", "filter", "color", "background-color", "border-color", "visibility"]
+/** The last six repaint a small box: the header shadow, and the pointer glow that @property registers. None changes layout. */
+const MOTION_PROPERTIES = ["opacity", "translate", "transform", "scale", "filter", "color", "background-color", "border-color", "visibility", "box-shadow", "--glow", "--gx", "--gy", "--hx", "--hy"]
 
 function trimmed(name) {
   return name.trim()

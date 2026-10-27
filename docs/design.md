@@ -38,12 +38,12 @@ The panel `id` equals the project `id`. A backlink such as `#cheminventory` open
 
 ## Motion
 
-Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter` or a color. No effect changes layout.
+Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter`, a color, a shadow or a gradient position. No effect changes layout.
 
 | Effect | Where | Keyframes or rule | Property |
 | --- | --- | --- | --- |
 | Scroll reveal | Each section head and card | `.reveal-on .reveal` | opacity, translate |
-| Hero entrance | Hero | `rise` | opacity, translate |
+| Hero entrance | Hero | `rise` | opacity, translate, scale, filter |
 | Grid drift | Hero art | `drift` | translate |
 | Glow drift | Hero art | `glow` | opacity, scale, translate |
 | Live dot pulse | Status chip | `pulse` | opacity, scale |
@@ -56,6 +56,11 @@ Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter` or a
 | Press | Buttons, tabs | `:active` | scale |
 | Preview zoom | Preview frames | `.frame:hover .frame__image` | scale |
 | Curve draw | dcurves illustration | `.curve__cover` | translate |
+| Pointer glow | Buttons and cards | `--glow` | background image |
+| Lit dots | Hero | `.hero__lit` | opacity, mask |
+| Edge light | Main hero button | `sheen` | rotate |
+| Accent word | Hero heading | `shimmer` | background position |
+| Header edge | Header | `[data-scroll="away"] .header` | box shadow, border color |
 
 Hover effects run only where a pointer can hover.
 
@@ -64,6 +69,7 @@ Hover effects run only where a pointer can hover.
 A visitor who asks for reduced motion sees a static page.
 
 - The scroll reveal stays off. All content shows.
+- The pointer glow does not follow the pointer. The edge light and the lit dots stay off.
 - Each animation stops. Each transition lasts 0.01 ms.
 - The curve cover is hidden, so the lines show at once.
 - The tabs still work.
@@ -94,6 +100,9 @@ Both tables come from `data/design.json`. Run `npm run build` to refresh them.
 | `--accent-soft` | rgba(31, 111, 112, 0.14) | rgba(127, 208, 209, 0.18) | Focus ring and the target highlight |
 | `--on-accent` | #ffffff | #0c1f1f | Text on the accent colour |
 | `--image-outline` | oklch(0 0 0 / 0.1) | oklch(1 0 0 / 0.1) | A 1 px outline on an image |
+| `--glow-tint` | rgba(31, 111, 112, 0.16) | rgba(127, 208, 209, 0.2) | The light that follows the pointer on a card or a quiet button |
+| `--glow-on-accent` | rgba(255, 255, 255, 0.3) | rgba(255, 255, 255, 0.34) | The same light on the primary button |
+| `--sheen` | rgba(255, 255, 255, 0.9) | rgba(255, 255, 255, 0.8) | The light that circles the main button |
 <!-- /gen -->
 
 <!-- gen:tokens -->
@@ -138,4 +147,9 @@ Both tables come from `data/design.json`. Run `npm run build` to refresh them.
 | `--ease-icon` | `cubic-bezier(0.2, 0, 0, 1)` |
 | `--ease-reveal` | `cubic-bezier(0.22, 1, 0.36, 1)` |
 | `--reveal-distance` | `12px` |
+| `--glow-size` | `220px` |
+| `--motion-glow` | `0.4s` |
+| `--motion-follow` | `0.22s` |
+| `--sheen-duration` | `6s` |
+| `--shimmer-duration` | `7s` |
 <!-- /gen -->
