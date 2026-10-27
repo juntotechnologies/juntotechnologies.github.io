@@ -27,7 +27,7 @@ Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the
 - Name no prospect and no customer. A public case study may name a customer only with consent.
 - State no price.
 - Make no claim of Part 11 compliance.
-- Say what each project is. ChemInventory is live software. Bench Bridge is a demo with sample data and a mock LIMS.
+- Say what each project is. ChemInventory is live. Bench Bridge is a demo with sample data and a mock LIMS.
 - Write "Source on GitHub" for Bench Bridge. The repository has no license, so "open source" is wrong.
 - Use "open source" only for a project that has an open license. The evidence rows below name each license.
 - State no star count. State a download count only for dcurves, from `data/downloads.json`, with its source and date.

@@ -34,6 +34,7 @@ Never edit a generated file. Change the source and run `npm run build`.
 ## Rules for the public site
 
 - Name no prospect and no customer. A public case study may name a customer only with consent.
+- Brand Junto as the company that makes the lab modern, in software and in hardware. Never write "software" in public copy: Shaun said so on 2026-10-27. `tools/checks/brand.json` lists the banned words and `tests/brand.test.mjs` enforces them. The schema.org type `SoftwareApplication` stays.
 - State no price. Make no claim of Part 11 compliance.
 - Say what each project is. Bench Bridge is a demo with sample data. Write "Source on GitHub", not "open source".
 - Use "open source" only for a project with an open license.

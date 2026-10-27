@@ -12,5 +12,6 @@ Commands that exit with code 1 when something drifts.
 
 ## Rules
 - `fitBudget.mjs` holds the pure steps of the fit check. `fit.json` names the device and the cards.
+- `brand.json` names the banned brand words and the files to scan. `tests/brand.test.mjs` reads it.
 - `upstreamHandlers.mjs` holds one pure handler for each check in `data/upstream.json`.
 - Print one line for each fault. Name the file or project.

@@ -7,7 +7,7 @@
       "kind": "Product",
       "status": "Live",
       "live": true,
-      "summary": "Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.",
+      "summary": "Chemical inventory that fits how each lab works. One record of what a lab holds, where it is and who changed it.",
       "points": [
         "Tracks chemicals, locations, orders and batch documents.",
         "Keeps a change history with the user and the time.",

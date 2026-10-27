@@ -1,10 +1,10 @@
 # Junto Technologies
 
-> Junto Technologies builds software for chemistry labs. It also applies machine learning and statistics to biomedical questions.
+> Junto Technologies modernizes chemistry labs. It also applies machine learning and statistics to biomedical questions.
 
 ## Projects
 
-- [ChemInventory](https://cheminventory.co/): Inventory software that fits how each lab works. One record of what a lab holds, where it is and who changed it.
+- [ChemInventory](https://cheminventory.co/): Chemical inventory that fits how each lab works. One record of what a lab holds, where it is and who changed it.
 - [Bench Bridge](https://bench-bridge.juntotechnologies.com/): A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.
 
 ## Open source
