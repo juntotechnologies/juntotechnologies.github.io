@@ -61,7 +61,6 @@ Each effect animates `translate`, `transform`, `scale`, `opacity`, `filter`, a c
 | Pointer glow | Buttons and cards | `--glow` | background image |
 | Lit dots | Hero | `.hero__lit` | opacity, mask |
 | Edge light | Main hero button | `sheen` | rotate |
-| Accent word | Hero heading | `shimmer` | background position |
 | Header edge | Header | `[data-scroll="away"] .header` | box shadow, border color |
 
 Hover effects run only where a pointer can hover.
@@ -157,5 +156,4 @@ Both tables come from `data/design.json`. Run `npm run build` to refresh them.
 | `--motion-glow` | `0.4s` |
 | `--motion-follow` | `0.22s` |
 | `--sheen-duration` | `6s` |
-| `--shimmer-duration` | `7s` |
 <!-- /gen -->

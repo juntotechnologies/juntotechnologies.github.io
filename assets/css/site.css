@@ -449,29 +449,9 @@ a:hover {
   background: inherit;
 }
 
-/* One word of the hero heading moves through the accent colors. Each color passes the text contrast test on the page. */
+/* One word of the hero heading takes the accent color. It passes the text contrast test on the page. */
 .hero__accent {
   color: var(--accent);
-  background-image: linear-gradient(100deg, var(--accent), var(--brand), var(--accent-strong), var(--accent));
-  background-size: 220% 100%;
-  animation: shimmer var(--shimmer-duration) ease-in-out infinite alternate;
-}
-
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  .hero__accent {
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-}
-
-@media (forced-colors: active) {
-  .hero__accent {
-    background: none;
-    -webkit-text-fill-color: currentColor;
-    color: inherit;
-  }
 }
 
 /* Page */
@@ -1785,12 +1765,6 @@ a:hover {
 @keyframes sheen {
   to {
     rotate: 360deg;
-  }
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 100% 0;
   }
 }
 

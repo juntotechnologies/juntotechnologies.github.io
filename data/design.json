@@ -67,8 +67,7 @@
     "glow-size": "220px",
     "motion-glow": "0.4s",
     "motion-follow": "0.22s",
-    "sheen-duration": "6s",
-    "shimmer-duration": "7s"
+    "sheen-duration": "6s"
   },
   "pairs": [
     { "text": "ink", "on": "bg", "min": 4.5 },

@@ -61,7 +61,7 @@ First-party links open in the same tab. External links open in a new tab. See `d
 ## Delivery
 
 - Work on a branch. Open a pull request. Merge it after `npm run check` and `npm run check:fit` pass, the preview walk at 360, 390, 820 and 1440 px passes, and no review is open. Shaun authorized merges to `main` for this site on 2026-10-27. Walk the live site after the merge.
-- Never merge or push to `main` for a change that touches the ChemInventory app or its demo. A production application serves other users, so Shaun reviews and merges that change. The marketing site `cheminventory.co` (repo `chem-inventory-site`) is free to publish: Shaun said so on 2026-10-27. A hub card about ChemInventory is hub work and follows the rule above.
+- Never merge or push to `main` for a change that touches the ChemInventory app or its demo. A production application serves other users, so Shaun reviews and merges that change. The marketing site `cheminventory.co` (repo `chem-inventory-site`) is free to publish: Shaun said so on 2026-10-27. A hub card about ChemInventory is hub work and follows the rule above. Open no app change and no app PR on your own: Shaun reviews and pushes app work himself (2026-10-27).
 - One exception to the pull request rule: the workflow `.github/workflows/refresh-downloads.yml` pushes the monthly download refresh straight to `main`. Shaun approved this on 2026-10-27. A count refresh is low risk and easy to undo.
 - Netlify builds a preview for each pull request. Walk the preview before you report the work done.
 - Netlify publishes the repo root. The discovery files sit at the root, so they answer at `/robots.txt` and the other root addresses.
