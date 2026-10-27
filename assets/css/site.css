@@ -708,30 +708,6 @@ a:hover {
   background: var(--look-accent);
 }
 
-.facts {
-  display: grid;
-  gap: var(--space-3);
-  width: fit-content;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: var(--text-sm);
-  list-style: none;
-  text-align: left;
-}
-
-.facts > li {
-  display: grid;
-  grid-template-columns: 16px minmax(0, 1fr);
-  gap: var(--space-3);
-  align-items: start;
-}
-
-.facts .icon {
-  margin-top: 0.2em;
-  color: var(--accent);
-}
-
 .note {
   margin: 0;
   color: var(--ink-3);
@@ -869,6 +845,14 @@ a:hover {
   transition-delay: 0s;
 }
 
+.panel__text {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  justify-items: center;
+  width: 100%;
+}
+
 .panel__head {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -961,11 +945,6 @@ a:hover {
 }
 
 /* The steps strip: a highlight passes over Capture, Parse and Deliver, then starts again. */
-.facts > .facts__flow {
-  display: block;
-  padding-top: var(--space-1);
-}
-
 .flow {
   display: flex;
   flex-wrap: wrap;
@@ -1628,32 +1607,28 @@ a:hover {
 
   .panel {
     grid-template-columns: var(--grid-12);
-    grid-template-rows: auto auto 1fr;
     gap: var(--space-4) var(--space-5);
+    align-items: center;
     justify-items: start;
     padding: var(--space-2) var(--space-2) 0;
     text-align: left;
   }
 
-  .panel__head {
+  .panel__text {
     grid-column: 1 / span 6;
     justify-items: start;
   }
 
-  .panel > .facts {
-    grid-column: 1 / span 6;
+  .panel__head {
+    justify-items: start;
   }
 
   .panel__actions {
-    grid-column: 1 / span 6;
-    align-self: end;
     max-width: none;
   }
 
   .panel__preview {
     grid-column: 7 / span 6;
-    grid-row: 1 / span 3;
-    align-self: start;
   }
 
   .lead {
@@ -1764,9 +1739,7 @@ a:hover {
     justify-content: flex-start;
   }
 
-  .panel__head,
-  .panel > .facts,
-  .panel__actions {
+  .panel__text {
     grid-column: 1 / span 5;
   }
 
@@ -1925,13 +1898,17 @@ a:hover {
   }
 }
 
-/* A phone: each project card and the team card fit one screen. The screenshot hides, and type and gaps tighten. */
+/* A phone: each project card and the team card fit one screen. The picture comes first, and type and gaps tighten. */
 @media (max-width: 560px) {
-  .panel__preview {
-    display: none;
+  .panel {
+    gap: var(--space-3);
   }
 
-  .panel {
+  .panel__preview {
+    order: -1;
+  }
+
+  .panel__text {
     gap: var(--space-3);
   }
 
@@ -1959,26 +1936,16 @@ a:hover {
 
   .panel__summary,
   .lead__summary,
-  .facts,
   .note {
     line-height: 1.45;
   }
 
-  .facts {
-    gap: var(--space-2);
+  .panel__summary {
+    font-size: var(--text-sm);
   }
 
-  .actions .button--primary {
-    grid-column: 1 / -1;
-  }
-
-  .actions .button--quiet:nth-child(2):last-child {
-    grid-column: 1 / -1;
-  }
-
-  .lead .actions .button--primary,
-  .lead .actions .button--quiet:nth-child(2):last-child {
-    grid-column: auto;
+  .frame__bar {
+    display: none;
   }
 
   .actions,

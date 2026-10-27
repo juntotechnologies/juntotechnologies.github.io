@@ -1,9 +1,8 @@
-/** The projects section: one card with tabs and one panel for each featured project. */
+/** The projects section: one card with tabs and one panel for each featured project. Each panel shows the project's own picture and a short text. */
 import { escapeHtml } from "./escape.mjs"
-import { actionRow, factList, noteLine, statusChip } from "./card.mjs"
+import { actionRow, noteLine, statusChip } from "./card.mjs"
 import { sectionHead } from "./sectionHead.mjs"
 
-const COUNT_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
 const MARK = '<span class="mark" aria-hidden="true"></span>'
 
 function isFeatured(project) {
@@ -27,21 +26,15 @@ function tablist(section, featured) {
   return `<div class="tabs" ${attributes}>${featured.map(tab).join("")}${indicator}</div>`
 }
 
-function instrumentFact(project) {
-  const count = (project.instruments ?? []).length
-  if (!count) return []
-  const word = COUNT_WORDS[count] ?? String(count)
-  return [`${word[0].toUpperCase()}${word.slice(1)} instruments in the demo.`]
-}
-
 function flowStep(step, index) {
   return `<li class="flow__step" style="--i:${index}">${escapeHtml(step)}</li>`
 }
 
-function flowItem(project) {
+/** The steps of a run, as a strip. Only a project with a `flow` shows it. */
+function flowStrip(project) {
   if (!project.flow) return ""
   const steps = project.flow.steps.map(flowStep).join("")
-  return `<li class="facts__flow"><ol class="flow" aria-label="${escapeHtml(project.flow.label)}">${steps}</ol></li>`
+  return `<ol class="flow" aria-label="${escapeHtml(project.flow.label)}">${steps}</ol>`
 }
 
 function clipSources(clip) {
@@ -69,13 +62,11 @@ function head(project) {
 function panel(project, index) {
   const selected = index === 0 ? " is-selected" : ""
   const wiring = `role="tabpanel" id="${project.id}" aria-labelledby="tab-${project.id}" style="${lookStyle(project.look)}"`
-  const facts = factList([...instrumentFact(project), ...project.points], flowItem(project))
   const actions = `<div class="panel__actions">${actionRow(project)}${noteLine(project.note)}</div>`
+  const text = `<div class="panel__text">${head(project)}${flowStrip(project)}${actions}</div>`
   return `<article class="panel${selected}" ${wiring}>
-          ${head(project)}
+          ${text}
           ${preview(project)}
-          ${facts}
-          ${actions}
         </article>`
 }
 

@@ -135,3 +135,14 @@ test("the dcurves card links the decision curve analysis website", () => {
 test("the illustration says that it shows no real data", () => {
   assert.match(html, /Illustration only\. Not real data\./)
 })
+
+test("a project panel holds its picture, a one-line summary and the buttons, and no fact list", () => {
+  const section = html.slice(html.indexOf('id="projects"'), html.indexOf('id="open-source"'))
+  assert.doesNotMatch(section, /class="facts"/)
+  assert.equal(section.match(/class="panel__preview"/g).length, 2)
+  assert.equal(section.match(/<video class="frame__image"/g).length, 2)
+})
+
+test("the Bench Bridge panel keeps the steps strip", () => {
+  assert.match(cardOf("bench-bridge"), /<ol class="flow" aria-label="Steps of a run">/)
+})

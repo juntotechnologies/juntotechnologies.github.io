@@ -7,15 +7,10 @@
       "kind": "Product",
       "status": "Live",
       "live": true,
-      "summary": "Chemical inventory that fits how each lab works. One record of what a lab holds, where it is and who changed it.",
-      "points": [
-        "Tracks chemicals, locations, orders and batch documents.",
-        "Keeps a change history with the user and the time.",
-        "Gives each person a role: admin, manager or chemist."
-      ],
+      "summary": "Chemical inventory that fits how each lab works.",
       "note": "The demo uses sample data. Changes reset on refresh.",
       "links": {
-        "primary": { "label": "Open ChemInventory", "href": "https://cheminventory.co/", "scope": "first-party" },
+        "primary": { "label": "Open the site", "href": "https://cheminventory.co/", "scope": "first-party" },
         "secondary": [{ "label": "Try the demo", "href": "https://demo.cheminventory.co/", "scope": "first-party" }]
       },
       "look": { "surface": "#eff6ff", "ink": "#1e3a8a", "accent": "#3b82f6", "host": "cheminventory.co" },
@@ -57,12 +52,9 @@
       "tier": "featured",
       "kind": "Demo",
       "status": "Sample data",
-      "summary": "A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.",
+      "summary": "A demo of how older lab instruments feed a LIMS and a controlled-substance ledger.",
       "instruments": ["Analytical balance", "HPLC system", "GC system", "GC-MS", "pH meter", "Karl Fischer titrator"],
       "flow": { "label": "Steps of a run", "steps": ["Capture", "Parse", "Deliver"] },
-      "points": [
-        "Concept drawings show the tap hardware for each instrument."
-      ],
       "note": "Runs in your browser with sample data and a mock LIMS. No real instrument is connected.",
       "links": {
         "primary": { "label": "Open the demo", "href": "https://bench-bridge.juntotechnologies.com/", "scope": "first-party" },

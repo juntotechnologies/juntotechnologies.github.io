@@ -4,8 +4,8 @@
 
 ## Projects
 
-- [ChemInventory](https://cheminventory.co/): Chemical inventory that fits how each lab works. One record of what a lab holds, where it is and who changed it.
-- [Bench Bridge](https://bench-bridge.juntotechnologies.com/): A demo of how older lab instruments can feed a laboratory information management system (LIMS) and a controlled-substance ledger.
+- [ChemInventory](https://cheminventory.co/): Chemical inventory that fits how each lab works.
+- [Bench Bridge](https://bench-bridge.juntotechnologies.com/): A demo of how older lab instruments feed a LIMS and a controlled-substance ledger.
 
 ## Open source
 
