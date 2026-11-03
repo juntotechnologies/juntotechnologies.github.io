@@ -9,6 +9,7 @@ Documents for the hub.
 | `projects.md` | The project list, the public-site rules and the evidence for each claim. |
 | `design.md` | The design rules, the tabs, the motion effects and the tokens. |
 | `discovery.md` | The files for search engines and agents, and where they live. |
+| `plans/` | Plans for work that is not built yet. |
 
 ## Rules
 - Write in ASD-STE100 Simplified Technical English.
