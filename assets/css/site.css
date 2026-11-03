@@ -245,7 +245,7 @@ a:hover {
   filter: blur(4px);
 }
 
-/* Buttons. One row of buttons shares one width. On a narrow screen the buttons stack at full width. */
+/* Buttons. One row of buttons shares one width. A row wraps when a button would lose its padding, so a label never touches an edge. */
 
 .button {
   display: inline-flex;
@@ -253,7 +253,7 @@ a:hover {
   justify-content: center;
   gap: var(--space-2);
   min-height: var(--touch);
-  padding: 0 var(--space-4);
+  padding: 0 var(--button-pad);
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
   font: 600 var(--text-sm) / 1 var(--font-sans);
@@ -271,7 +271,7 @@ a:hover {
 
 .button--large {
   min-height: 48px;
-  padding: 0 var(--space-5);
+  padding: 0 var(--button-pad-large);
   font-size: var(--text-md);
 }
 
@@ -289,15 +289,16 @@ a:hover {
 }
 
 .actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--action-min)), 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2);
   margin: 0;
   padding: 0;
 }
 
 .actions .button {
-  width: 100%;
+  flex: 1 1 0;
+  min-width: max-content;
 }
 
 /* Hover only where a pointer can hover, so a touch screen never keeps a hover state. */
@@ -701,7 +702,7 @@ a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
-  padding: var(--space-3);
+  padding: var(--card-pad);
 }
 
 .tabs {
@@ -782,7 +783,6 @@ a:hover {
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
   justify-items: center;
-  padding: var(--space-3) var(--space-3) var(--space-2);
   text-align: center;
   scroll-margin-top: 11rem;
 }
@@ -803,7 +803,7 @@ a:hover {
 
 .tabs-on .panel + .panel {
   margin-top: 0;
-  padding-top: var(--space-3);
+  padding-top: 0;
   border-top: 0;
 }
 
@@ -985,7 +985,7 @@ a:hover {
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-6);
   justify-items: center;
-  padding: var(--space-5) var(--space-4);
+  padding: var(--card-pad);
   text-align: center;
 }
 
@@ -1013,7 +1013,6 @@ a:hover {
 }
 
 .lead .actions {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
   width: 100%;
   max-width: 36rem;
 }
@@ -1064,7 +1063,7 @@ a:hover {
   gap: var(--space-3);
   width: 100%;
   margin: 0;
-  padding: var(--space-4);
+  padding: var(--inset-pad);
   border-radius: var(--radius-md);
   background: var(--sunken);
 }
@@ -1396,7 +1395,7 @@ a:hover {
   gap: var(--space-3);
   align-content: start;
   justify-items: center;
-  padding: var(--space-5);
+  padding: var(--card-pad);
   text-align: center;
 }
 
@@ -1448,7 +1447,7 @@ a:hover {
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-5);
   justify-items: center;
-  padding: var(--space-6) var(--space-5);
+  padding: var(--card-pad);
   text-align: center;
 }
 
@@ -1501,7 +1500,7 @@ a:hover {
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-5);
   justify-items: center;
-  padding: var(--space-7) var(--space-5);
+  padding: var(--band-pad);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--sunken);
@@ -1523,7 +1522,6 @@ a:hover {
 }
 
 .contact__actions {
-  --action-min: 10rem;
   width: 100%;
   max-width: 26rem;
 }
@@ -1577,7 +1575,6 @@ a:hover {
 
   .showcase {
     gap: var(--space-5);
-    padding: var(--space-5);
   }
 
   .tabs {
@@ -1590,7 +1587,6 @@ a:hover {
     gap: var(--space-4) var(--space-5);
     align-items: center;
     justify-items: start;
-    padding: var(--space-2) var(--space-2) 0;
     text-align: left;
   }
 
@@ -1612,7 +1608,6 @@ a:hover {
   }
 
   .lead {
-    padding: var(--space-6);
     text-align: left;
   }
 
@@ -1638,7 +1633,6 @@ a:hover {
     gap: var(--space-5);
     align-items: center;
     justify-items: stretch;
-    padding: var(--space-2);
     text-align: left;
   }
 
@@ -1650,7 +1644,6 @@ a:hover {
   .person__text {
     grid-column: 5 / span 8;
     max-width: none;
-    padding: var(--space-5) var(--space-6) var(--space-5) var(--space-2);
   }
 
   .person__bio {
@@ -1661,7 +1654,6 @@ a:hover {
     grid-template-columns: var(--grid-12);
     align-items: center;
     justify-items: stretch;
-    padding: var(--space-7);
     text-align: left;
   }
 
@@ -1882,6 +1874,19 @@ a:hover {
 
 /* A phone: each project card and the team card fit one screen. The picture comes first, and type and gaps tighten. */
 @media (max-width: 560px) {
+  .tabs {
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  .tabs__tab {
+    padding-inline: var(--space-1);
+    font-size: var(--text-xs);
+  }
+
+  .tabs__tab .mark {
+    display: none;
+  }
+
   .panel {
     gap: var(--space-3);
   }
@@ -1899,8 +1904,7 @@ a:hover {
   }
 
   .lead {
-    gap: 0;
-    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
   }
 
   .lead__name {
@@ -1913,7 +1917,6 @@ a:hover {
 
   .lead .curve {
     gap: var(--space-2);
-    padding: var(--space-2) var(--space-3);
   }
 
   .panel__summary,
@@ -1930,14 +1933,8 @@ a:hover {
     display: none;
   }
 
-  .actions,
-  .lead .actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .person {
     gap: var(--space-3);
-    padding: var(--space-4);
   }
 
   .person__photo {
@@ -1976,13 +1973,6 @@ a:hover {
     padding-left: var(--space-2);
   }
 
-  .tabs {
-    grid-auto-columns: minmax(0, 1fr);
-  }
-
-  .tabs__tab {
-    padding-inline: var(--space-2);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

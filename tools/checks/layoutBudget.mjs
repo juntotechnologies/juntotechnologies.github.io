@@ -1,4 +1,4 @@
-/** Pure steps of the layout check: lines in a heading, uneven outer margins, sideways scroll and reading order. */
+/** Pure steps of the layout check: lines in a heading, uneven outer margins, sideways scroll, reading order, button insets and card padding. */
 
 /** The number of text lines in a heading: its height over its line height. */
 export function linesOf(row) {
@@ -69,4 +69,34 @@ export function misordered(boxes, pairs, tolerance) {
 
 export function describeOrder(width, pair) {
   return `${width} px: ${pair[0]} ends below the top of ${pair[1]}`
+}
+
+function losesInset(min, row) {
+  return row.left < min || row.right < min
+}
+
+/** The buttons whose label sits closer than `min` pixels to an edge. Each row is { text, left, right }. */
+export function tightButtons(rows, min) {
+  return rows.filter(losesInset.bind(null, min))
+}
+
+export function describeButton(width, min, row) {
+  return `${width} px: button "${row.text}" has insets of ${Math.round(row.left)} and ${Math.round(row.right)} px; the least is ${min}`
+}
+
+function padOf(row) {
+  return row.pad
+}
+
+/** The distinct padding values across cards that must share one. Each row is { selector, pad }. */
+export function distinctPads(rows) {
+  return [...new Set(rows.map(padOf))]
+}
+
+function padLine(row) {
+  return `${row.selector} ${row.pad}`
+}
+
+export function describePads(width, rows) {
+  return `${width} px: cards differ in padding: ${[...new Set(rows.map(padLine))].join("; ")}`
 }

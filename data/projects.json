@@ -24,9 +24,9 @@
         ]
       },
       "look": {
-        "surface": "#eff6ff",
-        "ink": "#1e3a8a",
-        "accent": "#3b82f6",
+        "surface": "#fbfbf9",
+        "ink": "#15181e",
+        "accent": "#2340c8",
         "host": "cheminventory.co"
       },
       "preview": {
@@ -163,7 +163,7 @@
         },
         "secondary": [
           {
-            "label": "Source on GitHub",
+            "label": "GitHub",
             "href": "https://github.com/juntotechnologies/bench-bridge",
             "scope": "external"
           }
@@ -265,7 +265,12 @@
         },
         "secondary": [
           {
-            "label": "Source on GitHub",
+            "label": "ENT survey",
+            "href": "https://flexscope.juntotechnologies.com/quality/",
+            "scope": "first-party"
+          },
+          {
+            "label": "GitHub",
             "href": "https://github.com/juntotechnologies/flexscope-blueprint",
             "scope": "external"
           }
@@ -357,7 +362,7 @@
         },
         "secondary": [
           {
-            "label": "Source on GitHub",
+            "label": "GitHub",
             "href": "https://github.com/juntotechnologies/OptoLab",
             "scope": "external"
           }
@@ -425,11 +430,11 @@
       "downloads": "dcurves",
       "kind": "Python package",
       "status": "Apache-2.0 license",
-      "summary": "A Python package for decision curve analysis. It measures model performance with clinical consequences in mind.",
+      "summary": "Decision curve analysis in Python: weigh models by clinical consequences.",
       "note": "Created by Shaun. Owner: MSKCC-Epi-Bio.",
       "links": {
         "primary": {
-          "label": "dcurves on GitHub",
+          "label": "GitHub",
           "href": "https://github.com/MSKCC-Epi-Bio/dcurves",
           "scope": "external"
         },

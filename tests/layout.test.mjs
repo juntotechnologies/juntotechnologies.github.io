@@ -1,7 +1,7 @@
 /** Tests for the pure steps of the layout check: heading lines, outer margins, sideways scroll and reading order. */
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { describeHeading, describeMargins, describeOrder, describeOverflow, linesOf, marginsOf, misordered, overflowBy, tooManyLines, unevenMargins } from "../tools/checks/layoutBudget.mjs"
+import { describeButton, describePads, distinctPads, tightButtons, describeHeading, describeMargins, describeOrder, describeOverflow, linesOf, marginsOf, misordered, overflowBy, tooManyLines, unevenMargins } from "../tools/checks/layoutBudget.mjs"
 import rules from "../tools/checks/fit.json" with { type: "json" }
 
 function selectorOf(frame) {
@@ -71,4 +71,23 @@ test("the rules name the widths, the limit, the blocks to measure and the hero o
   assert.equal(rules.layout.maxHeadingLines, 2)
   assert.ok(rules.layout.frames.includes(".section"))
   assert.deepEqual(rules.layout.order, [[".hero__title", ".hero__body"]])
+})
+
+test("a button is tight when either inset is under the least", () => {
+  const rows = [{ text: "ok", left: 16, right: 16 }, { text: "left", left: 2, right: 16 }, { text: "right", left: 16, right: 2 }]
+  assert.deepEqual(tightButtons(rows, 12), rows.slice(1))
+})
+
+test("a tight button names its width, label and insets", () => {
+  assert.equal(describeButton(390, 12, { text: "GitHub", left: 2.2, right: 16 }), '390 px: button "GitHub" has insets of 2 and 16 px; the least is 12')
+})
+
+test("cards sharing one padding give one distinct value", () => {
+  assert.equal(distinctPads([{ pad: "16px" }, { pad: "16px" }]).length, 1)
+  assert.equal(distinctPads([{ pad: "16px" }, { pad: "8px" }]).length, 2)
+})
+
+test("a padding fault names each card once", () => {
+  const rows = [{ selector: ".a", pad: "8px" }, { selector: ".a", pad: "8px" }, { selector: ".b", pad: "16px" }]
+  assert.equal(describePads(390, rows), "390 px: cards differ in padding: .a 8px; .b 16px")
 })
