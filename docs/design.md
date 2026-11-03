@@ -25,7 +25,7 @@ The hub is a calm, neutral frame. A project shows its own look only inside its p
 
 ## Projects card
 
-One card holds the featured projects. A tab list sits on top. Each project has one panel.
+One card holds the product in use. It has no tabs. A second card holds the concepts. A tab list sits on top, and each concept has one panel.
 
 | Behavior | Detail |
 | --- | --- |
@@ -35,7 +35,7 @@ One card holds the featured projects. A tab list sits on top. Each project has o
 | Height | The panels share one grid cell. The card keeps the height of the tallest panel. |
 | No script | All panels show in one column and the tab list is hidden. |
 
-The panel `id` equals the project `id`. A backlink such as `#cheminventory` opens the right tab.
+The panel `id` equals the project `id`. A backlink such as `#flexscope` opens the right tab.
 
 ## Motion
 

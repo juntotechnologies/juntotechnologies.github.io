@@ -6,7 +6,9 @@
 | Project | Tier | Kind | Status | Primary link | Tab |
 | --- | --- | --- | --- | --- | --- |
 | ChemInventory | featured | Product | Live | https://cheminventory.co/ | first-party |
-| Bench Bridge | featured | Demo | Sample data | https://bench-bridge.juntotechnologies.com/ | first-party |
+| Bench Bridge | featured | Concept | Sample data | https://bench-bridge.juntotechnologies.com/ | first-party |
+| Flexscope | featured | Concept | Blueprint | https://flexscope.juntotechnologies.com/ | first-party |
+| OptoLab | featured | Concept | Prototype | https://optolab.juntotechnologies.com/ | first-party |
 | dcurves | more | Python package | Apache-2.0 license | https://github.com/MSKCC-Epi-Bio/dcurves | external |
 | bioeq | more | Python package | MIT license | https://github.com/juntotechnologies/bioeq | external |
 | hct-equity | more | Research code | Exploratory | https://github.com/juntotechnologies/hct-equity | external |
@@ -16,7 +18,7 @@
 
 | Tier | Shown as | Fields it needs |
 | --- | --- | --- |
-| `featured` | A tab and a panel: the project's own picture first, then a one-line summary, the buttons and a note | `look`, `preview`, `clip`, `capture`, `backlink`, `note` |
+| `featured` | A panel: the project's own picture first, then a one-line summary, the buttons and a note | `look`, `preview`, `clip`, `capture`, `backlink`, `note` |
 | `more` | A tile in "Open source" with its picture | `illustration` |
 | `more` with `lead` | The large entry at the top of "Open source" | `illustration`, `note` |
 
@@ -26,12 +28,15 @@ Optional fields: `live` shows a pulsing dot in the status chip. `flow` shows the
 
 A panel holds no fact list. The picture and the clip carry the detail. Keep the summary to one short sentence.
 
+A featured project has a `stage`. `in-use` puts it in the "In use" card, with no tab. `concept` gives it a tab in the "Concepts" card. ChemInventory is the only project in use.
+
 ## Rules for the public site
 
 - Name no prospect and no customer. A public case study may name a customer only with consent.
 - State no price.
 - Make no claim of Part 11 compliance.
-- Say what each project is. ChemInventory is live. Bench Bridge is a demo with sample data and a mock LIMS.
+- Say what each project is. ChemInventory is live. Bench Bridge is a concept with a demo, sample data and a mock LIMS. Flexscope and OptoLab are concepts.
+- Each clinical concept says "Concept. Not a medical device. Not for patient care." Make no accuracy claim and no diagnostic claim.
 - Write "Source on GitHub" for Bench Bridge. The repository has no license, so "open source" is wrong.
 - Use "open source" only for a project that has an open license. The evidence rows below name each license.
 - State no star count. State a download count only for dcurves, from `data/downloads.json`, with its source and date.
@@ -52,6 +57,12 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `bench-bridge` summary | `README.md` in `bench-bridge`: one reading becomes a sample result in the LIMS and a use entry in the controlled-substance ledger. Both are mock in the demo. |
 | `bench-bridge` note | The live demo. It runs with sample data and a mock LIMS, and no real instrument is connected. The bridge kit drawings are concept drawings. |
 | `bench-bridge` steps strip | The pipeline strip in the live demo shows Capture, Parse, Normalize, Map and Deliver. The strip on the hub shows the first, second and last step. |
+| `flexscope` summary and note | `README.md` in `flexscope-blueprint`: cheap single-use flexible scope, video by USB to a phone, concept only, not a medical device, not for patient use. |
+| `flexscope` links | `gh api repos/juntotechnologies/flexscope-blueprint`: the repository has no license, so the link says "Source on GitHub". |
+| `flexscope` look | `site/tokens.css` in `flexscope-blueprint`. |
+| `optolab` summary, status and note | `readme.md` in `juntotechnologies/OptoLab`: iPhone macro images, assessments to inspect and question, hackathon prototype, not clinically validated. |
+| `optolab` links | `gh api repos/juntotechnologies/OptoLab`: the repository has no license, so the link says "Source on GitHub". |
+| `optolab` clip | The landing page `optolab-site`. It shows a recording of the app screen only, with no face and no badge. |
 | `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
 | `dcurves` summary | Its README: decision curve analysis, net benefit, binary and survival outcomes. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
 | `dcurves` documentation link | `https://mskcc-epi-bio.github.io/dcurves/` answers with HTTP 200. |

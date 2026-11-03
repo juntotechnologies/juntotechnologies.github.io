@@ -10,11 +10,31 @@
       "summary": "Chemical inventory that fits how each lab works.",
       "note": "The demo uses sample data. Changes reset on refresh.",
       "links": {
-        "primary": { "label": "Open the site", "href": "https://cheminventory.co/", "scope": "first-party" },
-        "secondary": [{ "label": "Try the demo", "href": "https://demo.cheminventory.co/", "scope": "first-party" }]
+        "primary": {
+          "label": "Open the site",
+          "href": "https://cheminventory.co/",
+          "scope": "first-party"
+        },
+        "secondary": [
+          {
+            "label": "Try the demo",
+            "href": "https://demo.cheminventory.co/",
+            "scope": "first-party"
+          }
+        ]
       },
-      "look": { "surface": "#eff6ff", "ink": "#1e3a8a", "accent": "#3b82f6", "host": "cheminventory.co" },
-      "preview": { "file": "assets/img/projects/cheminventory.webp", "width": 1280, "height": 800, "alt": "The ChemInventory demo: a table of chemicals with product number, batch, name, CAS number and actions." },
+      "look": {
+        "surface": "#eff6ff",
+        "ink": "#1e3a8a",
+        "accent": "#3b82f6",
+        "host": "cheminventory.co"
+      },
+      "preview": {
+        "file": "assets/img/projects/cheminventory.webp",
+        "width": 1280,
+        "height": 800,
+        "alt": "The ChemInventory demo: a table of chemicals with product number, batch, name, CAS number and actions."
+      },
       "clip": {
         "mp4": "assets/video/cheminventory.mp4",
         "webm": "assets/video/cheminventory.webm",
@@ -23,45 +43,144 @@
         "fps": 24,
         "seconds": 8,
         "maxKilobytes": 450,
-        "quality": { "mp4Crf": 23, "webmCrf": 34 },
+        "quality": {
+          "mp4Crf": 23,
+          "webmCrf": 34
+        },
         "scene": {
-          "targets": { "search": "input[placeholder^=\"Search\"]", "pageTwo": "button:text-is(\"2\")", "pageOne": "button:text-is(\"1\")" },
+          "targets": {
+            "search": "input[placeholder^=\"Search\"]",
+            "pageTwo": "button:text-is(\"2\")",
+            "pageOne": "button:text-is(\"1\")"
+          },
           "steps": [
-            { "do": "wait", "ms": 900 },
-            { "do": "type", "target": "search", "text": "ace", "delayMs": 170 },
-            { "do": "wait", "ms": 1100 },
-            { "do": "clear", "target": "search" },
-            { "do": "wait", "ms": 500 },
-            { "do": "type", "target": "search", "text": "chlor", "delayMs": 150 },
-            { "do": "wait", "ms": 1000 },
-            { "do": "clear", "target": "search" },
-            { "do": "wait", "ms": 500 },
-            { "do": "click", "target": "pageTwo" },
-            { "do": "wait", "ms": 1000 },
-            { "do": "click", "target": "pageOne" },
-            { "do": "wait", "ms": 600 }
+            {
+              "do": "wait",
+              "ms": 900
+            },
+            {
+              "do": "type",
+              "target": "search",
+              "text": "ace",
+              "delayMs": 170
+            },
+            {
+              "do": "wait",
+              "ms": 1100
+            },
+            {
+              "do": "clear",
+              "target": "search"
+            },
+            {
+              "do": "wait",
+              "ms": 500
+            },
+            {
+              "do": "type",
+              "target": "search",
+              "text": "chlor",
+              "delayMs": 150
+            },
+            {
+              "do": "wait",
+              "ms": 1000
+            },
+            {
+              "do": "clear",
+              "target": "search"
+            },
+            {
+              "do": "wait",
+              "ms": 500
+            },
+            {
+              "do": "click",
+              "target": "pageTwo"
+            },
+            {
+              "do": "wait",
+              "ms": 1000
+            },
+            {
+              "do": "click",
+              "target": "pageOne"
+            },
+            {
+              "do": "wait",
+              "ms": 600
+            }
           ]
         }
       },
-      "capture": { "url": "https://demo.cheminventory.co/", "width": 1000, "height": 720, "clip": { "x": 0, "y": 56, "width": 1000, "height": 625 } },
-      "backlink": { "text": "A Junto Technologies project", "placement": "Footer of cheminventory.co, below the copyright line." }
+      "capture": {
+        "url": "https://demo.cheminventory.co/",
+        "width": 1000,
+        "height": 720,
+        "clip": {
+          "x": 0,
+          "y": 56,
+          "width": 1000,
+          "height": 625
+        }
+      },
+      "backlink": {
+        "text": "A Junto Technologies project",
+        "placement": "Footer of cheminventory.co, below the copyright line."
+      },
+      "stage": "in-use"
     },
     {
       "id": "bench-bridge",
       "name": "Bench Bridge",
       "tier": "featured",
-      "kind": "Demo",
+      "kind": "Concept",
       "status": "Sample data",
       "summary": "A demo of how older lab instruments feed a LIMS and a controlled-substance ledger.",
-      "instruments": ["Analytical balance", "HPLC system", "GC system", "GC-MS", "pH meter", "Karl Fischer titrator"],
-      "flow": { "label": "Steps of a run", "steps": ["Capture", "Parse", "Deliver"] },
+      "instruments": [
+        "Analytical balance",
+        "HPLC system",
+        "GC system",
+        "GC-MS",
+        "pH meter",
+        "Karl Fischer titrator",
+        "LC-MS/MS"
+      ],
+      "flow": {
+        "label": "Steps of a run",
+        "steps": [
+          "Capture",
+          "Parse",
+          "Deliver"
+        ]
+      },
       "note": "Runs in your browser with sample data and a mock LIMS. No real instrument is connected.",
       "links": {
-        "primary": { "label": "Open the demo", "href": "https://bench-bridge.juntotechnologies.com/", "scope": "first-party" },
-        "secondary": [{ "label": "Source on GitHub", "href": "https://github.com/juntotechnologies/bench-bridge", "scope": "external" }]
+        "primary": {
+          "label": "Open the demo",
+          "href": "https://bench-bridge.juntotechnologies.com/",
+          "scope": "first-party"
+        },
+        "secondary": [
+          {
+            "label": "Source on GitHub",
+            "href": "https://github.com/juntotechnologies/bench-bridge",
+            "scope": "external"
+          }
+        ]
       },
-      "look": { "surface": "#f3eee3", "ink": "#1c1b19", "accent": "#e8590c", "host": "bench-bridge.juntotechnologies.com" },
-      "preview": { "file": "assets/img/projects/bench-bridge.webp", "width": 1280, "height": 800, "alt": "Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps." },
+      "look": {
+        "surface": "#f3eee3",
+        "ink": "#1c1b19",
+        "accent": "#e8590c",
+        "host": "bench-bridge.juntotechnologies.com"
+      },
+      "preview": {
+        "file": "assets/img/projects/bench-bridge.webp",
+        "width": 1280,
+        "height": 800,
+        "alt": "Bench Bridge: a drawing of an analytical balance with a tap, the instrument list, and the five pipeline steps."
+      },
       "clip": {
         "mp4": "assets/video/bench-bridge.mp4",
         "webm": "assets/video/bench-bridge.webm",
@@ -70,22 +189,233 @@
         "fps": 24,
         "seconds": 9,
         "maxKilobytes": 450,
-        "quality": { "mp4Crf": 23, "webmCrf": 34 },
+        "quality": {
+          "mp4Crf": 23,
+          "webmCrf": 34
+        },
         "scene": {
-          "targets": { "hplc": "text=HPLC system", "assembled": "role=button[name=/assembled/i]", "run": "role=button[name=/run bridge/i]" },
+          "targets": {
+            "hplc": "text=HPLC system",
+            "assembled": "role=button[name=/assembled/i]",
+            "run": "role=button[name=/run bridge/i]"
+          },
           "steps": [
-            { "do": "wait", "ms": 800 },
-            { "do": "click", "target": "hplc" },
-            { "do": "wait", "ms": 800 },
-            { "do": "click", "target": "assembled" },
-            { "do": "wait", "ms": 700 },
-            { "do": "click", "target": "run" },
-            { "do": "wait", "ms": 5200 }
+            {
+              "do": "wait",
+              "ms": 800
+            },
+            {
+              "do": "click",
+              "target": "hplc"
+            },
+            {
+              "do": "wait",
+              "ms": 800
+            },
+            {
+              "do": "click",
+              "target": "assembled"
+            },
+            {
+              "do": "wait",
+              "ms": 700
+            },
+            {
+              "do": "click",
+              "target": "run"
+            },
+            {
+              "do": "wait",
+              "ms": 5200
+            }
           ]
         }
       },
-      "capture": { "url": "https://bench-bridge.juntotechnologies.com/", "width": 1120, "height": 700, "clip": { "x": 0, "y": 0, "width": 1120, "height": 700 } },
-      "backlink": { "text": "Junto Technologies", "placement": "Top bar, left of the fleet card. It shows an arrow and the words. On a narrow window it shows the arrow only." }
+      "capture": {
+        "url": "https://bench-bridge.juntotechnologies.com/",
+        "width": 1120,
+        "height": 700,
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1120,
+          "height": 700
+        }
+      },
+      "backlink": {
+        "text": "Junto Technologies",
+        "placement": "Top bar, left of the fleet card. It shows an arrow and the words. On a narrow window it shows the arrow only."
+      },
+      "stage": "concept"
+    },
+    {
+      "id": "flexscope",
+      "name": "Flexscope",
+      "tier": "featured",
+      "stage": "concept",
+      "kind": "Concept",
+      "status": "Blueprint",
+      "summary": "A low-cost single-use flexible ENT scope that shows video on a phone.",
+      "note": "Concept. Not a medical device. Not for patient care.",
+      "links": {
+        "primary": {
+          "label": "Open the blueprint",
+          "href": "https://flexscope.juntotechnologies.com/",
+          "scope": "first-party"
+        },
+        "secondary": [
+          {
+            "label": "Source on GitHub",
+            "href": "https://github.com/juntotechnologies/flexscope-blueprint",
+            "scope": "external"
+          }
+        ]
+      },
+      "look": {
+        "surface": "#f3eee3",
+        "ink": "#1c1b19",
+        "accent": "#e8590c",
+        "host": "flexscope.juntotechnologies.com"
+      },
+      "preview": {
+        "file": "assets/img/projects/flexscope.webp",
+        "width": 1280,
+        "height": 800,
+        "alt": "Flexscope: an exploded drawing of a flexible ENT scope with part labels."
+      },
+      "clip": {
+        "mp4": "assets/video/flexscope.mp4",
+        "webm": "assets/video/flexscope.webm",
+        "fps": 24,
+        "seconds": 8,
+        "maxKilobytes": 450,
+        "quality": {
+          "mp4Crf": 23,
+          "webmCrf": 34
+        },
+        "width": 960,
+        "height": 600,
+        "scene": {
+          "targets": {
+            "assembled": "[data-view=assembled]",
+            "exploded": "[data-view=exploded]"
+          },
+          "steps": [
+            {
+              "do": "wait",
+              "ms": 1500
+            },
+            {
+              "do": "click",
+              "target": "assembled"
+            },
+            {
+              "do": "wait",
+              "ms": 2500
+            },
+            {
+              "do": "click",
+              "target": "exploded"
+            },
+            {
+              "do": "wait",
+              "ms": 2500
+            }
+          ]
+        }
+      },
+      "capture": {
+        "url": "https://flexscope.juntotechnologies.com/",
+        "width": 1120,
+        "height": 700,
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1120,
+          "height": 700
+        }
+      },
+      "backlink": {
+        "text": "Junto Technologies",
+        "placement": "Footer of flexscope.juntotechnologies.com."
+      }
+    },
+    {
+      "id": "optolab",
+      "name": "OptoLab",
+      "tier": "featured",
+      "stage": "concept",
+      "kind": "Concept",
+      "status": "Prototype",
+      "summary": "iPhone macro images of the eye become assessments you can inspect and question.",
+      "note": "Concept. Not a medical device. Not for patient care.",
+      "links": {
+        "primary": {
+          "label": "Open the site",
+          "href": "https://optolab.juntotechnologies.com/",
+          "scope": "first-party"
+        },
+        "secondary": [
+          {
+            "label": "Source on GitHub",
+            "href": "https://github.com/juntotechnologies/OptoLab",
+            "scope": "external"
+          }
+        ]
+      },
+      "look": {
+        "surface": "#f1f2fb",
+        "ink": "#1a1d3a",
+        "accent": "#4a5de0",
+        "host": "optolab.juntotechnologies.com"
+      },
+      "preview": {
+        "file": "assets/img/projects/optolab.webp",
+        "width": 1280,
+        "height": 800,
+        "alt": "OptoLab: the prototype app on a phone, with a close image of an eye."
+      },
+      "clip": {
+        "mp4": "assets/video/optolab.mp4",
+        "webm": "assets/video/optolab.webm",
+        "fps": 24,
+        "seconds": 8,
+        "maxKilobytes": 450,
+        "quality": {
+          "mp4Crf": 23,
+          "webmCrf": 34
+        },
+        "width": 960,
+        "height": 600,
+        "scene": {
+          "targets": {},
+          "steps": [
+            {
+              "do": "wait",
+              "ms": 4000
+            },
+            {
+              "do": "wait",
+              "ms": 4000
+            }
+          ]
+        }
+      },
+      "capture": {
+        "url": "https://optolab.juntotechnologies.com/",
+        "width": 1120,
+        "height": 700,
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1120,
+          "height": 700
+        }
+      },
+      "backlink": {
+        "text": "Junto Technologies",
+        "placement": "Top of optolab.juntotechnologies.com, with an arrow."
+      }
     },
     {
       "id": "dcurves",
@@ -98,17 +428,38 @@
       "summary": "A Python package for decision curve analysis. It measures model performance with clinical consequences in mind.",
       "note": "Created by Shaun. Owner: MSKCC-Epi-Bio.",
       "links": {
-        "primary": { "label": "dcurves on GitHub", "href": "https://github.com/MSKCC-Epi-Bio/dcurves", "scope": "external" },
-        "secondary": [{ "label": "Documentation", "href": "https://mskcc-epi-bio.github.io/dcurves/", "scope": "external" }],
-        "learn": { "label": "What is a decision curve?", "href": "https://mskcc-epi-bio.github.io/decisioncurveanalysis/", "scope": "external" }
+        "primary": {
+          "label": "dcurves on GitHub",
+          "href": "https://github.com/MSKCC-Epi-Bio/dcurves",
+          "scope": "external"
+        },
+        "secondary": [
+          {
+            "label": "Documentation",
+            "href": "https://mskcc-epi-bio.github.io/dcurves/",
+            "scope": "external"
+          }
+        ],
+        "learn": {
+          "label": "What is a decision curve?",
+          "href": "https://mskcc-epi-bio.github.io/decisioncurveanalysis/",
+          "scope": "external"
+        }
       },
       "illustration": {
         "kind": "decision-curve",
         "caption": "Illustration only. Not real data.",
         "prevalence": 0.2,
         "separation": 1.5,
-        "axes": { "x": "Threshold probability", "y": "Net benefit" },
-        "lines": { "model": "Model", "all": "Treat all", "none": "Treat none" }
+        "axes": {
+          "x": "Threshold probability",
+          "y": "Net benefit"
+        },
+        "lines": {
+          "model": "Model",
+          "all": "Treat all",
+          "none": "Treat none"
+        }
       }
     },
     {
@@ -118,8 +469,29 @@
       "kind": "Python package",
       "status": "MIT license",
       "summary": "A Python package for bioequivalence analysis. It handles 2x2 crossover, parallel and replicate designs.",
-      "links": { "primary": { "label": "bioeq on GitHub", "href": "https://github.com/juntotechnologies/bioeq", "scope": "external" }, "secondary": [] },
-      "illustration": { "kind": "equivalence", "caption": "Illustration only. Not real data.", "limits": [80, 125], "centre": 100, "estimate": 101.5, "interval": [94, 109], "confidence": 90 }
+      "links": {
+        "primary": {
+          "label": "bioeq on GitHub",
+          "href": "https://github.com/juntotechnologies/bioeq",
+          "scope": "external"
+        },
+        "secondary": []
+      },
+      "illustration": {
+        "kind": "equivalence",
+        "caption": "Illustration only. Not real data.",
+        "limits": [
+          80,
+          125
+        ],
+        "centre": 100,
+        "estimate": 101.5,
+        "interval": [
+          94,
+          109
+        ],
+        "confidence": 90
+      }
     },
     {
       "id": "hct-equity",
@@ -128,13 +500,32 @@
       "kind": "Research code",
       "status": "Exploratory",
       "summary": "Compares survival predictions across race groups, with calibration and decision curves. Uses synthetic Kaggle data. Not peer reviewed.",
-      "links": { "primary": { "label": "hct-equity on GitHub", "href": "https://github.com/juntotechnologies/hct-equity", "scope": "external" }, "secondary": [] },
+      "links": {
+        "primary": {
+          "label": "hct-equity on GitHub",
+          "href": "https://github.com/juntotechnologies/hct-equity",
+          "scope": "external"
+        },
+        "secondary": []
+      },
       "illustration": {
         "kind": "calibration",
         "caption": "Illustration only. Not real data.",
         "reference": "Perfect",
-        "axes": { "x": "Predicted risk", "y": "Observed risk" },
-        "groups": [{ "label": "Group A", "exponent": 1.15 }, { "label": "Group B", "exponent": 1.7 }]
+        "axes": {
+          "x": "Predicted risk",
+          "y": "Observed risk"
+        },
+        "groups": [
+          {
+            "label": "Group A",
+            "exponent": 1.15
+          },
+          {
+            "label": "Group B",
+            "exponent": 1.7
+          }
+        ]
       }
     }
   ]

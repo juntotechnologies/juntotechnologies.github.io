@@ -1,31 +1,68 @@
 {
   "name": "Junto Technologies",
   "url": "https://juntotechnologies.com/",
-  "description": "Junto Technologies modernizes chemistry labs. It also applies machine learning and statistics to biomedical questions.",
+  "description": "Junto Technologies modernizes chemistry labs. It also applies machine learning and statistics to biomedical questions. It is exploring low-cost clinical imaging concepts.",
   "logo": "public/junto-tech-logo.png",
   "favicon": "public/favicon.png",
-  "contact": { "email": "shaun.porwal@juntotechnologies.com", "bookingUrl": "https://cal.com/shaun-porwal-junto/30min" },
-  "social": { "label": "GitHub", "href": "https://github.com/juntotechnologies" },
+  "contact": {
+    "email": "shaun.porwal@juntotechnologies.com",
+    "bookingUrl": "https://cal.com/shaun-porwal-junto/30min"
+  },
+  "social": {
+    "label": "GitHub",
+    "href": "https://github.com/juntotechnologies"
+  },
   "nav": [
-    { "label": "Projects", "href": "#projects" },
-    { "label": "Team", "href": "#team" },
-    { "label": "Contact", "href": "#contact", "primary": true }
+    {
+      "label": "In use",
+      "href": "#projects"
+    },
+    {
+      "label": "Concepts",
+      "href": "#concepts"
+    },
+    {
+      "label": "Team",
+      "href": "#team"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "primary": true
+    }
   ],
   "hero": {
     "heading": "Make your lab modern",
     "accent": "modern",
-    "body": "Junto Technologies modernizes chemistry labs. It tracks what a lab holds and designs ways to connect older instruments to lab systems. It also applies machine learning and statistics to biomedical questions.",
+    "body": "Junto Technologies modernizes chemistry labs. It tracks what a lab holds and designs ways to connect older instruments to lab systems. It also applies machine learning and statistics to biomedical questions. It is exploring low-cost clinical imaging concepts.",
     "actions": [
-      { "label": "See the projects", "href": "#projects", "primary": true },
-      { "label": "Get in touch", "href": "#contact" }
+      {
+        "label": "See the projects",
+        "href": "#projects",
+        "primary": true
+      },
+      {
+        "label": "Get in touch",
+        "href": "#contact"
+      }
     ],
     "areasLabel": "Areas of work",
-    "expertise": ["Healthcare", "Lab systems", "Engineering", "Machine learning", "Statistics"]
+    "expertise": [
+      "Healthcare",
+      "Lab systems",
+      "Engineering",
+      "Machine learning",
+      "Statistics"
+    ]
   },
   "projects": {
-    "heading": "Projects",
-    "body": "Each project has its own site and its own look.",
-    "tabsLabel": "Choose a project"
+    "heading": "In use",
+    "body": "ChemInventory is the product labs can use today.",
+    "concepts": {
+      "heading": "Concepts",
+      "body": "Ideas we are exploring and building. They are not products.",
+      "tabsLabel": "Choose a concept"
+    }
   },
   "more": {
     "heading": "Open source",
@@ -51,5 +88,7 @@
     "emailLabel": "Email Shaun",
     "bookingLabel": "Book a call"
   },
-  "footer": { "copyright": "All rights reserved." }
+  "footer": {
+    "copyright": "All rights reserved."
+  }
 }
