@@ -1,12 +1,16 @@
-/** The projects section: one card with tabs and one panel for each featured project. Each panel shows the project's own picture and a short text. */
+/** The projects sections: one card for the product in use, and one card with tabs for the concepts. Each panel shows the project's own picture and a short text. */
 import { escapeHtml } from "./escape.mjs"
 import { actionRow, noteLine, statusChip } from "./card.mjs"
 import { sectionHead } from "./sectionHead.mjs"
 
 const MARK = '<span class="mark" aria-hidden="true"></span>'
 
-function isFeatured(project) {
-  return project.tier === "featured"
+function isInUse(project) {
+  return project.tier === "featured" && project.stage === "in-use"
+}
+
+function isConcept(project) {
+  return project.tier === "featured" && project.stage === "concept"
 }
 
 function lookStyle(look) {
@@ -59,27 +63,52 @@ function head(project) {
   return `<div class="panel__head">${statusChip(project)}${name}<p class="panel__summary">${escapeHtml(project.summary)}</p></div>`
 }
 
-function panel(project, index) {
-  const selected = index === 0 ? " is-selected" : ""
-  const wiring = `role="tabpanel" id="${project.id}" aria-labelledby="tab-${project.id}" style="${lookStyle(project.look)}"`
+function panelBody(project) {
   const actions = `<div class="panel__actions">${actionRow(project)}${noteLine(project.note)}</div>`
   const text = `<div class="panel__text">${head(project)}${flowStrip(project)}${actions}</div>`
+  return `${text}
+          ${preview(project)}`
+}
+
+function tabPanel(project, index) {
+  const selected = index === 0 ? " is-selected" : ""
+  const wiring = `role="tabpanel" id="${project.id}" aria-labelledby="tab-${project.id}" style="${lookStyle(project.look)}"`
   return `<article class="panel${selected}" ${wiring}>
-          ${text}
-          ${preview(project)}
+          ${panelBody(project)}
         </article>`
 }
 
-export function renderProjects(section, projects) {
-  const featured = projects.filter(isFeatured)
-  const panels = featured.map(panel).join("\n        ")
+/** A card with one project needs no tabs. */
+function soloPanel(project) {
+  return `<article class="panel is-selected" id="${project.id}" style="${lookStyle(project.look)}">
+          ${panelBody(project)}
+        </article>`
+}
+
+function inUseSection(section, projects) {
   return `<section class="section" id="projects" aria-labelledby="projects-title">
       ${sectionHead(section, "projects-title")}
       <div class="showcase card reveal" style="--i:1">
-        ${tablist(section, featured)}
         <div class="panels">
-        ${panels}
+        ${projects.map(soloPanel).join("\n        ")}
         </div>
       </div>
     </section>`
+}
+
+function conceptsSection(section, projects) {
+  return `<section class="section" id="concepts" aria-labelledby="concepts-title">
+      ${sectionHead(section, "concepts-title")}
+      <div class="showcase card reveal" style="--i:1">
+        ${tablist(section, projects)}
+        <div class="panels">
+        ${projects.map(tabPanel).join("\n        ")}
+        </div>
+      </div>
+    </section>`
+}
+
+export function renderProjects(section, projects) {
+  return `${inUseSection(section, projects.filter(isInUse))}
+    ${conceptsSection(section.concepts, projects.filter(isConcept))}`
 }

@@ -30,8 +30,25 @@ test("each id appears once", () => {
   assert.equal(new Set(ids).size, ids.length)
 })
 
-test("each featured project has a tab panel with its own id", () => {
-  FEATURED.forEach(hasPanel)
+function isConcept(project) {
+  return project.stage === "concept"
+}
+
+const CONCEPTS = FEATURED.filter(isConcept)
+
+test("each concept has a tab panel with its own id", () => {
+  CONCEPTS.forEach(hasPanel)
+})
+
+test("ChemInventory alone sits in the in-use section, with no tab", () => {
+  const inUse = html.slice(html.indexOf('id="projects"'), html.indexOf('id="concepts"'))
+  assert.match(inUse, /<article class="panel is-selected" id="cheminventory"/)
+  assert.equal(inUse.match(/<article class="panel/g).length, 1)
+  assert.doesNotMatch(inUse, /role="tab/)
+})
+
+test("each clinical concept says it is not a medical device", () => {
+  for (const id of ["flexscope", "optolab"]) assert.match(cardOf(id), /Not a medical device\. Not for patient care\./)
 })
 
 function hasPanel(project) {
@@ -39,7 +56,7 @@ function hasPanel(project) {
 }
 
 test("each tab names its panel, and each panel names its tab", () => {
-  FEATURED.forEach(isWired)
+  CONCEPTS.forEach(isWired)
 })
 
 function isWired(project) {
@@ -49,7 +66,7 @@ function isWired(project) {
 
 test("the tab list has one selected tab and shows the first panel", () => {
   assert.equal(html.match(/aria-selected="true"/g).length, 1)
-  assert.equal(html.match(/<article class="panel is-selected"/g).length, 1)
+  assert.equal(html.match(/<article class="panel is-selected"/g).length, 2)
   assert.match(html, /role="tablist" aria-label="[^"]+"/)
 })
 
@@ -139,8 +156,8 @@ test("the illustration says that it shows no real data", () => {
 test("a project panel holds its picture, a one-line summary and the buttons, and no fact list", () => {
   const section = html.slice(html.indexOf('id="projects"'), html.indexOf('id="open-source"'))
   assert.doesNotMatch(section, /class="facts"/)
-  assert.equal(section.match(/class="panel__preview"/g).length, 2)
-  assert.equal(section.match(/<video class="frame__image"/g).length, 2)
+  assert.equal(section.match(/class="panel__preview"/g).length, FEATURED.length)
+  assert.equal(section.match(/<video class="frame__image"/g).length, FEATURED.length)
 })
 
 test("the Bench Bridge panel keeps the steps strip", () => {

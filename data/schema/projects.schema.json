@@ -116,6 +116,7 @@
         "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
         "name": { "type": "string" },
         "tier": { "enum": ["featured", "more"] },
+        "stage": { "enum": ["in-use", "concept"], "description": "A featured project is the product in use or a concept. It sets the section." },
         "kind": { "type": "string" },
         "status": { "type": "string" },
         "summary": { "type": "string" },

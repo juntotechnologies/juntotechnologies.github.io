@@ -1,11 +1,13 @@
 # Junto Technologies
 
-> Junto Technologies modernizes chemistry labs. It also applies machine learning and statistics to biomedical questions.
+> Junto Technologies modernizes chemistry labs. It also applies machine learning and statistics to biomedical questions. It is exploring low-cost clinical imaging concepts.
 
 ## Projects
 
 - [ChemInventory](https://cheminventory.co/): Chemical inventory that fits how each lab works.
 - [Bench Bridge](https://bench-bridge.juntotechnologies.com/): A demo of how older lab instruments feed a LIMS and a controlled-substance ledger.
+- [Flexscope](https://flexscope.juntotechnologies.com/): A low-cost single-use flexible ENT scope that shows video on a phone.
+- [OptoLab](https://optolab.juntotechnologies.com/): iPhone macro images of the eye become assessments you can inspect and question.
 
 ## Open source
 

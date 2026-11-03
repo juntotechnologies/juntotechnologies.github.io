@@ -34,8 +34,17 @@
     "projects": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["heading", "body", "tabsLabel"],
-      "properties": { "heading": { "type": "string" }, "body": { "type": "string" }, "tabsLabel": { "type": "string" } }
+      "required": ["heading", "body", "concepts"],
+      "properties": {
+        "heading": { "type": "string" },
+        "body": { "type": "string" },
+        "concepts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["heading", "body", "tabsLabel"],
+          "properties": { "heading": { "type": "string" }, "body": { "type": "string" }, "tabsLabel": { "type": "string" } }
+        }
+      }
     },
     "more": { "$ref": "#/$defs/section" },
     "team": {

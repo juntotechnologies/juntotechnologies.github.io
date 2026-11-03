@@ -20,9 +20,13 @@ test("hasBlock finds a block by name", () => {
   assert.equal(hasBlock(DOC, "y"), false)
 })
 
+function isFeatured(project) {
+  return project.tier === "featured"
+}
+
 test("the backlink table has one row for each featured project", () => {
   const rows = backlinkTable(data).split("\n")
-  assert.equal(rows.length, 2 + 2)
+  assert.equal(rows.length, 2 + data.projects.projects.filter(isFeatured).length)
   assert.match(rows[2], /juntotechnologies\.com\/#cheminventory/)
 })
 

@@ -33,9 +33,9 @@ Each external link has three parts:
 
 ## Deep links
 
-Each featured project has one tab panel. Each other project has one entry in the open source section. The element `id` equals the project `id` in `data/projects.json`.
+ChemInventory has one panel. Each concept has one tab panel. Each other project has one entry in the open source section. The element `id` equals the project `id` in `data/projects.json`.
 
-- `https://juntotechnologies.com/#cheminventory` opens the ChemInventory tab and scrolls to it.
+- `https://juntotechnologies.com/#cheminventory` scrolls to the ChemInventory card.
 - `https://juntotechnologies.com/#bench-bridge` opens the Bench Bridge tab and scrolls to it.
 - The tab script reads the hash. A click on a tab writes the hash with `history.replaceState`.
 - With JavaScript off, the browser scrolls to the panel. All panels show.

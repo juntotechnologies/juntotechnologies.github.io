@@ -7,6 +7,8 @@ Each featured project site links back to its card on the hub. The table below co
 | --- | --- | --- | --- |
 | ChemInventory | `https://juntotechnologies.com/#cheminventory` | A Junto Technologies project | Footer of cheminventory.co, below the copyright line. |
 | Bench Bridge | `https://juntotechnologies.com/#bench-bridge` | Junto Technologies | Top bar, left of the fleet card. It shows an arrow and the words. On a narrow window it shows the arrow only. |
+| Flexscope | `https://juntotechnologies.com/#flexscope` | Junto Technologies | Footer of flexscope.juntotechnologies.com. |
+| OptoLab | `https://juntotechnologies.com/#optolab` | Junto Technologies | Top of optolab.juntotechnologies.com, with an arrow. |
 <!-- /gen -->
 
 Each entry below holds the label and the address. The project copies its entry into its own labels file.
@@ -21,6 +23,14 @@ Each entry below holds the label and the address. The project copies its entry i
   "bench-bridge": {
     "label": "Junto Technologies",
     "href": "https://juntotechnologies.com/#bench-bridge"
+  },
+  "flexscope": {
+    "label": "Junto Technologies",
+    "href": "https://juntotechnologies.com/#flexscope"
+  },
+  "optolab": {
+    "label": "Junto Technologies",
+    "href": "https://juntotechnologies.com/#optolab"
   }
 }
 ```
