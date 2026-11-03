@@ -6,7 +6,6 @@ import { ROOT } from "../tools/paths.mjs"
 
 const FALLBACK_TYPE = "application/octet-stream"
 
-/** The file that a URL path names, or null when the path leaves the repo root. */
 export function resolveFile(urlPath) {
   const name = decodeURIComponent(new URL(urlPath, "http://host").pathname)
   const file = resolve(ROOT, `.${name === "/" ? "/index.html" : name}`)

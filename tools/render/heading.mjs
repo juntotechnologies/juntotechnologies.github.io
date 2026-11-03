@@ -7,7 +7,6 @@ function wrap(word) {
   return `<span class="${ACCENT_CLASS}">${escapeHtml(word)}</span>`
 }
 
-/** The heading as HTML. The last match of the word gets the accent class. A missing word leaves the heading plain. */
 export function emphasize(heading, word) {
   const at = word ? heading.lastIndexOf(word) : -1
   if (at < 0) return escapeHtml(heading)

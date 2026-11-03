@@ -20,7 +20,7 @@ function play(video) {
   video.play()?.catch(ignore)
 }
 
-/** With live tabs the panels overlap, so a clip in an unselected panel counts as hidden. */
+/* why: With live tabs the panels overlap, so a clip in an unselected panel counts as hidden. */
 function isShown(video) {
   if (!root.classList.contains("tabs-on")) return true
   return video.closest(PANEL)?.classList.contains(SELECTED) ?? true

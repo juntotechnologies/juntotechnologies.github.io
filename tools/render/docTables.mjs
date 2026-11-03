@@ -24,7 +24,6 @@ function backlinkRow(site, project) {
   return [project.name, `\`${site.url}#${project.id}\``, project.backlink.text, project.backlink.placement]
 }
 
-/** One row for each featured project: the hub address to link to, the wording, and where it goes. */
 export function backlinkTable(data) {
   const featured = data.projects.projects.filter(isFeatured)
   return table(["Project", "Link to the hub card", "Wording", "Placement"], featured.map(backlinkRow.bind(null, data.site)))
@@ -34,7 +33,6 @@ function entry(site, project) {
   return [project.id, { label: project.backlink.text, href: `${site.url}#${project.id}` }]
 }
 
-/** The label and address of each backlink as JSON. A project copies its entry into its own labels file. */
 export function entryBlock(data) {
   const featured = data.projects.projects.filter(isFeatured)
   const entries = Object.fromEntries(featured.map(entry.bind(null, data.site)))
@@ -54,7 +52,6 @@ function colorRow([name, token]) {
   return [`\`--${name}\``, token.light, token.dark, token.use]
 }
 
-/** One row for each color token: the name, the light value, the dark value and the use. */
 export function colorTable(data) {
   return table(["Token", "Light", "Dark", "Use"], Object.entries(data.design.color).map(colorRow))
 }
@@ -63,7 +60,6 @@ function fixedRow([name, value]) {
   return [`\`--${name}\``, `\`${value}\``]
 }
 
-/** One row for each fixed token: spacing, type, radius, motion and layout. */
 export function tokenTable(data) {
   return table(["Token", "Value"], Object.entries(data.design.fixed).map(fixedRow))
 }

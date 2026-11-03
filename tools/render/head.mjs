@@ -18,7 +18,6 @@ function propertyPair([name, value]) {
   return property(name, value)
 }
 
-/** The text alternative of the social image: the site name and the hero heading, as the image shows them. */
 export function ogAlt(site) {
   return `${site.name}. ${site.hero.heading}.`
 }

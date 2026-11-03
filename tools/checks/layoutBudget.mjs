@@ -1,6 +1,5 @@
 /** Pure steps of the layout check: lines in a heading, uneven outer margins, sideways scroll, reading order, button insets and card padding. */
 
-/** The number of text lines in a heading: its height over its line height. */
 export function linesOf(row) {
   return Math.round(row.height / row.lineHeight)
 }
@@ -9,12 +8,10 @@ function hasTooManyLines(max, row) {
   return linesOf(row) > max
 }
 
-/** The headings that wrap to more lines than `max`. Each row is { text, height, lineHeight }. */
 export function tooManyLines(rows, max) {
   return rows.filter(hasTooManyLines.bind(null, max))
 }
 
-/** The gaps between a block and the two screen edges. */
 export function marginsOf(frame, clientWidth) {
   return { left: frame.left, right: clientWidth - frame.right }
 }
@@ -24,12 +21,10 @@ function isUneven(clientWidth, tolerance, frame) {
   return Math.abs(margins.left - margins.right) > tolerance
 }
 
-/** The blocks whose left and right gaps differ by more than `tolerance` pixels. Each frame is { selector, left, right }. */
 export function unevenMargins(frames, clientWidth, tolerance) {
   return frames.filter(isUneven.bind(null, clientWidth, tolerance))
 }
 
-/** How far the page scrolls sideways, in pixels. Zero when it does not. */
 export function overflowBy(widths) {
   return Math.max(0, widths.scroll - widths.client)
 }
@@ -62,7 +57,6 @@ function isMisordered(boxes, tolerance, pair) {
   return above.bottom > below.top + tolerance
 }
 
-/** The pairs where the first block ends below the top of the second. Each box is { selector, top, bottom }. */
 export function misordered(boxes, pairs, tolerance) {
   return pairs.filter(isMisordered.bind(null, boxes, tolerance))
 }
@@ -75,7 +69,6 @@ function losesInset(row) {
   return row.left < row.min || row.right < row.min
 }
 
-/** The controls whose label sits closer than their `min` pixels to an edge. Each row is { text, left, right, min }. */
 export function tightButtons(rows) {
   return rows.filter(losesInset)
 }
@@ -88,7 +81,6 @@ function padOf(row) {
   return row.pad
 }
 
-/** The distinct padding values across cards that must share one. Each row is { selector, pad }. */
 export function distinctPads(rows) {
   return [...new Set(rows.map(padOf))]
 }

@@ -27,7 +27,6 @@ function validated(ajv, source) {
   return [source.key, data]
 }
 
-/** Every data file, validated: { site, projects, downloads, discovery, design, upstream }. */
 export function loadData() {
   const ajv = new Ajv({ allErrors: true, strict: true })
   return Object.fromEntries(SOURCES.map(validated.bind(null, ajv)))

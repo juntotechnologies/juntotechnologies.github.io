@@ -22,7 +22,6 @@ async function runStep(page, targets, step) {
   await HANDLERS[step.do](page, step, targets[step.target])
 }
 
-/** Runs each step in order. The scene says what to do. This file says how. */
 export async function runScene(page, scene) {
   for (const step of scene.steps) await runStep(page, scene.targets, step)
 }

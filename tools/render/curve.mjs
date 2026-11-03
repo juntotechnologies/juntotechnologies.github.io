@@ -30,7 +30,6 @@ function dot(curve, name) {
   return `<circle class="dot dot--${ROLES[name]}" data-dot="${name}" cx="0" cy="${marker.y}" r="4.5"${hidden} />`
 }
 
-/** The vertical line, the ping ring on the axis and one dot per line. A script moves the group along the axis. */
 function probe(curve) {
   const rule = `<line class="curve__rule" x1="0" x2="0" y1="${BOX.top}" y2="${BOX.bottom}" />`
   const ping = `<circle class="ping" cx="0" cy="${BOX.bottom}" r="7" />`
@@ -75,7 +74,7 @@ function data(illustration) {
   return `data-curve data-prevalence="${illustration.prevalence}" data-separation="${illustration.separation}" data-names="${names}"`
 }
 
-/** The learn link sits in the caption, so the card holds no explanation of net benefit. */
+/* why: The learn link sits in the caption, so the card holds no explanation of net benefit. */
 export function renderCurve(illustration, learn) {
   const frame = plotFrame(svg(illustration), illustration.axes.y, { top: BOX.top, bottom: BOX.bottom, height: BOX.height })
   const stage = `<div class="curve__stage">${frame}${slider(illustration.axes)}</div>`

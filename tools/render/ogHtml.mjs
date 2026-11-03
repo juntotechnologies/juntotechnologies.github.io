@@ -19,7 +19,6 @@ function body(site, assets) {
   return `<div class="dots"></div><div class="glow"></div>${brand}${copy}<div class="host">${escapeHtml(new URL(site.url).host)}</div>`
 }
 
-/** One document of 1200 by 630 pixels. The caller passes the stylesheet text and the file addresses of the font and the logo. */
 export function ogHtml(data, assets) {
   const styles = [fontFace(assets), rootVariables(data.design.color), assets.css].join("\n")
   return `<!doctype html><html lang="en"><head><meta charset="utf-8" /><style>\n${styles}\n</style></head><body>${body(data.site, assets)}</body></html>`

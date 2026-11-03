@@ -42,7 +42,7 @@ test("the stretched tile link stays above the tile", () => {
   assert.match(css, /\.tile__link::after \{[^}]*z-index: 1;/)
 })
 
-/** The last six repaint a small box: the header shadow, and the pointer glow that @property registers. None changes layout. */
+/* why: The last six repaint a small box: the header shadow, and the pointer glow that @property registers. None changes layout. */
 const MOTION_PROPERTIES = ["opacity", "translate", "transform", "scale", "filter", "color", "background-color", "border-color", "visibility", "box-shadow", "--glow", "--gx", "--gy", "--hx", "--hy"]
 
 function trimmed(name) {

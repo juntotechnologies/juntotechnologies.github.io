@@ -12,7 +12,6 @@ const PATHS = {
   moon: '<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
 }
 
-/** The class `icon--<name>` lets CSS move one icon, such as the arrow that glides on hover. */
 export function icon(name) {
   return `<svg class="icon icon--${name}" ${ATTRIBUTES}>${PATHS[name]}</svg>`
 }

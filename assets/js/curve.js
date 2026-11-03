@@ -42,7 +42,6 @@ function isOnThumb(event) {
   return event.target.matches(RANGE)
 }
 
-/** A press or a drag on the plot sets the threshold. The thumb moves itself. */
 function scrub(figure, event) {
   if (event.buttons !== 1 || isOnThumb(event)) return
   const box = figure.querySelector(".figure__plot").getBoundingClientRect()

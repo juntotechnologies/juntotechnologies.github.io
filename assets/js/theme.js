@@ -9,7 +9,7 @@ function save(theme) {
   try {
     localStorage.setItem(KEY, theme)
   } catch {
-    /* The choice then lasts for this visit only. */
+    /* why: The choice then lasts for this visit only. */
   }
 }
 
@@ -30,7 +30,7 @@ function endSwitch() {
   root.classList.remove("theme-switching")
 }
 
-/** Turn every transition off for one frame, so the whole page changes at once. */
+/* why: Turn every transition off for one frame, so the whole page changes at once. */
 function apply(theme) {
   root.classList.add("theme-switching")
   show(theme)

@@ -25,7 +25,6 @@ function descending(a, b) {
   return b - a
 }
 
-/** The ratio, from 1 (no contrast) to 21 (black on white). */
 export function contrast(first, second) {
   const [high, low] = [luminance(first), luminance(second)].sort(descending)
   return (high + OFFSET) / (low + OFFSET)
