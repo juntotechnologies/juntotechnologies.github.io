@@ -4,7 +4,7 @@ import { test } from "node:test"
 import { HANDLERS } from "../tools/checks/upstreamHandlers.mjs"
 
 const PROJECT = { id: "p", look: { surface: "#eff6ff", ink: "#1e3a8a", accent: "#3b82f6" }, instruments: ["Balance", "HPLC"] }
-const PALETTE = "--palette-blue-50: 239 246 255;\n--palette-navy: 30 58 138;\n--palette-blue: 59 130 246;\n"
+const PALETTE = "--background: 239 246 255;\n--foreground: 30 58 138;\n--primary: 59 130 246;\n"
 
 test("the instrument check passes when the names match", () => {
   assert.deepEqual(HANDLERS["bench-bridge-instruments"](PROJECT, JSON.stringify([{ name: "Balance" }, { name: "HPLC" }])), [])

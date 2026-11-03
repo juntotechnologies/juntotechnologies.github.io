@@ -36,11 +36,11 @@ function benchBridgeColors(project, text) {
 }
 
 function channelsOf(css, name) {
-  return new RegExp(`--palette-${name}:\\s*([0-9 ]+);`).exec(css)[1]
+  return new RegExp(`--${name}:\\s*([0-9 ]+);`).exec(css)[1]
 }
 
 function cimsColors(project, text) {
-  return compareColors(project, { surface: hex(channelsOf(text, "blue-50")), ink: hex(channelsOf(text, "navy")), accent: hex(channelsOf(text, "blue")) })
+  return compareColors(project, { surface: hex(channelsOf(text, "background")), ink: hex(channelsOf(text, "foreground")), accent: hex(channelsOf(text, "primary")) })
 }
 
 export const HANDLERS = {

@@ -60,8 +60,8 @@ Each row names a claim in `data/projects.json` and the file that supports it. Ch
 | `flexscope` summary and note | `README.md` in `flexscope-blueprint`: cheap single-use flexible scope, video by USB to a phone, concept only, not a medical device, not for patient use. |
 | `flexscope` links | `gh api repos/juntotechnologies/flexscope-blueprint`: the repository has no license, so the link says "Source on GitHub". |
 | `flexscope` look | `site/tokens.css` in `flexscope-blueprint`. |
-| `optolab` summary, status and note | `readme.md` in `shaunporwal/OptoLab`: iPhone macro images, assessments to inspect and question, hackathon prototype, not clinically validated. |
-| `optolab` links | `gh api repos/shaunporwal/OptoLab`: the repository has no license, so the link says "Source on GitHub". |
+| `optolab` summary, status and note | `readme.md` in `juntotechnologies/OptoLab`: iPhone macro images, assessments to inspect and question, hackathon prototype, not clinically validated. |
+| `optolab` links | `gh api repos/juntotechnologies/OptoLab`: the repository has no license, so the link says "Source on GitHub". |
 | `optolab` clip | The landing page `optolab-site`. It shows a recording of the app screen only, with no face and no badge. |
 | `dcurves` description and license | `gh api repos/MSKCC-Epi-Bio/dcurves`: Python package for decision curve analysis, Apache-2.0 license. The PyPI page lists the same license. |
 | `dcurves` summary | Its README: decision curve analysis, net benefit, binary and survival outcomes. `dcurves/plot_graphs.py` plots net benefit against the threshold probability, with the reference lines "all" and "none". |
