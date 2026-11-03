@@ -1,13 +1,46 @@
 {
   "device": "iPhone 15 Pro",
   "header": ".header",
-  "cards": [".showcase", ".lead", ".tile", ".person"],
+  "cards": [
+    ".showcase",
+    ".lead",
+    ".tile",
+    ".person"
+  ],
   "layout": {
-    "widths": [360, 390, 820, 1040, 1280, 1440, 1920],
+    "widths": [
+      360,
+      390,
+      820,
+      1040,
+      1280,
+      1440,
+      1920
+    ],
     "headings": "h1, h2, h3",
     "maxHeadingLines": 2,
-    "frames": [".header__inner", ".hero__layout", ".section", ".footer__inner"],
-    "order": [[".hero__title", ".hero__body"]],
-    "marginTolerance": 1
+    "frames": [
+      ".header__inner",
+      ".hero__layout",
+      ".section",
+      ".footer__inner"
+    ],
+    "order": [
+      [
+        ".hero__title",
+        ".hero__body"
+      ]
+    ],
+    "marginTolerance": 1,
+    "sameCardPad": [
+      ".showcase",
+      ".lead",
+      ".tile",
+      ".person"
+    ],
+    "minInset": {
+      ".button": 12,
+      ".tabs__tab": 6
+    }
   }
 }

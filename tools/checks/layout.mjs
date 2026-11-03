@@ -1,5 +1,5 @@
-/** Check (browser): at each width in `fit.json`, no sideways scroll, no heading over the line limit, equal outer margins and blocks in reading order. Needs the Playwright browsers. */
-import { describeHeading, describeMargins, describeOrder, describeOverflow, misordered, overflowBy, tooManyLines, unevenMargins } from "./layoutBudget.mjs"
+/** Check (browser): at each width in `fit.json`, no sideways scroll, no heading over the line limit, equal outer margins, blocks in reading order, buttons that keep their inset and cards that share one padding. Needs the Playwright browsers. */
+import { describeButton, describeHeading, describeMargins, describeOrder, describeOverflow, describePads, distinctPads, misordered, overflowBy, tightButtons, tooManyLines, unevenMargins } from "./layoutBudget.mjs"
 
 /** Runs in the page. It reads one heading: its words, its height and its line height. */
 function headingRow(node) {
@@ -18,6 +18,22 @@ function frameRow(node) {
 function boxRow(node) {
   const box = node.getBoundingClientRect()
   return { top: box.top + window.scrollY, bottom: box.bottom + window.scrollY }
+}
+
+/** Runs in the page. It reads how far the visible label and icon of one button sit from its left and right edges. */
+function buttonRow(node) {
+  const box = node.getBoundingClientRect()
+  const range = document.createRange()
+  range.setStartBefore(node.firstChild)
+  range.setEndAfter(node.querySelector(":scope > svg") ?? node.lastChild)
+  const label = range.getBoundingClientRect()
+  return { text: node.textContent.trim().slice(0, 40), left: label.left - box.left, right: box.right - label.right }
+}
+
+/** Runs in the page. It reads the four paddings of one card. */
+function padRow(node) {
+  const { paddingTop, paddingRight, paddingBottom, paddingLeft } = getComputedStyle(node)
+  return { pad: [paddingTop, paddingRight, paddingBottom, paddingLeft].join(" ") }
 }
 
 /** Runs in the page. It reads the width of the page and of the screen. */
@@ -45,6 +61,26 @@ async function allFrames(page, selectors) {
   return (await Promise.all(selectors.map(framesOf.bind(null, page)))).flat()
 }
 
+async function padsOf(page, selector) {
+  return (await rowsOf(page, selector, padRow)).map(withSelector.bind(null, selector))
+}
+
+async function allPads(page, selectors) {
+  return (await Promise.all(selectors.map(padsOf.bind(null, page)))).flat()
+}
+
+function withMin(min, row) {
+  return { ...row, min }
+}
+
+async function insetsOf(page, [selector, min]) {
+  return (await rowsOf(page, selector, buttonRow)).map(withMin.bind(null, min))
+}
+
+async function allInsets(page, minInset) {
+  return (await Promise.all(Object.entries(minInset).map(insetsOf.bind(null, page)))).flat()
+}
+
 async function boxesOf(page, selector) {
   return (await rowsOf(page, selector, boxRow)).map(withSelector.bind(null, selector)).slice(0, 1)
 }
@@ -56,7 +92,8 @@ async function orderedBoxes(page, pairs) {
 async function measure(page, rules) {
   const widths = await page.evaluate(pageWidths)
   const headings = await rowsOf(page, rules.headings, headingRow)
-  return { widths, headings, frames: await allFrames(page, rules.frames), boxes: await orderedBoxes(page, rules.order) }
+  const buttons = await allInsets(page, rules.minInset)
+  return { widths, headings, buttons, pads: await allPads(page, rules.sameCardPad), frames: await allFrames(page, rules.frames), boxes: await orderedBoxes(page, rules.order) }
 }
 
 function faultsOf(rules, width, found) {
@@ -65,7 +102,9 @@ function faultsOf(rules, width, found) {
   const headings = tooManyLines(found.headings, rules.maxHeadingLines).map(describeHeading.bind(null, width, rules.maxHeadingLines))
   const uneven = unevenMargins(found.frames, found.widths.client, rules.marginTolerance)
   const order = misordered(found.boxes, rules.order, rules.marginTolerance).map(describeOrder.bind(null, width))
-  return [...sideways, ...headings, ...uneven.map(describeMargins.bind(null, width, found.widths.client)), ...order]
+  const tight = tightButtons(found.buttons).map(describeButton.bind(null, width))
+  const pads = distinctPads(found.pads).length > 1 ? [describePads(width, found.pads)] : []
+  return [...sideways, ...headings, ...uneven.map(describeMargins.bind(null, width, found.widths.client)), ...order, ...tight, ...pads]
 }
 
 async function faultsAt(browser, port, rules, width) {

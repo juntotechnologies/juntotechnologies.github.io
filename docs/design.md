@@ -15,6 +15,13 @@ The hub is a calm, neutral frame. A project shows its own look only inside its p
 | Links | A first-party link ends with an arrow right. An external link ends with an arrow out and opens a new tab. |
 | Hero | The title has its own row. The text and the buttons sit below it at every width. `npm run check:fit` checks the order at seven widths. |
 
+## Padding
+
+- One home: `--card-pad` for each card, `--band-pad` for the contact band, `--inset-pad` for a figure inside a card, `--button-pad` and `--button-pad-large` for buttons. Tokens: `data/design.json`.
+- Never set a card's padding in a media query. The tokens scale with `clamp`.
+- A row of buttons wraps before a button loses its padding.
+- `npm run check:fit` fails when a label sits under 12 px from a button edge or 6 px from a tab edge, or when cards differ in padding. CI runs it on each pull request.
+
 ## Phones
 
 - Headings, chips and short copy are centred.
@@ -133,7 +140,11 @@ Both tables come from `data/design.json`. Run `npm run build` to refresh them.
 | `--section-gap` | `clamp(72px, 10vw, 120px)` |
 | `--grid-12` | `repeat(12, minmax(0, 1fr))` |
 | `--touch` | `44px` |
-| `--action-min` | `12.5rem` |
+| `--card-pad` | `clamp(16px, 4vw, 24px)` |
+| `--band-pad` | `clamp(24px, 6vw, 48px)` |
+| `--inset-pad` | `clamp(12px, 3vw, 16px)` |
+| `--button-pad` | `16px` |
+| `--button-pad-large` | `24px` |
 | `--font-sans` | `"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif` |
 | `--text-2xs` | `0.6875rem` |
 | `--text-xs` | `0.75rem` |
