@@ -6,7 +6,8 @@ GitHub Actions workflows for the hub.
 | File | Job | Writes |
 | --- | --- | --- |
 | `refresh-downloads.yml` | Refresh `data/downloads.json` each month, rebuild, check and push to `main`. | `contents: write` |
-| `ui.yml` | On each pull request, run `npm run check` and `npm run check:fit` in a real browser. `ops ship` refuses to merge a failure. | None |
+| `ui.yml` | On each pull request, run `npm run check:fit` in a real browser. `ops ship` refuses a failure. | None |
+| `check.yml` | On each pull request, run the shared check: lint on changed lines + `npm run check`. Source: agent-skills. | None |
 
 ## Rules
 - Pin each action to a full commit SHA. Write the version in a comment on the same line.
