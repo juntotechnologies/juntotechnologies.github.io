@@ -1,4 +1,4 @@
-# Fails a pull request when the page breaks in a real browser: sideways scroll, a card over one phone screen, a button label near its edge, cards with different padding.
+# Fails a pull request when the page breaks in a real browser; shared lint + tests run in check.yml: sideways scroll, a card over one phone screen, a button label near its edge, cards with different padding.
 name: UI
 
 on:
@@ -18,5 +18,4 @@ jobs:
           node-version: 24
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - run: npm run check
       - run: npm run check:fit
