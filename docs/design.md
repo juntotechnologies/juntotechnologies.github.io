@@ -20,7 +20,7 @@ The hub is a calm, neutral frame. A project shows its own look only inside its p
 - One home: `--card-pad` for each card, `--band-pad` for the contact band, `--inset-pad` for a figure inside a card, `--button-pad` and `--button-pad-large` for buttons. Tokens: `data/design.json`.
 - Never set a card's padding in a media query. The tokens scale with `clamp`.
 - A row of buttons wraps before a button loses its padding.
-- `npm run check:fit` fails when a label sits under 10 px from a button or tab edge, or when cards differ in padding. CI runs it on each pull request.
+- `npm run check:fit` fails when a label sits under 12 px from a button edge or 6 px from a tab edge, or when cards differ in padding. CI runs it on each pull request.
 
 ## Phones
 

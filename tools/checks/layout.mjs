@@ -69,6 +69,18 @@ async function allPads(page, selectors) {
   return (await Promise.all(selectors.map(padsOf.bind(null, page)))).flat()
 }
 
+function withMin(min, row) {
+  return { ...row, min }
+}
+
+async function insetsOf(page, [selector, min]) {
+  return (await rowsOf(page, selector, buttonRow)).map(withMin.bind(null, min))
+}
+
+async function allInsets(page, minInset) {
+  return (await Promise.all(Object.entries(minInset).map(insetsOf.bind(null, page)))).flat()
+}
+
 async function boxesOf(page, selector) {
   return (await rowsOf(page, selector, boxRow)).map(withSelector.bind(null, selector)).slice(0, 1)
 }
@@ -80,7 +92,7 @@ async function orderedBoxes(page, pairs) {
 async function measure(page, rules) {
   const widths = await page.evaluate(pageWidths)
   const headings = await rowsOf(page, rules.headings, headingRow)
-  const buttons = await rowsOf(page, rules.buttons, buttonRow)
+  const buttons = await allInsets(page, rules.minInset)
   return { widths, headings, buttons, pads: await allPads(page, rules.sameCardPad), frames: await allFrames(page, rules.frames), boxes: await orderedBoxes(page, rules.order) }
 }
 
@@ -90,7 +102,7 @@ function faultsOf(rules, width, found) {
   const headings = tooManyLines(found.headings, rules.maxHeadingLines).map(describeHeading.bind(null, width, rules.maxHeadingLines))
   const uneven = unevenMargins(found.frames, found.widths.client, rules.marginTolerance)
   const order = misordered(found.boxes, rules.order, rules.marginTolerance).map(describeOrder.bind(null, width))
-  const tight = tightButtons(found.buttons, rules.minButtonInset).map(describeButton.bind(null, width, rules.minButtonInset))
+  const tight = tightButtons(found.buttons).map(describeButton.bind(null, width))
   const pads = distinctPads(found.pads).length > 1 ? [describePads(width, found.pads)] : []
   return [...sideways, ...headings, ...uneven.map(describeMargins.bind(null, width, found.widths.client)), ...order, ...tight, ...pads]
 }

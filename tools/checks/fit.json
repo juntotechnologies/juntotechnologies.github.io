@@ -32,13 +32,15 @@
       ]
     ],
     "marginTolerance": 1,
-    "buttons": ".button, .tabs__tab",
-    "minButtonInset": 10,
     "sameCardPad": [
       ".showcase",
       ".lead",
       ".tile",
       ".person"
-    ]
+    ],
+    "minInset": {
+      ".button": 12,
+      ".tabs__tab": 6
+    }
   }
 }

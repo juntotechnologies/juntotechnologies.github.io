@@ -74,12 +74,12 @@ test("the rules name the widths, the limit, the blocks to measure and the hero o
 })
 
 test("a button is tight when either inset is under the least", () => {
-  const rows = [{ text: "ok", left: 16, right: 16 }, { text: "left", left: 2, right: 16 }, { text: "right", left: 16, right: 2 }]
-  assert.deepEqual(tightButtons(rows, 12), rows.slice(1))
+  const rows = [{ text: "ok", left: 16, right: 16, min: 12 }, { text: "left", left: 2, right: 16, min: 12 }, { text: "right", left: 16, right: 2, min: 12 }]
+  assert.deepEqual(tightButtons(rows), rows.slice(1))
 })
 
 test("a tight button names its width, label and insets", () => {
-  assert.equal(describeButton(390, 12, { text: "GitHub", left: 2.2, right: 16 }), '390 px: button "GitHub" has insets of 2 and 16 px; the least is 12')
+  assert.equal(describeButton(390, { text: "GitHub", left: 2.2, right: 16, min: 12 }), '390 px: control "GitHub" has insets of 2 and 16 px; the least is 12')
 })
 
 test("cards sharing one padding give one distinct value", () => {

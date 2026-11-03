@@ -71,17 +71,17 @@ export function describeOrder(width, pair) {
   return `${width} px: ${pair[0]} ends below the top of ${pair[1]}`
 }
 
-function losesInset(min, row) {
-  return row.left < min || row.right < min
+function losesInset(row) {
+  return row.left < row.min || row.right < row.min
 }
 
-/** The buttons whose label sits closer than `min` pixels to an edge. Each row is { text, left, right }. */
-export function tightButtons(rows, min) {
-  return rows.filter(losesInset.bind(null, min))
+/** The controls whose label sits closer than their `min` pixels to an edge. Each row is { text, left, right, min }. */
+export function tightButtons(rows) {
+  return rows.filter(losesInset)
 }
 
-export function describeButton(width, min, row) {
-  return `${width} px: button "${row.text}" has insets of ${Math.round(row.left)} and ${Math.round(row.right)} px; the least is ${min}`
+export function describeButton(width, row) {
+  return `${width} px: control "${row.text}" has insets of ${Math.round(row.left)} and ${Math.round(row.right)} px; the least is ${row.min}`
 }
 
 function padOf(row) {
