@@ -24,7 +24,6 @@ function block(selector, scheme, body) {
   return `${selector} {\n  color-scheme: ${scheme};\n${body}\n}`
 }
 
-/** Light values on :root, dark values for a dark system setting, and dark values when the page asks for dark. */
 export function renderTokens(design) {
   const fixed = Object.entries(design.fixed).map(fixedDeclaration).join("\n")
   const dark = themed(design, "dark")

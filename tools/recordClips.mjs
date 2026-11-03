@@ -36,7 +36,6 @@ async function playScene(page, scene) {
   return { started, ended: Date.now() }
 }
 
-/** Records the scene. Returns the video file, the seconds before the scene began and the scene length. */
 async function record(browser, scratch, project) {
   const { context, page, opened } = await openDemo(browser, scratch, project.capture)
   const { started, ended } = await playScene(page, project.clip.scene)

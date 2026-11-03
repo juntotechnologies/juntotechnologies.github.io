@@ -17,7 +17,6 @@ function endMark(scope) {
   return scope === "external" ? `${icon("arrow-up-right")}${NEW_TAB_NOTE}` : icon("arrow-right")
 }
 
-/** One link as an anchor. The scope of the link sets the tab rule and the end mark: an arrow right, or an arrow out with a screen-reader note. */
 export function anchor(link, className) {
   const label = escapeHtml(link.label)
   return `<a class="${className}" href="${escapeHtml(link.href)}"${attributesFor(link.scope)}>${label}${endMark(link.scope)}</a>`

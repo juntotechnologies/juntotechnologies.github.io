@@ -17,7 +17,6 @@ function main(data) {
   return `<main id="main" class="main">\n    ${parts.join("\n    ")}\n  </main>`
 }
 
-/** The whole page as one string. It has no script work to do before it shows. */
 export function renderPage(data) {
   const { site } = data
   return `<!doctype html>

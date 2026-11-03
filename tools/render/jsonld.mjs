@@ -26,13 +26,12 @@ function application(data, project) {
   return { ...base, applicationCategory, operatingSystem, publisher: { "@id": idOf(site, "organization") } }
 }
 
-/** The whole graph as one object. It has no price, no rating and no count. */
 export function structuredData(data) {
   const products = data.projects.projects.filter(isFeatured).map(application.bind(null, data))
   return { "@context": CONTEXT, "@graph": [organization(data), website(data), ...products] }
 }
 
-/** One script tag. The "<" character is escaped, so no data value can close the tag. */
+/* why: One script tag. The "<" character is escaped, so no data value can close the tag. */
 export function jsonLdScript(data) {
   const json = JSON.stringify(structuredData(data)).replaceAll("<", "\\u003c")
   return `<script type="application/ld+json">${json}</script>`

@@ -32,7 +32,6 @@ function mark(index, tab, position) {
   panelOf(tab).classList.toggle("is-selected", on)
 }
 
-/** Show one panel. The tab list holds the index for the CSS that slides the indicator. */
 function select(index) {
   tabs.forEach(mark.bind(null, index))
   list.style.setProperty("--tab", String(index))
@@ -47,7 +46,6 @@ function hasId(id, tab) {
   return tab.getAttribute("aria-controls") === id
 }
 
-/** A hash that names a project selects its tab. Any other hash leaves the choice as it is. */
 function applyHash() {
   const index = tabs.findIndex(hasId.bind(null, location.hash.slice(1)))
   if (index >= 0) select(index)
@@ -76,7 +74,7 @@ function enableMotion() {
   root.dataset.tabs = "live"
 }
 
-/** The motion starts one frame later, so a deep link does not slide the indicator at load. */
+/* why: The motion starts one frame later, so a deep link does not slide the indicator at load. */
 function start() {
   tabs.forEach(wire)
   applyHash()

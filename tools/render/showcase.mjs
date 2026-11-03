@@ -34,7 +34,6 @@ function flowStep(step, index) {
   return `<li class="flow__step" style="--i:${index}">${escapeHtml(step)}</li>`
 }
 
-/** The steps of a run, as a strip. Only a project with a `flow` shows it. */
 function flowStrip(project) {
   if (!project.flow) return ""
   const steps = project.flow.steps.map(flowStep).join("")
@@ -45,7 +44,7 @@ function clipSources(clip) {
   return `<source src="${clip.mp4}" type="video/mp4" /><source src="${clip.webm}" type="video/webm" />`
 }
 
-/** The still is the poster. The clip loads only when a script asks for it, so a still page costs no video bytes. */
+/* why: The still is the poster. The clip loads only when a script asks for it, so a still page costs no video bytes. */
 function clipVideo(project) {
   const { preview: shot, clip } = project
   const flags = 'data-clip muted loop playsinline preload="none"'
@@ -78,7 +77,6 @@ function tabPanel(project, index) {
         </article>`
 }
 
-/** A card with one project needs no tabs. */
 function soloPanel(project) {
   return `<article class="panel is-selected" id="${project.id}" style="${lookStyle(project.look)}">
           ${panelBody(project)}

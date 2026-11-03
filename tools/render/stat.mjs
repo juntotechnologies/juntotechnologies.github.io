@@ -4,7 +4,6 @@ import { escapeHtml } from "./escape.mjs"
 const STEP = 1000
 const DATE_FORMAT = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })
 
-/** A count under one thousand stays exact. A larger count rounds down to the thousand and ends in a plus. */
 export function formatCount(count) {
   if (count < STEP) return String(count)
   return `${(Math.floor(count / STEP) * STEP).toLocaleString("en-US")}+`
@@ -25,7 +24,6 @@ export function renderDownloads(entry) {
   return `<p class="stat">${value}${text}</p>`
 }
 
-/** The figure for a project that names an entry in downloads.json, or an empty string. */
 export function statFor(downloads, project) {
   if (!project.downloads) return ""
   const entry = downloads[project.downloads]

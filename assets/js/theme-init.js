@@ -21,12 +21,12 @@ function systemTheme() {
   return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 }
 
-/** The scroll reveal needs IntersectionObserver, and it stays off for a visitor who asks for less motion. */
+/* why: The scroll reveal needs IntersectionObserver, and it stays off for a visitor who asks for less motion. */
 function canReveal() {
   return "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches
 }
 
-/** Each script marks its feature, with data-tabs or data-reveal. A feature that is not ready after the delay shows all its content. */
+/* why: Each script marks its feature, with data-tabs or data-reveal. A feature that is not ready after the delay shows all its content. */
 function releaseUnready() {
   if (!root.dataset.tabs) root.classList.remove("tabs-on")
   if (!root.dataset.reveal) root.classList.remove("reveal-on")

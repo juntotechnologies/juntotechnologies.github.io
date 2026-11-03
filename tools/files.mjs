@@ -29,7 +29,6 @@ function discoveryFiles(data, lastModified) {
   ]
 }
 
-/** Every generated file: the page, the tokens, the discovery files and the generated blocks inside the docs. */
 export function generatedFiles(data, readText, lastModified) {
   const page = [["index.html", renderPage(data)], ["assets/css/tokens.css", renderTokens(data.design)]]
   return [...page, ...discoveryFiles(data, lastModified), ...DOC_FILES.map(docFile.bind(null, data, readText))]

@@ -1,26 +1,22 @@
 /** Check (browser): at each width in `fit.json`, no sideways scroll, no heading over the line limit, equal outer margins, blocks in reading order, buttons that keep their inset and cards that share one padding. Needs the Playwright browsers. */
 import { describeButton, describeHeading, describeMargins, describeOrder, describeOverflow, describePads, distinctPads, misordered, overflowBy, tightButtons, tooManyLines, unevenMargins } from "./layoutBudget.mjs"
 
-/** Runs in the page. It reads one heading: its words, its height and its line height. */
 function headingRow(node) {
   const style = getComputedStyle(node)
   const lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.2
   return { text: node.textContent.trim().slice(0, 40), height: node.getBoundingClientRect().height, lineHeight }
 }
 
-/** Runs in the page. It reads where one block starts and ends. */
 function frameRow(node) {
   const box = node.getBoundingClientRect()
   return { left: box.left, right: box.right }
 }
 
-/** Runs in the page. It reads where one block sits from the top of the page. */
 function boxRow(node) {
   const box = node.getBoundingClientRect()
   return { top: box.top + window.scrollY, bottom: box.bottom + window.scrollY }
 }
 
-/** Runs in the page. It reads how far the visible label and icon of one button sit from its left and right edges. */
 function buttonRow(node) {
   const box = node.getBoundingClientRect()
   const range = document.createRange()
@@ -30,13 +26,11 @@ function buttonRow(node) {
   return { text: node.textContent.trim().slice(0, 40), left: label.left - box.left, right: box.right - label.right }
 }
 
-/** Runs in the page. It reads the four paddings of one card. */
 function padRow(node) {
   const { paddingTop, paddingRight, paddingBottom, paddingLeft } = getComputedStyle(node)
   return { pad: [paddingTop, paddingRight, paddingBottom, paddingLeft].join(" ") }
 }
 
-/** Runs in the page. It reads the width of the page and of the screen. */
 function pageWidths() {
   return { scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }
 }
@@ -116,7 +110,6 @@ async function faultsAt(browser, port, rules, width) {
   return faults
 }
 
-/** Every layout fault at every width in the rules, as lines of text. */
 export async function layoutFaults(browser, port, rules) {
   const perWidth = []
   for (const width of rules.widths) perWidth.push(await faultsAt(browser, port, rules, width))
